@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Course title",
+    "title": "RNA-seq using Nextflow",
     "section": "",
-    "text": "This course is aimed at researchers, students, and industry professionals who want to learn about …\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "Introduces the first steps of analysing RNA sequencing data using the command line - including how to pre-process raw sequencing reads to analysis ready count data. We will use the nf-co.re’s rnaseq workflow on Pawsey Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "index.html#trainers",
@@ -51,7 +51,7 @@
   {
     "objectID": "setup.html",
     "href": "setup.html",
-    "title": "Setup",
+    "title": "RNA-Seq using Nextflow",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
@@ -61,5 +61,138 @@
     "title": "Sydney Informatics Hub Course name",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "index.html#course-survey",
+    "href": "index.html#course-survey",
+    "title": "RNA-seq using Nextflow",
+    "section": "Course survey!",
+    "text": "Course survey!\nPlease fill out our course survey before you leave!"
+  },
+  {
+    "objectID": "notebooks/1.1_Download_data.html",
+    "href": "notebooks/1.1_Download_data.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/4_nfcore-rnaseq.html",
+    "href": "notebooks/4_nfcore-rnaseq.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.3_Trimming.html",
+    "href": "notebooks/2.3_Trimming.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html",
+    "href": "notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3_intro_to_nextflow_and_nfcore.html",
+    "href": "notebooks/3_intro_to_nextflow_and_nfcore.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/6.2_Running_nfcore_command_default_parameters.html",
+    "href": "notebooks/6.2_Running_nfcore_command_default_parameters.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/6.3_Interpreting_results.html",
+    "href": "notebooks/6.3_Interpreting_results.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.4_Alignment_using_STAR.html",
+    "href": "notebooks/2.4_Alignment_using_STAR.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.2_fastQ_and_fastQC.html",
+    "href": "notebooks/2.2_fastQ_and_fastQC.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/6.4_Interpreting_results_2.html",
+    "href": "notebooks/6.4_Interpreting_results_2.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/1.0_Learning_objectives.html",
+    "href": "notebooks/1.0_Learning_objectives.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/7_Summary_Day1.html",
+    "href": "notebooks/7_Summary_Day1.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html",
+    "href": "notebooks/2.1_The_pipeline.html",
+    "title": "RNA-Seq using Nextflow",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html#raw-data-and-quality-checking",
+    "href": "notebooks/2.1_The_pipeline.html#raw-data-and-quality-checking",
+    "title": "RNA-Seq using Nextflow",
+    "section": "1. Raw data and quality checking",
+    "text": "1. Raw data and quality checking\n\nObtain sequencing data in Fastq format\nQuality checking with fastQC and multiQC\nQuality trimming with Trim galore"
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html#alignment-and-visualisation",
+    "href": "notebooks/2.1_The_pipeline.html#alignment-and-visualisation",
+    "title": "RNA-Seq using Nextflow",
+    "section": "2. Alignment and Visualisation",
+    "text": "2. Alignment and Visualisation\n\nAlignment with STAR aligner\nVisualisation using …"
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html#mapped-reads-to-gene-counts",
+    "href": "notebooks/2.1_The_pipeline.html#mapped-reads-to-gene-counts",
+    "title": "RNA-Seq using Nextflow",
+    "section": "3. Mapped reads to gene-counts",
+    "text": "3. Mapped reads to gene-counts\nConverting the reads mapped to the reference genome to a matrix which contains individual gene-counts per sample for downstream statistical enrichment analysis."
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html#differential-expression-de-analysis",
+    "href": "notebooks/2.1_The_pipeline.html#differential-expression-de-analysis",
+    "title": "RNA-Seq using Nextflow",
+    "section": "4. Differential expression (DE) analysis",
+    "text": "4. Differential expression (DE) analysis\nIdentify statistically significant DE genes using tools such as the R-library DESeq2."
+  },
+  {
+    "objectID": "notebooks/2.1_The_pipeline.html#functional-interpretation",
+    "href": "notebooks/2.1_The_pipeline.html#functional-interpretation",
+    "title": "RNA-Seq using Nextflow",
+    "section": "5. Functional interpretation",
+    "text": "5. Functional interpretation\nFunctional enrichment analysis using tools such as the R-library clusterProfiler.\n\nWe will discuss each of the steps from (1) to (3) in detail today.\nThe steps (5) and (6) will be covered on Day 2 tomorrow.\n\n\nKey points\n\nTools such as FastQC can be used for assessing the sequencing read-quality.\nTrim galore is one of the many tools available for read-trimming based on multiple criteria.\nWe will use the aligner STAR to map the reads to the reference genome/transcriptome.\nThe identification of statistically significant DE genes can be done using R libraries such as DeSeq2."
   }
 ]

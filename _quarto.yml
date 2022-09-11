@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Sydney Informatics Hub Course name"
+  title: "RNA-Seq using Nextflow"
   navbar:
     background: primary
     left:
@@ -11,10 +11,37 @@ website:
         text: Home
       - href: setup.html
         text: "Setup"
-      - text: "Session 1"
+      - text: "Start Day 1"
         menu:
-        - text: "Fundamentals"
-          href: notebooks/01a-fundamentals.html
+        - text: "Learning objectives: Day 1"
+          href: notebooks/1.0_Learning_objectives.md
+        - text: "Download all files"
+          href: notebooks/1.1_Download_data.md
+      - text: "Differential expression (DE) analysis"
+        menu:
+        - text: "The main steps involved in RNA-Seq DE analysis"
+          href: notebooks/2.1_The_pipeline.md
+        - text: "Get raw sequencing data and check quality"
+          href: notebooks/2.2_fastQ_and_fastQC.md
+        - text: "Trimming"
+          href: notebooks/2.3_Trimming.md
+        - text: "Alignment to reference genome"
+          href: notebooks/2.4_Alignment_using_STAR.md
+      - text: "Using Nextflow (nfcore) pipelines"
+        menu:
+        - text: "Why use a workflow managers such as Nextflow?"
+          href: notebooks/3_intro_to_nextflow_and_nfcore.md
+        - text: "Introduction to nfcore-rnaseq"
+          href: notebooks/4_nfcore-rnaseq.md
+        - text: "nfcore-rnaseq : Parameters"
+          href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.md
+        - text: "Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud"
+          href: notebooks/6.2_Running_nfcore_command_default_parameters.md
+        - text: "Reading the main outputs from nfcore-rnaseq"
+          href: notebooks/6.3_Interpreting_results.md
+        - text: "Helpful Nextflow logs"
+          href: notebooks/6.4_Interpreting_results_2.md
+      
 
   body-footer: "All materials copyright Sydney Informatics Hub, University of Sydney"
           
