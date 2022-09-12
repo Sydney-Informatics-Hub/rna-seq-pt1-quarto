@@ -148,6 +148,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -163,15 +172,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-use-a-workflow-managers-such-as-nextflow" id="toc-why-use-a-workflow-managers-such-as-nextflow" class="nav-link active" data-scroll-target="#why-use-a-workflow-managers-such-as-nextflow">Why use a workflow managers such as Nextflow?</a>
+  <li><a href="#why-nextflow" id="toc-why-nextflow" class="nav-link active" data-scroll-target="#why-nextflow"><strong>Why Nextflow?</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#a-typical-bioinformatics-workflow" id="toc-a-typical-bioinformatics-workflow" class="nav-link" data-scroll-target="#a-typical-bioinformatics-workflow">A typical bioinformatics workflow</a></li>
-  <li><a href="#what-are-workflow-managers" id="toc-what-are-workflow-managers" class="nav-link" data-scroll-target="#what-are-workflow-managers">What are workflow managers?</a></li>
-  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow">Nextflow</a></li>
-  <li><a href="#nfcore" id="toc-nfcore" class="nav-link" data-scroll-target="#nfcore">nfcore</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#a-typical-bioinformatics-workflow" id="toc-a-typical-bioinformatics-workflow" class="nav-link" data-scroll-target="#a-typical-bioinformatics-workflow"><strong>A typical bioinformatics workflow</strong></a>
+  <ul class="collapse">
+  <li><a href="#what-are-workflow-managers" id="toc-what-are-workflow-managers" class="nav-link" data-scroll-target="#what-are-workflow-managers"><strong>What are workflow managers?</strong></a></li>
+  <li><a href="#nextflow" id="toc-nextflow" class="nav-link" data-scroll-target="#nextflow"><strong>Nextflow</strong></a></li>
+  <li><a href="#nfcore" id="toc-nfcore" class="nav-link" data-scroll-target="#nfcore"><strong>nfcore</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -181,10 +192,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="why-use-a-workflow-managers-such-as-nextflow" class="level1">
-<h1>Why use a workflow managers such as Nextflow?</h1>
+<section id="why-nextflow" class="level1">
+<h1><strong>Why Nextflow?</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>Why use bioinformatics workflow managers?</li>
 <li>What is Nextflow?</li>
@@ -192,23 +203,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
 <li>Introduction to Nextflow and nfcore</li>
 </ul>
 </section>
-<p>Replace this image with DE analysis ?</p>
-<section id="a-typical-bioinformatics-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="a-typical-bioinformatics-workflow">A typical bioinformatics workflow</h3>
+<section id="a-typical-bioinformatics-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="a-typical-bioinformatics-workflow"><strong>A typical bioinformatics workflow</strong></h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">A typical bioinformatics workflow</figcaption><p></p>
 <p><img src="../fig/bioinformatics_workflow.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-</section>
 <section id="what-are-workflow-managers" class="level3">
-<h3 class="anchored" data-anchor-id="what-are-workflow-managers">What are workflow managers?</h3>
+<h3 class="anchored" data-anchor-id="what-are-workflow-managers"><strong>What are workflow managers?</strong></h3>
 <ul>
 <li>Transforming data into information involves running a large number of tools, optimizing parameters, and integrating dynamically changing reference data.</li>
 <li><a href="https://www.nature.com/articles/s41592-021-01254-9">Workflow managers</a> simplify pipeline development, optimize resource usage, handle software installation and versions, and run on different compute platforms, enabling workflow portability and sharing.</li>
@@ -216,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="nextflow" class="level3">
-<h3 class="anchored" data-anchor-id="nextflow">Nextflow</h3>
+<h3 class="anchored" data-anchor-id="nextflow"><strong>Nextflow</strong></h3>
 <ul>
 <li><a href="https://www.nextflow.io/">Nextflow</a> is one such workflow management tool which runs tasks across multiple compute infrastructures in a very portable manner.</li>
 <li>Nextflow enables scalable and reproducible scientific workflows using software containers.</li>
@@ -225,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="nfcore" class="level3">
-<h3 class="anchored" data-anchor-id="nfcore">nfcore</h3>
+<h3 class="anchored" data-anchor-id="nfcore"><strong>nfcore</strong></h3>
 <ul>
 <li><a href="https://nf-co.re/">nfcore</a> is a community effort to collect a curated set of analysis pipelines built using Nextflow.</li>
 <li>It is a diverse project spread across many groups.</li>
@@ -235,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
 <li>Nextflow is a workflow management tool.</li>
 <li>nfcore is a community effort of curated nextflow pipelines.</li>
@@ -243,6 +252,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 
 
+</section>
 </section>
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->

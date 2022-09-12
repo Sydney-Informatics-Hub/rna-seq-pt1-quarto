@@ -148,6 +148,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -163,14 +172,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-nfcore-rnaseq" id="toc-introduction-to-nfcore-rnaseq" class="nav-link active" data-scroll-target="#introduction-to-nfcore-rnaseq">Introduction to nfcore-rnaseq</a>
+  <li><a href="#introduction-to-nfcore-rnaseq" id="toc-introduction-to-nfcore-rnaseq" class="nav-link active" data-scroll-target="#introduction-to-nfcore-rnaseq"><strong>Introduction to nfcore-rnaseq</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#nfcore-rnaseq" id="toc-nfcore-rnaseq" class="nav-link" data-scroll-target="#nfcore-rnaseq">nfcore-rnaseq</a></li>
-  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow">Workflow</a></li>
-  <li><a href="#platforms-to-run-the-pipeline" id="toc-platforms-to-run-the-pipeline" class="nav-link" data-scroll-target="#platforms-to-run-the-pipeline">Platforms to run the pipeline</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#nfcore-rnaseq" id="toc-nfcore-rnaseq" class="nav-link" data-scroll-target="#nfcore-rnaseq"><strong>nfcore-rnaseq</strong></a></li>
+  <li><a href="#platforms-to-run-the-pipeline" id="toc-platforms-to-run-the-pipeline" class="nav-link" data-scroll-target="#platforms-to-run-the-pipeline"><strong>Platforms to run the pipeline</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -181,44 +189,36 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="introduction-to-nfcore-rnaseq" class="level1">
-<h1>Introduction to nfcore-rnaseq</h1>
+<h1><strong>Introduction to nfcore-rnaseq</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>What is nfcore-rnaseq</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
 <li>Introduction to the nfcore-rnaseq pipeline</li>
 </ul>
 </section>
 <section id="nfcore-rnaseq" class="level3">
-<h3 class="anchored" data-anchor-id="nfcore-rnaseq">nfcore-rnaseq</h3>
+<h3 class="anchored" data-anchor-id="nfcore-rnaseq"><strong>nfcore-rnaseq</strong></h3>
 <ul>
 <li>nfcore-rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotation.</li>
 <li>The pipeline is built using <a href="https://www.nextflow.io/">Nextflow</a></li>
 <li>It uses <a href="https://www.docker.com/">Docker</a>/<a href="https://sylabs.io/">Singularity</a> containers making installation trivial and results highly reproducible.</li>
 <li>Citation : doi: <a href="https://doi.org/10.5281/zenodo.1400710">10.5281/zenodo.1400710</a></li>
 </ul>
-</section>
-<section id="workflow" class="level3">
-<h3 class="anchored" data-anchor-id="workflow">Workflow</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">A typical bioinformatics workflow</figcaption><p></p>
-<p><img src="../fig/bioinformatics_workflow.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="../fig/typical_and_nfcore_merged.png" class="img-fluid"></p>
 <ul>
 <li>nfcore-rnaseq uses <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>,<a href="http://multiqc.info/">MultiQC</a>, <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> and other tools for quality control and pre-processing of sequencing reads.</li>
 <li>The pipeline uses <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="https://github.com/deweylab/RSEM">RSEM</a>, <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">HISAT2</a> or <a href="https://combine-lab.github.io/salmon/">Salmon</a> with gene/isoform counts for alignment and quantification.</li>
-<li>The pipeline uses <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> for initial exploratory analysis of the generated raw-counts matrix.</li>
+<li>The pipeline also uses <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> for initial exploratory analysis of the generated raw-counts matrix.</li>
 </ul>
 </section>
 <section id="platforms-to-run-the-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="platforms-to-run-the-pipeline">Platforms to run the pipeline</h3>
+<h3 class="anchored" data-anchor-id="platforms-to-run-the-pipeline"><strong>Platforms to run the pipeline</strong></h3>
 <ul>
 <li><strong>Local machine</strong>: Is this sufficient?</li>
 <li><strong>High Performance Computing (HPC)</strong>: USyd-Artemis, NCI-GADI, Amazon cloud …</li>
@@ -227,10 +227,11 @@ ul.task-list li input[type="checkbox"] {
 <p>In this workshop, we will be using training Nimbus Virtual machine (VM) instances provided by <a href="https://pawsey.org.au/">Pawsey Supercomputing Center</a></p>
 </section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>nfcore-rnaseq is an nextflow pipeline which works with containers such a sigularity and docker.</li>
+<li>The nfcore-rnaseq pipeline can be run using a single command.</li>
 <li>nfcore-rnaseq is portable across platforms using easy to use configuration files.</li>
+<li>We will run the nfcore-rnaseq pipeline on training Nimbus Virtual machine (VM) instances.</li>
 </ul>
 </section>
 

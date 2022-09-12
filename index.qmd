@@ -1,5 +1,5 @@
 ---
-title: "RNA-seq using Nextflow"
+title: "**RNA-seq using Nextflow**"
 output:
   html_document:
     toc: false
@@ -10,20 +10,21 @@ fig-cap-location: top
 
 
 ### Synopsis:
-Introduces the first steps of analysing RNA sequencing data using the command line - including how to __pre-process raw sequencing reads to analysis ready count data__. We will use the __[nf-co.re's rnaseq workflow](https://nf-co.re/rnaseq/usage) on [Pawsey Nimbus Cloud](https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation)__.
+Introduces the first steps of analysing RNA sequencing data using the command line - including how to __pre-process raw sequencing reads to analysis ready count data__. We will use the __[nf-co.re's rnaseq workflow](https://nf-co.re/rnaseq/3.8.1) on [Pawsey Nimbus Cloud](https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation)__.
 
 ### Target audience:
 Researchers, students and life scientists who are new to RNA sequencing for differential expression and pathway analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn about and use [nf-co.re](https://nf-co.re/) workflows.
 
 ### Useful resources
 - Introduction to __[Command Line for Genomics](https://datacarpentry.org/shell-genomics/)__
-- __[Nextflow and Supercomputing at Pawsey]()__ : An introduction to nextflow pipelines and Pawsey supercomputing. 
+- __[Nextflow and Supercomputing at Pawsey](https://www.biocommons.org.au/events/nextflow-nimbus)__ : WEBINAR: Portable, reproducible and scalable bioinformatics workflows using Nextflow and Pawsey Nimbus Cloud. 
 
 
 ### How to navigate the web-pages
-- Please use the Menu bar on the top.
 
-![**Menu bar for navigation**](/fig/MwnuBar_Day1.png)
+Please use the Menu bar on the top.
+
+![**Menu bar for navigation**](/fig/MenuBar_Day1.png)
 
 - We will start with the `Setup` page and then naviate to the right. 
 - Each main menu header has sub-header which will be visible when you click on the main-menu, as shown above.
@@ -31,7 +32,7 @@ Researchers, students and life scientists who are new to RNA sequencing for diff
 ### Follow-on courses:
 This course is __part one__ of the two-part __[RNA sequencing training series](https://sydney-informatics-hub.github.io/training.RNAseq.series/)__. The second part of the series uses R/R Studio on Pawsey Nimbus Cloud to perform differential expression and pathway analysis using raw count data generated in part 1.
 
-We recommend attending both courses if you would like and end to end overview of how to perform the analysis. If you are only interested in the technologies used, you may be able to get away with attending only the parts of interest :smiley:. 
+We recommend attending both courses if you would like an end-to-end overview of how to perform the analysis. If you are only interested in the technologies used, you may be able to get away with attending only the parts of interest. 
 
 
 

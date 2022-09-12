@@ -203,11 +203,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Reading the main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nfcore-rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
  <span class="dropdown-text">Helpful Nextflow logs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
   </li>  
     </ul>
   </li>
@@ -226,13 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link active" data-scroll-target="#interpreting-the-results">Interpreting the results</a>
+  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link active" data-scroll-target="#interpreting-the-results"><strong>Interpreting the results</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#how-to-view-and-interpret-the-results" id="toc-how-to-view-and-interpret-the-results" class="nav-link" data-scroll-target="#how-to-view-and-interpret-the-results">How to view and interpret the results</a></li>
-  <li><a href="#intepreting-the-biological-results" id="toc-intepreting-the-biological-results" class="nav-link" data-scroll-target="#intepreting-the-biological-results">Intepreting the biological results</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#how-to-view-and-interpret-the-results" id="toc-how-to-view-and-interpret-the-results" class="nav-link" data-scroll-target="#how-to-view-and-interpret-the-results"><strong>How to view and interpret the results</strong></a></li>
+  <li><a href="#intepreting-the-biological-results" id="toc-intepreting-the-biological-results" class="nav-link" data-scroll-target="#intepreting-the-biological-results"><strong>Intepreting the biological results</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -243,29 +252,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="interpreting-the-results" class="level1">
-<h1>Interpreting the results</h1>
+<h1><strong>Interpreting the results</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>What are the main biological results generated?</li>
 <li>How to best view and interpret the results?</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
 <li>View and interpret the various biological results</li>
 <li>Streamline the results interpretation prcoess</li>
 </ul>
 </section>
 <section id="how-to-view-and-interpret-the-results" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-view-and-interpret-the-results">How to view and interpret the results</h3>
+<h3 class="anchored" data-anchor-id="how-to-view-and-interpret-the-results"><strong>How to view and interpret the results</strong></h3>
 <p>The results are stored in the folder ‘results’ with sub-folders for individual steps. It should resemble:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>drwxrwxr<span class="sc">-</span>x  <span class="dv">2</span> ubuntu ubuntu <span class="dv">4096</span> Jul <span class="dv">26</span> <span class="dv">06</span><span class="sc">:</span><span class="dv">53</span> pipeline_info</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>drwxrwxr<span class="sc">-</span>x <span class="dv">19</span> ubuntu ubuntu <span class="dv">4096</span> Jul <span class="dv">26</span> <span class="dv">06</span><span class="sc">:</span><span class="dv">53</span> star_salmon</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drwxrwxr<span class="sc">-</span>x  <span class="dv">3</span> ubuntu ubuntu <span class="dv">4096</span> Jul <span class="dv">26</span> <span class="dv">06</span><span class="sc">:</span><span class="dv">44</span> trimgalore</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>drwxrwxr<span class="sc">-</span>x  <span class="dv">2</span> ubuntu ubuntu <span class="dv">4096</span> Jul <span class="dv">26</span> <span class="dv">06</span><span class="sc">:</span><span class="dv">43</span> fastqc</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>drwxrwxr<span class="sc">-</span>x  <span class="dv">3</span> ubuntu ubuntu <span class="dv">4096</span> Jul <span class="dv">25</span> <span class="dv">20</span><span class="sc">:</span><span class="dv">51</span> multiqc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:53 pipeline_info</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x 19 ubuntu ubuntu 4096 Jul 26 06:53 star_salmon</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 26 06:44 trimgalore</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:43 fastqc</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 25 20:51 multiqc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>X11 Forwarding would be the best way to provide the user with a streamlined approach to interpret and proceed on the same platform.</li>
 <li>It should also assist the user with essential steps such as :
@@ -278,30 +287,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Since X11 Forwarding is not working on the Nimbus instance, we will use the second option.</li>
 </ul>
 <p>On your local machine, please use the following scp command for transferring the “results” folder</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>scp <span class="sc">-</span>r <span class="st">`</span><span class="at">login_name</span><span class="st">`</span><span class="sc">@</span><span class="do">###.</span><span class="al">###</span><span class="do">.</span><span class="al">###</span><span class="do">.</span><span class="al">###</span><span class="do">:PATH_TO_results_FOLDER/results ./</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>scp -r `login_name`@###.###.###.###:PATH_TO_results_FOLDER/results ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="intepreting-the-biological-results" class="level3">
-<h3 class="anchored" data-anchor-id="intepreting-the-biological-results">Intepreting the biological results</h3>
+<h3 class="anchored" data-anchor-id="intepreting-the-biological-results"><strong>Intepreting the biological results</strong></h3>
 <ul>
 <li><strong>FastQC</strong>: Quality assessment and trimming</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">The samplesheet</figcaption><p></p>
-<p><img src="../fig/fastqQC.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="../fig/fastqQC.png" class="img-fluid"></p>
 <ul>
 <li><p><strong>Alignment</strong>: Map the sequenced reads against a (Huge) reference (organism) sequence to identify the genes to which they belong.</p></li>
-<li><p><strong>Count data</strong>: For gene expression in Part II <img src="../fig/count_matrix.png" class="img-fluid" alt="The samplesheet"></p></li>
-<li><p><strong>Principal component analysis (PCA) plot</strong>: A two dimensional view of the multi-dimensional gene signatures <img src="../fig/PCA.png" class="img-fluid" alt="The samplesheet"></p></li>
+<li><p><strong>Count data</strong>: For gene expression in Part II <img src="../fig/count_matrix.png" class="img-fluid"></p></li>
+<li><p><strong>Principal component analysis (PCA) plot</strong>: A two dimensional view of the multi-dimensional gene signatures <img src="../fig/PCA.png" class="img-fluid"></p></li>
 </ul>
 </section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li></li>
-<li></li>
+<li>Nexyflow can download the required software containers as well as genome resource databases in run-time, if we are working with standard model organisms such as human, mouse etc.</li>
+<li>The nfcore-rnaseq pipeline generates independant sub-folders in the main <code>results</code> folder for individual processes</li>
+<li>The outputs can be transferred to the local machine and viewed for further analysis.<br>
+</li>
 </ul>
 </section>
 

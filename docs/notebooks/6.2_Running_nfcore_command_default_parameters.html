@@ -211,6 +211,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -226,12 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-cloud" id="toc-run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-cloud" class="nav-link active" data-scroll-target="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-cloud">Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus Cloud”</a>
+  <li><a href="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" id="toc-run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" class="nav-link active" data-scroll-target="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance"><strong>Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#running-the-pipeline-on-pawsey-nimbus-vm" id="toc-running-the-pipeline-on-pawsey-nimbus-vm" class="nav-link" data-scroll-target="#running-the-pipeline-on-pawsey-nimbus-vm">Running the pipeline on Pawsey-Nimbus VM</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#run-the-pipeline-on-pawsey-nimbus-vm-instance" id="toc-run-the-pipeline-on-pawsey-nimbus-vm-instance" class="nav-link" data-scroll-target="#run-the-pipeline-on-pawsey-nimbus-vm-instance"><strong>Run the pipeline on Pawsey-Nimbus VM instance</strong></a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -241,28 +251,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-cloud" class="level1">
-<h1>Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus Cloud”</h1>
+<section id="run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" class="level1">
+<h1><strong>Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>“What does the actual nfcore-rnaseq command look like?”</li>
-<li>“What are the main input parameters?”</li>
-<li>“What are the outputs?”</li>
-<li>“What are the output log files?”</li>
+<li>What does the actual nfcore-rnaseq command look like?</li>
+<li>What are the main input parameters?</li>
+<li>What are the outputs?</li>
+<li>What are the output log files?</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>“Understanding and excecuting the nfcore-rnaseq command, it’s inputs and outputs”</li>
+<li>Understand and excecute the nfcore-rnaseq command</li>
 </ul>
 </section>
-<section id="running-the-pipeline-on-pawsey-nimbus-vm" class="level3">
-<h3 class="anchored" data-anchor-id="running-the-pipeline-on-pawsey-nimbus-vm">Running the pipeline on Pawsey-Nimbus VM</h3>
+<section id="run-the-pipeline-on-pawsey-nimbus-vm-instance" class="level3">
+<h3 class="anchored" data-anchor-id="run-the-pipeline-on-pawsey-nimbus-vm-instance"><strong>Run the pipeline on Pawsey-Nimbus VM instance</strong></h3>
 <ul>
-<li>Please go back to the command-line(Terminal) window on which you have logged on to the Nimbus training instance. Check your path by typing:</li>
+<li>Please go back to the command-line(Terminal) window on which you have logged on to the Nimbus training instance.</li>
+<li>In case the window has been closed accidently or if you have been logged-off, you will need to follow the log-in steps on the <code>Setup</code> page.</li>
 </ul>
+<p>Check your path by typing:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>You should be in the path: <code>/home/training/base_directory/working_directory</code></li>
@@ -270,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd <span class="sc">/</span>home<span class="sc">/</span>training<span class="sc">/</span>base_directory<span class="sc">/</span>working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="excecuting-the-nextflow-nfcore-rnaseq-pipeline" class="level4">
-<h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nfcore-rnaseq-pipeline">Excecuting the Nextflow nfcore-rnaseq pipeline</h4>
+<h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nfcore-rnaseq-pipeline"><strong>Excecuting the Nextflow nfcore-rnaseq pipeline</strong></h4>
 <p>We will run the single nfcore-rnaseq command using a utility called <strong>screen</strong> in unix.</p>
 <p>What is the <code>screen</code> command?</p>
 <ul>
@@ -278,15 +290,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>When a process is started with ‘screen’, the process can be detached from session &amp; then can reattach the session at a later time.</li>
 <li>When the session is detached, the process that was originally started from the screen is still running and managed by the screen itself.</li>
 <li>The process can then re-attach the session at a later time, and the terminals are still there, the way it was left.</li>
+<li>In short, we can use a <code>single Terminal</code> and <code>multiple screen</code> sessions in the terminal to do multiple different things. <br><br> <strong>NOTE</strong> If this sounds too complicated, the other alternative is to open a new <code>terminal</code> window :-) for a new task.</li>
 </ul>
 </section>
 <section id="start-a-new-screen-window" class="level4">
-<h4 class="anchored" data-anchor-id="start-a-new-screen-window">(1) Start a new screen window</h4>
-<p>-S: It will start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
+<h4 class="anchored" data-anchor-id="start-a-new-screen-window"><strong>(1) Start a new screen window</strong></h4>
+<p><code>-S</code>: It will start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>S run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="run-the-nfcore-rnaseq-command" class="level4">
-<h4 class="anchored" data-anchor-id="run-the-nfcore-rnaseq-command">(2) Run the nfcore-rnaseq command</h4>
+<h4 class="anchored" data-anchor-id="run-the-nfcore-rnaseq-command"><strong>(2) Run the nfcore-rnaseq command</strong></h4>
 <p><font size="2.5"></font></p><font size="2.5">
 <div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
@@ -308,29 +321,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section>
 <section id="detach-from-the-above-screen-session" class="level4">
-<h4 class="anchored" data-anchor-id="detach-from-the-above-screen-session">(3) Detach from the above screen session</h4>
-<p>-d: It is used to detach a screen session so that it can be reattached in future. It can also be done with the help of shortcut key <code>Ctrl-a + d</code></p>
+<h4 class="anchored" data-anchor-id="detach-from-the-above-screen-session"><strong>(3) Detach from the above screen session</strong></h4>
+<p><code>-d</code>: It is used to detach a screen session so that it can be reattached in future. It can also be done with the help of shortcut key <code>Ctrl-a + d</code></p>
 </section>
 <section id="reattach-the-screen-session-to-check-the-progress" class="level4">
-<h4 class="anchored" data-anchor-id="reattach-the-screen-session-to-check-the-progress">(4) Reattach the screen-session to check the progress</h4>
-<p>-r: It is used to reattach a screen session which was detached in past.</p>
+<h4 class="anchored" data-anchor-id="reattach-the-screen-session-to-check-the-progress"><strong>(4) Reattach the screen-session to check the progress</strong></h4>
+<p><code>-r</code> : It is used to reattach a screen session which was detached in past.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Repeat Steps (3) and (4) to check the the excecution status of the command.</p>
 <ul>
 <li>The nfcore-rnaseq command will take about 18-22 minutes to run to completion.</li>
-<li>In the mean time we will proceed to discuss some of the important log files.</li>
-<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more trainees have a runtime problem, they will be able view these pre-computed results.<br>
+<li>In the mean time we will proceed to discuss some of the important output and log files.</li>
+<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nfcore command, they will be able use these pre-computed results.<br>
 </li>
 <li>An <code>scp command</code> to transfer required files from the results folder on the VM instance to your local machine will also be made available.</li>
 </ul>
 </section>
 </section>
+<section id="challenge" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<ul>
+<li>Which parameters in the above <code>nfcore-rnaseq</code> command seem to be mandatory? <br><strong>NOTE</strong> This is a trick question , but a very important one <span class="emoji" data-emoji="smirk">😏</span></li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+<ul>
+<li>If we are working with model organisms such as human/mouse
+<ul>
+<li>The ONLY mandatory parameters which the user needs to supply to the pipeline are
+<ul>
+<li>The samplesheet : <code>--input samplesheet.csv</code></li>
+<li>The name of the genome version e.g.&nbsp;<code>--genome GRCh37</code></li>
+<li>The profile ‘-profile’</li>
+</ul></li>
+<li>So the most basic command (when a standard genome is available from a nfcore resource) is</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nextflow run nf-core/rnaseq \</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    --outdir &lt;OUTDIR&gt; \</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    --genome GRCh37 \</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    -profile &lt;docker/singularity/podman/shifter/charliecloud/conda/institute&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Provided with a genome ID such as <code>--genome GRCh37</code>, the nfcore-rnaseq pipeline will download all requried genome-related files at run-time.</li>
+<li>However when we are working with our own non-model species of interest, we will need to provide the genome related index files.</li>
+<li>In this workshop, although we are working with a standard version of the mouse genome (GRCh38/mm10) , inorder to save time, bandwidth and hard-disk space on the individial VM instances, we have hosted the genome files in a central repository called <a href="https://cernvm.cern.ch/fs/"><code>Cern-VM-FS</code></a>, and hence provided the cvmfs paths.</li>
+</ul>
+</details>
+</section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
 <li>Pawsey Nimbus VM is a good resource to run nfcore piplelines</li>
-<li>System resouces such as cpus and memory can be customised per step using config files.</li>
-<li>Excecution and timeline logs files provide a detailed summary of the run.</li>
 </ul>
 </section>
 

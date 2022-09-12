@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -211,6 +148,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
     </ul>
   </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
@@ -226,12 +172,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#trimming" id="toc-trimming" class="nav-link active" data-scroll-target="#trimming">Trimming</a>
+  <li><a href="#trimming-reads" id="toc-trimming-reads" class="nav-link active" data-scroll-target="#trimming-reads"><strong>Trimming reads</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#why-trim" id="toc-why-trim" class="nav-link" data-scroll-target="#why-trim"><strong>Why trim?</strong></a></li>
+  <li><a href="#does-trimming-help" id="toc-does-trimming-help" class="nav-link" data-scroll-target="#does-trimming-help"><strong>Does trimming help?</strong></a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -241,21 +189,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="trimming" class="level1">
-<h1>Trimming</h1>
+<section id="trimming-reads" class="level1">
+<h1><strong>Trimming reads</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>Why trim RNA sequencing reads?</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>Understand the requirement for trimming RNA sequencing reads</li>
+<li>Understand the requirements for trimming RNA sequencing reads</li>
 <li>Understand the pros and cons of trimming</li>
 </ul>
 </section>
+<section id="why-trim" class="level3">
+<h3 class="anchored" data-anchor-id="why-trim"><strong>Why trim?</strong></h3>
 <ul>
 <li>Trimming is sometimes performed to improve the quality of the raw data and potentially improve its mappability. There are several ways to perform trimming:
 <ul>
@@ -264,17 +214,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Removal of polyA tails</li>
 </ul></li>
 </ul>
-<p><strong>NOTE:</strong> - Be very wary about trimming RNA sequencing data - Trimming of poor quality reads can affect gene expression estimates (Williams at el., 2016)</p>
+</section>
+<section id="does-trimming-help" class="level3">
+<h3 class="anchored" data-anchor-id="does-trimming-help"><strong>Does trimming help?</strong></h3>
 <ul>
+<li>Be very wary about trimming RNA sequencing data
+<ul>
+<li>Trimming of poor quality reads can affect gene expression estimates (Williams at el., 2016)</li>
+</ul></li>
 <li>Trimming of high quality adapter sequences was shown to increase quality and reliability of biological signals in RNA-seq data (Dozmorov et al., 2015)</li>
 </ul>
+</section>
 <section id="challenge" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge">Challenge</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>From looking into the results folder <span class="cf">in</span> the path <span class="st">`</span><span class="at">~/base_directory/working_directory/</span><span class="st">`</span>, can you tell <span class="sc">:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Which tool does nfcore<span class="sc">-</span>rnaseq use <span class="cf">for</span> read<span class="sc">-</span>trimming?</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> Was there an effect of the trimming step on the sample SRR3473989_selected.fastq?</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> Which tool did you use <span class="cf">for</span> visualisation of the quality; Before and after trimming?</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span> Which folders <span class="cf">in</span> the <span class="st">'results'</span> did you need to access? </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<ul>
+<li>From looking into the results folder in the path <code>~/base_directory/working_directory/</code>, can you tell :
+<ul>
+<li>Which tool does nfcore-rnaseq use for read-trimming?</li>
+</ul></li>
+<li>Was there an effect of the trimming step on the sample SRR3473989_selected.fastq?
+<ul>
+<li>Which tool did you use for visualisation of the quality; Before and after trimming?</li>
+<li>Which folders in the ‘results’ did you need to access?</li>
+</ul></li>
+</ul>
 <details>
 <summary>
 Solution
@@ -282,7 +245,7 @@ Solution
 </details>
 </section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
 <li>Tools such as Trim galore and trimmomatic can be used for read-trimming</li>
 <li>FastQC can be used to visualise if the trimming step helped improve the read-set.</li>

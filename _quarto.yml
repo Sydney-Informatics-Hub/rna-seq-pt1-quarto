@@ -37,10 +37,14 @@ website:
           href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.md
         - text: "Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud"
           href: notebooks/6.2_Running_nfcore_command_default_parameters.md
-        - text: "Reading the main outputs from nfcore-rnaseq"
+        - text: "Main outputs from nfcore-rnaseq"
           href: notebooks/6.3_Interpreting_results.md
         - text: "Helpful Nextflow logs"
           href: notebooks/6.4_Interpreting_results_2.md
+      - text: "Summary Day 1"
+        menu:
+        - text: "Raw sequence to gene-counts"
+          href: notebooks/7_Summary_Day1.md
       
 
   body-footer: "All materials copyright Sydney Informatics Hub, University of Sydney"

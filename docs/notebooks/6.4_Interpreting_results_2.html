@@ -140,11 +140,20 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Reading the main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nfcore-rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
  <span class="dropdown-text">Helpful Nextflow logs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
   </li>  
     </ul>
   </li>
@@ -163,16 +172,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#helpful-nextflow-logs" id="toc-helpful-nextflow-logs" class="nav-link active" data-scroll-target="#helpful-nextflow-logs">Helpful Nextflow logs</a>
+  <li><a href="#helpful-nextflow-logs" id="toc-helpful-nextflow-logs" class="nav-link active" data-scroll-target="#helpful-nextflow-logs"><strong>Helpful Nextflow logs</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#workflow-timeline" id="toc-workflow-timeline" class="nav-link" data-scroll-target="#workflow-timeline">Workflow timeline</a></li>
-  <li><a href="#compute-resource-usage" id="toc-compute-resource-usage" class="nav-link" data-scroll-target="#compute-resource-usage">Compute resource usage</a>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#workflow-timeline" id="toc-workflow-timeline" class="nav-link" data-scroll-target="#workflow-timeline"><strong>Workflow timeline</strong></a></li>
+  <li><a href="#compute-resource-usage" id="toc-compute-resource-usage" class="nav-link" data-scroll-target="#compute-resource-usage"><strong>Compute resource usage</strong></a>
   <ul class="collapse">
   <li><a href="#analysing-the-technical-requirements" id="toc-analysing-the-technical-requirements" class="nav-link" data-scroll-target="#analysing-the-technical-requirements">Analysing the technical requirements</a></li>
-  <li><a href="#part-2-gene-counts-to-differential-expression" id="toc-part-2-gene-counts-to-differential-expression" class="nav-link" data-scroll-target="#part-2-gene-counts-to-differential-expression">Part 2 (Gene counts to Differential expression)</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -184,9 +192,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="helpful-nextflow-logs" class="level1">
-<h1>Helpful Nextflow logs</h1>
+<h1><strong>Helpful Nextflow logs</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>What information does the timeline log file provide us?</li>
 <li>How can we estimate the CPU/memory resource requirements?</li>
@@ -194,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
 <li>Understand the timelines for multiple processes</li>
 <li>Estimate the resource requirements for multiple processes</li>
@@ -202,13 +210,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="workflow-timeline" class="level2">
-<h2 class="anchored" data-anchor-id="workflow-timeline">Workflow timeline</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">The samplesheet</figcaption><p></p>
-<p><img src="../fig/timeline.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<h2 class="anchored" data-anchor-id="workflow-timeline"><strong>Workflow timeline</strong></h2>
+<p><img src="../fig/timeline.png" class="img-fluid"></p>
 <ul>
 <li>Different processing times for different tools.</li>
 <li>Each process can be assigned specifc resources using a nextflow.config file.</li>
@@ -216,16 +219,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="compute-resource-usage" class="level2">
-<h2 class="anchored" data-anchor-id="compute-resource-usage">Compute resource usage</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">The samplesheet</figcaption><p></p>
-<p><img src="../fig/cpu_usage.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<p align="center">
-<img src="{{ page.root }}/fig/memory_usage.png" style="margin:10px;height:500px">
-</p>
+<h2 class="anchored" data-anchor-id="compute-resource-usage"><strong>Compute resource usage</strong></h2>
+<p><img src="../fig/cpu_usage.png" class="img-fluid"></p>
 <ul>
 <li>Shows multiple graphical statistics displaying the resource usage for various processes in the run.</li>
 <li>This helps to get an estimate of the required resources for independant processes and assign them for future runs.</li>
@@ -234,25 +229,16 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="analysing-the-technical-requirements">Analysing the technical requirements</h3>
 <ul>
 <li><strong>Big data size reflecting on resource requirements</strong>: The data used for this run is massively subsetted. Real bioinformatics samples for RNASeq are in the range of few GB. Many bioinformatics tools can use multiple CPUs and quite a few also display high memory requirements.</li>
-<li><strong>Storing big reference databases for re-use</strong>: Resources such as “cvmfs” will be ideal for storing big sized reference datasets in central repostories. This is being demonstrated in today’s workshop.</li>
-<li><strong>Storing most recent version of the ’nfcore software; as backup</strong>: Although it is recommended (and theorotically possible) to download the latest version of a nfcore pipeline, it was observed that the most recent version of nfcore-rnaseq displayed errors when I attempted to download it. So, storing a near recent copy in the “cvmfs” solved his issue. Since (possibly) minor changes are observed between sub-versions of nfcore pipelines, this approach can be used as an effective backup.</li>
+<li><strong>Storing big reference databases for re-use</strong>: Resources such as “cvmfs” will be ideal for storing big sized reference datasets in central repostories.</li>
+<li><strong>Storing most recent version of the ’nfcore software; as backup</strong>: Although it is recommended to download the latest version of a nfcore pipeline, it was observed that the most recent version of nfcore-rnaseq displayed errors. So we are hosting a near recent copy of the pipeline from the “cvmfs”. Since (possibly) minor changes are observed between sub-versions of nfcore pipelines, this approach can be used as an effective alternative.</li>
 <li><strong>Storing singularity containers in cvmfs!!</strong>: Need to weigh the pros and cons! - Also, this is directly dependant on whether we download the nfcore-pipeline on the fly (or use an older version)…</li>
 <li><strong>X11 Forwarding</strong>: The analysis can be streamlined if the user is able to visualise and run GUI based applications on the Vm instances.</li>
 </ul>
 </section>
-<section id="part-2-gene-counts-to-differential-expression" class="level3">
-<h3 class="anchored" data-anchor-id="part-2-gene-counts-to-differential-expression">Part 2 (Gene counts to Differential expression)</h3>
-<ul>
-<li>This was <strong>Part 1</strong> of the RNASeq analyis</li>
-<li>The demostrated nfcore-rnaseq pipeline simplifies the processing of sequence-data to gene counts.</li>
-<li>We use RStudio (available on Nimbus VM) for <strong>Part 2</strong> of the analysis.</li>
-</ul>
-</section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li></li>
-<li></li>
+<li>Nextflow provides easy to understand html log files, which can be used to understand the system resource requirement and hence planning for future big runs.</li>
 </ul>
 </section>
 

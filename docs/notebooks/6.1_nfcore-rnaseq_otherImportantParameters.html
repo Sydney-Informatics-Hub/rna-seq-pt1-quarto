@@ -226,13 +226,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nfcore-rnaseq-parameters" id="toc-nfcore-rnaseq-parameters" class="nav-link active" data-scroll-target="#nfcore-rnaseq-parameters">nfcore-rnaseq : Parameters</a>
+  <li><a href="#nfcore-rnaseq-parameters" id="toc-nfcore-rnaseq-parameters" class="nav-link active" data-scroll-target="#nfcore-rnaseq-parameters"><strong>nfcore-rnaseq : Parameters</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#the-nfcore-rnaseq-command" id="toc-the-nfcore-rnaseq-command" class="nav-link" data-scroll-target="#the-nfcore-rnaseq-command">The nfcore-rnaseq command</a></li>
-  <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2">Challenge #2</a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#the-nfcore-rnaseq-command" id="toc-the-nfcore-rnaseq-command" class="nav-link" data-scroll-target="#the-nfcore-rnaseq-command"><strong>The nfcore-rnaseq command</strong></a></li>
+  <li><a href="#samplesheet-sequence-data" id="toc-samplesheet-sequence-data" class="nav-link" data-scroll-target="#samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
+  <li><a href="#other-inputoutput-options" id="toc-other-inputoutput-options" class="nav-link" data-scroll-target="#other-inputoutput-options"><strong>Other input/output options</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -243,49 +245,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 <section id="nfcore-rnaseq-parameters" class="level1">
-<h1>nfcore-rnaseq : Parameters</h1>
+<h1><strong>nfcore-rnaseq : Parameters</strong></h1>
 <section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>What are the important nfcore-rnaseq parameters</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
+<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
 <li>Understanding the nfcore-rnaseq parameters</li>
 </ul>
 </section>
 <section id="the-nfcore-rnaseq-command" class="level3">
-<h3 class="anchored" data-anchor-id="the-nfcore-rnaseq-command">The nfcore-rnaseq command</h3>
-<p><font size="2"></font></p><font size="2">
+<h3 class="anchored" data-anchor-id="the-nfcore-rnaseq-command"><strong>The nfcore-rnaseq command</strong></h3>
+<p>The nfcore-rnaseq pipeline can be run using a single command with deafult parameters.</p>
+<p><font size="3"></font></p><font size="3">
 <div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>nextflow run $Path_to_nfcore-rnaseq \         # The nfcore-rnaseq excecutable</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    --input $Path_to_samplesheet.csv \        # samplesheet file-name</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                    # For pre-installed softwares</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    --fasta $Genome_fasta_file \              # Genome sequence file</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    --gtf $Path_to_Genome.gtf \               # gtf - gene locations on genome</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    --star_index $Path_to_index file \       # Formatted file for aligner</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \        # Memory and cpu resources </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    --outdir $Path_to_results \               # results folder</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \     # Excecution log file-name </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</font><p><font size="2"></font></p>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  nextflow run $Path_to_nfcore-rnaseq \         # The nfcore-rnaseq excecutable</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    --input $Path_to_samplesheet.csv \        # samplesheet file-name</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                    # For pre-installed softwares</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    --fasta $Genome_fasta_file \              # Genome sequence file</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    --gtf $Path_to_Genome.gtf \               # gtf - gene locations on genome</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    --star_index $Path_to_index file \        # Formatted file for aligner</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \        # Memory and cpu resources </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    --outdir $Path_to_results \               # results folder</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \     # Excecution log file-name </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</font><p><font size="3"></font></p>
 <p>This section introduces the user to the important nfcore-rnaseq parameters</p>
-<section id="samplesheet-sequence-data" class="level4">
-<h4 class="anchored" data-anchor-id="samplesheet-sequence-data">Samplesheet sequence data</h4>
+</section>
+<section id="samplesheet-sequence-data" class="level3">
+<h3 class="anchored" data-anchor-id="samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></h3>
 <ul>
 <li>We need a <a href="https://nf-co.re/rnaseq/3.7/usage#samplesheet-input">samplesheet</a> with information about the samples you would like to analyse.</li>
 <li>If the samplesheet is located in a different folder, you can use this parameter to specify its path.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">The samplesheet</figcaption><p></p>
-<p><img src="../fig/elaborate_samplesheet.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p><img src="../fig/elaborate_samplesheet.png" class="img-fluid"></p>
 <ul>
 <li>The samplesheet is a comma-separated file with 4 columns, and a header row as shown in the example samplesheet above.</li>
 <li>The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet.</li>
@@ -293,62 +290,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Samplesheet:details</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Samplesheet columns</figcaption><p></p>
 <p><img src="../fig/samplesheet_description.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </section>
-</section>
-<section id="challenge-2" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge-2">Challenge #2</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>- The samplesheet which we will be using for today's hands-on is already created and placed in the folder `~/base_directory/working_directory`.</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>- Can you open this file using the utility `vi` and figure out what is the difference between ours and the one shown as a sample above?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="challenge" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge">Challenge</h3>
+<ul>
+<li>The samplesheet which we will be using for today’s hands-on is already created and available at <code>~/base_directory/working_directory/samplesheet.csv</code>.</li>
+<li>Can you open this file using the utility <code>vi</code> and figure out what is the difference between ours and the one shown as a example, above?
 <details>
 <summary>
 Solution
 </summary>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>- The samplesheet above consists of both single- and paired-end data. It is for 6 samples, where TREATMENT_REP3 has been sequenced twice.</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>- The samplesheet to be used in today's analysis is a lot simpler, with only single-end reads. </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</section>
-<ul>
-<li>However one thing we can check ourselves as a task, is the <strong>strandedness</strong> of the read library.</li>
+The samplesheet above consists of both single- and paired-end data. It is for 6 samples, where TREATMENT_REP3 has been sequenced twice. The samplesheet to be used in today’s analysis is a lot simpler, with only single-end reads.
+</details></li>
 </ul>
-<section id="other-inputoutput-options" class="level4">
-<h4 class="anchored" data-anchor-id="other-inputoutput-options">Other input/output options</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>--input   Path to comma-separated file containing information about the samples.</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>--outdir  The output directory where the results will be saved.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="other-inputoutput-options" class="level3">
+<h3 class="anchored" data-anchor-id="other-inputoutput-options"><strong>Other input/output options</strong></h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>--input   Path to comma-separated file containing information about the samples.</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>--outdir  The output directory where the results will be saved.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="reference-genome-options" class="level4">
-<h4 class="anchored" data-anchor-id="reference-genome-options">Reference genome options</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>--genome            Name of iGenomes reference. </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>--star_index        Path to directory or tar.gz archive for pre-built STAR index.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>--hisat2_index      Path to directory or tar.gz archive for pre-built HISAT2 index.</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>--save_reference    If generated by the pipeline save the STAR index in the results directory.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 class="anchored" data-anchor-id="reference-genome-options"><em>Reference genome options</em></h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>--genome            Name of iGenomes reference. </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>--star_index        Path to directory or tar.gz archive for pre-built STAR index.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>--hisat2_index      Path to directory or tar.gz archive for pre-built HISAT2 index.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>--save_reference    If generated by the pipeline save the STAR index in the results directory.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="alignment-options" class="level4">
-<h4 class="anchored" data-anchor-id="alignment-options">Alignment options</h4>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>--aligner           Alignment algorithm to use.</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>--pseudo_aligner    Pseudo aligner to use.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 class="anchored" data-anchor-id="alignment-options"><em>Alignment options</em></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>--aligner           Alignment algorithm to use.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>--pseudo_aligner    Pseudo aligner to use.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="process-skippinguse-alternate-options" class="level4">
-<h4 class="anchored" data-anchor-id="process-skippinguse-alternate-options">Process skipping/use-alternate options</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a># There is a rds file created which can then be used further?</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a># Also check which/where are DESeq2 PCA and heatmap plotting created?</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a># Check results of nfcore-rnaseq in details</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>--deseq2_vst      Use vst transformation instead of rlog with DESeq2.</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 class="anchored" data-anchor-id="process-skippinguse-alternate-options"><em>Process skipping/use-alternate options</em></h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>--deseq2_vst      Use vst transformation instead of rlog with DESeq2.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>For details of all parameters in nfcore click <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</li>
 </ul>
 </section>
+</section>
 <section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>A single nfcore command can be run for the complete workflow excecution.</li>
-<li>nfcore provides high flexibility to use alternative tools for a step in the rnaseq pipeline.</li>
-<li>nfcore provides high flexibility when allowing to skip non-madatory steps in the rnaseq pipeline.</li>
+<li>A single nfcore command can be run for the complete rnaseq pipeline.</li>
+<li>It provides high flexibility change resources such as processing-memory and cpus.<br>
+</li>
+<li>The pipeline works with containers such a sigularity and docker.</li>
+<li>nfcore provides flexibility to use alternative tools (when avaialble) for a particular step and also skip non-madatory steps in the rnaseq pipeline.</li>
 </ul>
 </section>
 
