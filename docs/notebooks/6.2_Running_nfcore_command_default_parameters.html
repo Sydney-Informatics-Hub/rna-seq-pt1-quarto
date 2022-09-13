@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow – running_nfcore_command_default_parameters</title>
+<title>RNA-Seq using Nextflow: Day 1 – running_nfcore_command_default_parameters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">RNA-Seq using Nextflow</span>
+    <span class="navbar-title">RNA-Seq using Nextflow: Day 1</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -156,17 +156,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Differential expression (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-differential-expression-(de-analysis">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
- <span class="dropdown-text">The main steps involved in RNA-Seq DE analysis</span></a>
+ <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_fastQ_and_fastQC.html">
@@ -183,27 +187,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-(nfcore-pipelines" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow (nfcore) pipelines</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-(nfcore-pipelines">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
+ <span class="dropdown-text">Let’s recall the case-study</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
- <span class="dropdown-text">Introduction to nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
- <span class="dropdown-text">nfcore-rnaseq : Parameters</span></a>
+ <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud</span></a>
+ <span class="dropdown-text">Run the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Reading the main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -235,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" id="toc-run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" class="nav-link active" data-scroll-target="#run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance"><strong>Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></a>
+  <li><a href="#run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" id="toc-run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" class="nav-link active" data-scroll-target="#run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance"><strong>Run the nf-core/rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
@@ -251,12 +259,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="run-the-nfcore-rnaseq-pipeline-on-pawseys-nimbus-vm-instance" class="level1">
-<h1><strong>Run the nfcore-rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></h1>
+<section id="run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" class="level1">
+<h1><strong>Run the nf-core/rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What does the actual nfcore-rnaseq command look like?</li>
+<li>What does the actual nf-core/rnaseq command look like?</li>
 <li>What are the main input parameters?</li>
 <li>What are the outputs?</li>
 <li>What are the output log files?</li>
@@ -265,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>Understand and excecute the nfcore-rnaseq command</li>
+<li>Understand and excecute the nf-core/rnaseq command</li>
 </ul>
 </section>
 <section id="run-the-pipeline-on-pawsey-nimbus-vm-instance" class="level3">
@@ -281,9 +289,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>If you are not, move into the above path by typing:</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd <span class="sc">/</span>home<span class="sc">/</span>training<span class="sc">/</span>base_directory<span class="sc">/</span>working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="excecuting-the-nextflow-nfcore-rnaseq-pipeline" class="level4">
-<h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nfcore-rnaseq-pipeline"><strong>Excecuting the Nextflow nfcore-rnaseq pipeline</strong></h4>
-<p>We will run the single nfcore-rnaseq command using a utility called <strong>screen</strong> in unix.</p>
+<section id="excecuting-the-nextflow-nf-corernaseq-pipeline" class="level4">
+<h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nf-corernaseq-pipeline"><strong>Excecuting the Nextflow nf-core/rnaseq pipeline</strong></h4>
+<p>We will run the single nf-core/rnaseq command using a utility called <strong>screen</strong> in unix.</p>
 <p>What is the <code>screen</code> command?</p>
 <ul>
 <li>The <strong>screen command</strong> in Linux provides the ability to launch and use multiple shell sessions from a single ssh session.</li>
@@ -298,8 +306,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><code>-S</code>: It will start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>S run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="run-the-nfcore-rnaseq-command" class="level4">
-<h4 class="anchored" data-anchor-id="run-the-nfcore-rnaseq-command"><strong>(2) Run the nfcore-rnaseq command</strong></h4>
+<section id="run-the-nf-corernaseq-command" class="level4">
+<h4 class="anchored" data-anchor-id="run-the-nf-corernaseq-command"><strong>(2) Run the nf-core/rnaseq command</strong></h4>
 <p><font size="2.5"></font></p><font size="2.5">
 <div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
@@ -330,9 +338,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Repeat Steps (3) and (4) to check the the excecution status of the command.</p>
 <ul>
-<li>The nfcore-rnaseq command will take about 18-22 minutes to run to completion.</li>
+<li>The nf-core/rnaseq command will take about 18-22 minutes to run to completion.</li>
 <li>In the mean time we will proceed to discuss some of the important output and log files.</li>
-<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nfcore command, they will be able use these pre-computed results.<br>
+<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nf-core command, they will be able use these pre-computed results.<br>
 </li>
 <li>An <code>scp command</code> to transfer required files from the results folder on the VM instance to your local machine will also be made available.</li>
 </ul>
@@ -341,7 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="challenge" class="level3 challenge">
 <h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
 <ul>
-<li>Which parameters in the above <code>nfcore-rnaseq</code> command seem to be mandatory? <br><strong>NOTE</strong> This is a trick question , but a very important one <span class="emoji" data-emoji="smirk">😏</span></li>
+<li>Which parameters in the above <code>nf-core/rnaseq</code> command seem to be mandatory? <br><strong>NOTE</strong> This is a trick question , but a very important one <span class="emoji" data-emoji="smirk">😏</span></li>
 </ul>
 <details>
 <summary>
@@ -356,7 +364,7 @@ Solution
 <li>The name of the genome version e.g.&nbsp;<code>--genome GRCh37</code></li>
 <li>The profile ‘-profile’</li>
 </ul></li>
-<li>So the most basic command (when a standard genome is available from a nfcore resource) is</li>
+<li>So the most basic command (when a standard genome is available from a nf-core resource) is</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nextflow run nf-core/rnaseq \</span>
@@ -365,7 +373,7 @@ Solution
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    --genome GRCh37 \</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    -profile &lt;docker/singularity/podman/shifter/charliecloud/conda/institute&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>Provided with a genome ID such as <code>--genome GRCh37</code>, the nfcore-rnaseq pipeline will download all requried genome-related files at run-time.</li>
+<li>Provided with a genome ID such as <code>--genome GRCh37</code>, the nf-core/rnaseq pipeline will download all requried genome-related files at run-time.</li>
 <li>However when we are working with our own non-model species of interest, we will need to provide the genome related index files.</li>
 <li>In this workshop, although we are working with a standard version of the mouse genome (GRCh38/mm10) , inorder to save time, bandwidth and hard-disk space on the individial VM instances, we have hosted the genome files in a central repository called <a href="https://cernvm.cern.ch/fs/"><code>Cern-VM-FS</code></a>, and hence provided the cvmfs paths.</li>
 </ul>
@@ -374,7 +382,7 @@ Solution
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>Pawsey Nimbus VM is a good resource to run nfcore piplelines</li>
+<li>Pawsey Nimbus VM is a good resource to run nf-core piplelines</li>
 </ul>
 </section>
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow – interpreting_results_2</title>
+<title>RNA-Seq using Nextflow: Day 1 – interpreting_results_2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">RNA-Seq using Nextflow</span>
+    <span class="navbar-title">RNA-Seq using Nextflow: Day 1</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -93,17 +93,21 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Differential expression (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-differential-expression-(de-analysis">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
- <span class="dropdown-text">The main steps involved in RNA-Seq DE analysis</span></a>
+ <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_fastQ_and_fastQC.html">
@@ -120,27 +124,35 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-(nfcore-pipelines" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow (nfcore) pipelines</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-(nfcore-pipelines">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
+ <span class="dropdown-text">Let’s recall the case-study?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
+ <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
- <span class="dropdown-text">Introduction to nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
- <span class="dropdown-text">nfcore-rnaseq : Parameters</span></a>
+ <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud</span></a>
+ <span class="dropdown-text">Deploy the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -206,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Understand the timelines for multiple processes</li>
 <li>Estimate the resource requirements for multiple processes</li>
-<li>Analysing the technical requirements to run nfcore pipelines</li>
+<li>Analysing the technical requirements to run nf-core pipelines</li>
 </ul>
 </section>
 <section id="workflow-timeline" class="level2">
@@ -230,8 +242,8 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Big data size reflecting on resource requirements</strong>: The data used for this run is massively subsetted. Real bioinformatics samples for RNASeq are in the range of few GB. Many bioinformatics tools can use multiple CPUs and quite a few also display high memory requirements.</li>
 <li><strong>Storing big reference databases for re-use</strong>: Resources such as “cvmfs” will be ideal for storing big sized reference datasets in central repostories.</li>
-<li><strong>Storing most recent version of the ’nfcore software; as backup</strong>: Although it is recommended to download the latest version of a nfcore pipeline, it was observed that the most recent version of nfcore-rnaseq displayed errors. So we are hosting a near recent copy of the pipeline from the “cvmfs”. Since (possibly) minor changes are observed between sub-versions of nfcore pipelines, this approach can be used as an effective alternative.</li>
-<li><strong>Storing singularity containers in cvmfs!!</strong>: Need to weigh the pros and cons! - Also, this is directly dependant on whether we download the nfcore-pipeline on the fly (or use an older version)…</li>
+<li><strong>Storing most recent version of the ’nf-core software; as backup</strong>: Although it is recommended to download the latest version of a nf-core pipeline, it was observed that the most recent version of nf-core/rnaseq displayed errors. So we are hosting a near recent copy of the pipeline from the “cvmfs”. Since (possibly) minor changes are observed between sub-versions of nf-core pipelines, this approach can be used as an effective alternative.</li>
+<li><strong>Storing singularity containers in cvmfs!!</strong>: Need to weigh the pros and cons! - Also, this is directly dependant on whether we download the nf-core pipeline on the fly (or use an older version)…</li>
 <li><strong>X11 Forwarding</strong>: The analysis can be streamlined if the user is able to visualise and run GUI based applications on the Vm instances.</li>
 </ul>
 </section>

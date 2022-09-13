@@ -15,11 +15,13 @@ website:
         menu:
         - text: "Learning objectives: Day 1"
           href: notebooks/1.0_Learning_objectives.md
+        - text: "Introductory slides"
+          href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
         - text: "Download all files"
           href: notebooks/1.1_Download_data.md
-      - text: "Differential expression (DE) analysis"
+      - text: "RNA-seq differential expression (DE) analysis"
         menu:
-        - text: "The main steps involved in RNA-Seq DE analysis"
+        - text: "The main steps involved in RNA-seq (DE) analysis"
           href: notebooks/2.1_The_pipeline.md
         - text: "Get raw sequencing data and check quality"
           href: notebooks/2.2_fastQ_and_fastQC.md
@@ -27,17 +29,19 @@ website:
           href: notebooks/2.3_Trimming.md
         - text: "Alignment to reference genome"
           href: notebooks/2.4_Alignment_using_STAR.md
-      - text: "Using Nextflow (nfcore) pipelines"
+      - text: "Using Nextflow for RNA-seq (DE) analysis"
         menu:
+        - text: "Let's recall the case-study"
+          href: notebooks/3.1_Revisiting_the_case_study.md
         - text: "Why use a workflow managers such as Nextflow?"
           href: notebooks/3_intro_to_nextflow_and_nfcore.md
-        - text: "Introduction to nfcore-rnaseq"
+        - text: "Introduction to nf-core/rnaseq"
           href: notebooks/4_nfcore-rnaseq.md
-        - text: "nfcore-rnaseq : Parameters"
+        - text: "nf-core/rnaseq : Parameters"
           href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.md
-        - text: "Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud"
+        - text: "Run the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud"
           href: notebooks/6.2_Running_nfcore_command_default_parameters.md
-        - text: "Main outputs from nfcore-rnaseq"
+        - text: "Main outputs from nf-core/rnaseq"
           href: notebooks/6.3_Interpreting_results.md
         - text: "Helpful Nextflow logs"
           href: notebooks/6.4_Interpreting_results_2.md

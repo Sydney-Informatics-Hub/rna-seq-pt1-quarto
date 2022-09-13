@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow – nfcore-rnaseq_otherimportantparameters</title>
+<title>RNA-Seq using Nextflow: Day 1 – nfcore-rnaseq_otherimportantparameters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -134,7 +134,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">RNA-Seq using Nextflow</span>
+    <span class="navbar-title">RNA-Seq using Nextflow: Day 1</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -156,17 +156,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Differential expression (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-differential-expression-(de-analysis">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
- <span class="dropdown-text">The main steps involved in RNA-Seq DE analysis</span></a>
+ <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_fastQ_and_fastQC.html">
@@ -183,31 +187,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-(nfcore-pipelines" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow (nfcore) pipelines</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-(nfcore-pipelines">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
+ <span class="dropdown-text">Let’s recall the case-study</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
- <span class="dropdown-text">Introduction to nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
- <span class="dropdown-text">nfcore-rnaseq : Parameters</span></a>
+ <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud</span></a>
+ <span class="dropdown-text">Deploy the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Reading the main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
  <span class="dropdown-text">Helpful Nextflow logs</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-summary-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Summary Day 1</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-summary-day-1">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/7_Summary_Day1.html">
+ <span class="dropdown-text">Raw sequence to gene-counts</span></a>
   </li>  
     </ul>
   </li>
@@ -226,11 +243,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nfcore-rnaseq-parameters" id="toc-nfcore-rnaseq-parameters" class="nav-link active" data-scroll-target="#nfcore-rnaseq-parameters"><strong>nfcore-rnaseq : Parameters</strong></a>
+  <li><a href="#nf-corernaseq-parameters" id="toc-nf-corernaseq-parameters" class="nav-link active" data-scroll-target="#nf-corernaseq-parameters"><strong>nf-core/rnaseq : Parameters</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#the-nfcore-rnaseq-command" id="toc-the-nfcore-rnaseq-command" class="nav-link" data-scroll-target="#the-nfcore-rnaseq-command"><strong>The nfcore-rnaseq command</strong></a></li>
+  <li><a href="#the-nf-corernaseq-command" id="toc-the-nf-corernaseq-command" class="nav-link" data-scroll-target="#the-nf-corernaseq-command"><strong>The nf-core/rnaseq command</strong></a></li>
   <li><a href="#samplesheet-sequence-data" id="toc-samplesheet-sequence-data" class="nav-link" data-scroll-target="#samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></a></li>
   <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
   <li><a href="#other-inputoutput-options" id="toc-other-inputoutput-options" class="nav-link" data-scroll-target="#other-inputoutput-options"><strong>Other input/output options</strong></a></li>
@@ -244,26 +261,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="nfcore-rnaseq-parameters" class="level1">
-<h1><strong>nfcore-rnaseq : Parameters</strong></h1>
+<section id="nf-corernaseq-parameters" class="level1">
+<h1><strong>nf-core/rnaseq : Parameters</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What are the important nfcore-rnaseq parameters</li>
+<li>What are the important nf-core/rnaseq parameters</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>Understanding the nfcore-rnaseq parameters</li>
+<li>Understanding the nf-core/rnaseq parameters</li>
 </ul>
 </section>
-<section id="the-nfcore-rnaseq-command" class="level3">
-<h3 class="anchored" data-anchor-id="the-nfcore-rnaseq-command"><strong>The nfcore-rnaseq command</strong></h3>
-<p>The nfcore-rnaseq pipeline can be run using a single command with deafult parameters.</p>
+<section id="the-nf-corernaseq-command" class="level3">
+<h3 class="anchored" data-anchor-id="the-nf-corernaseq-command"><strong>The nf-core/rnaseq command</strong></h3>
+<p>The nf-core/rnaseq pipeline can be run using a single command with deafult parameters.</p>
 <p><font size="3"></font></p><font size="3">
 <div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  nextflow run $Path_to_nfcore-rnaseq \         # The nfcore-rnaseq excecutable</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  nextflow run $Path_to_nf-core/rnaseq \      # The nf-core/rnaseq excecutable</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    --input $Path_to_samplesheet.csv \        # samplesheet file-name</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                    # For pre-installed softwares</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    --fasta $Genome_fasta_file \              # Genome sequence file</span>
@@ -274,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \     # Excecution log file-name </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
-<p>This section introduces the user to the important nfcore-rnaseq parameters</p>
+<p>This section introduces the user to the important nf-core/rnaseq parameters</p>
 </section>
 <section id="samplesheet-sequence-data" class="level3">
 <h3 class="anchored" data-anchor-id="samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></h3>
@@ -330,18 +347,18 @@ The samplesheet above consists of both single- and paired-end data. It is for 6 
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li>For details of all parameters in nfcore click <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</li>
+<li>For details of all parameters in nf-core click <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</li>
 </ul>
 </section>
 </section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>A single nfcore command can be run for the complete rnaseq pipeline.</li>
+<li>A single nf-core command can be run for the complete rnaseq pipeline.</li>
 <li>It provides high flexibility change resources such as processing-memory and cpus.<br>
 </li>
 <li>The pipeline works with containers such a sigularity and docker.</li>
-<li>nfcore provides flexibility to use alternative tools (when avaialble) for a particular step and also skip non-madatory steps in the rnaseq pipeline.</li>
+<li>nf-core provides flexibility to use alternative tools (when avaialble) for a particular step and also skip non-madatory steps in the rnaseq pipeline.</li>
 </ul>
 </section>
 

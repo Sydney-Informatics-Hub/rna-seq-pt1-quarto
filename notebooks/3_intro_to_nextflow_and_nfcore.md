@@ -15,7 +15,7 @@ fig-cap-location: top
 <div class="objectives">
 
 ### **Objectives**
-- Introduction to Nextflow and nfcore
+- Introduction to Nextflow and nf-core
 </div>  
 
 

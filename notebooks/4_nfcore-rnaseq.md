@@ -2,26 +2,26 @@
 fig-cap-location: top
 ---
 
-# **Introduction to nfcore-rnaseq**
+# **Introduction to nf-core/rnaseq**
 
 <div class="questions">
 
 ### **Questions**
 
-- What is nfcore-rnaseq
+- What is nf-core/rnaseq
 </div>  
 
 <div class="objectives">
 
 ### **Objectives**
 
-- Introduction to the nfcore-rnaseq pipeline
+- Introduction to the nf-core/rnaseq pipeline
 </div>  
 
 
-### **nfcore-rnaseq**
+### **nf-core/rnaseq**
 
-- nfcore-rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotation.
+- nf-core/rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotation.
 - The pipeline is built using [Nextflow](https://www.nextflow.io/)
 -  It uses [Docker](https://www.docker.com/)/[Singularity](https://sylabs.io/) containers making installation trivial and results highly reproducible. 
 -  Citation : doi: [10.5281/zenodo.1400710](https://doi.org/10.5281/zenodo.1400710)
@@ -29,7 +29,7 @@ fig-cap-location: top
 
 ![](/fig/typical_and_nfcore_merged.png)
 
-- nfcore-rnaseq uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/),[MultiQC](http://multiqc.info/), [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) and other tools for quality control and pre-processing of sequencing reads.
+- nf-core/rnaseq uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/),[MultiQC](http://multiqc.info/), [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) and other tools for quality control and pre-processing of sequencing reads.
 - The pipeline uses [STAR](https://github.com/alexdobin/STAR), [RSEM](https://github.com/deweylab/RSEM), [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml) or [Salmon](https://combine-lab.github.io/salmon/) with gene/isoform counts for alignment and quantification.
 - The pipeline also uses [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html) for initial exploratory analysis of the generated raw-counts matrix.
 
@@ -44,7 +44,7 @@ In this workshop, we will be using training Nimbus Virtual machine (VM) instance
 <div class="keypoints">
 
 ### **Key points**
-- The nfcore-rnaseq pipeline can be run using a single command.
-- nfcore-rnaseq is portable across platforms using easy to use configuration files.
-- We will run the nfcore-rnaseq pipeline on training Nimbus Virtual machine (VM) instances.
+- The nf-core/rnaseq pipeline can be run using a single command.
+- nf-core/rnaseq is portable across platforms using easy to use configuration files.
+- We will run the nf-core/rnaseq pipeline on training Nimbus Virtual machine (VM) instances.
 </div>  

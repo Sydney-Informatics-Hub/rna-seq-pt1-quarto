@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow – nfcore-rnaseq</title>
+<title>RNA-Seq using Nextflow: Day 1 – nfcore-rnaseq</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +71,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">RNA-Seq using Nextflow</span>
+    <span class="navbar-title">RNA-Seq using Nextflow: Day 1</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -93,17 +93,21 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
   </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Differential expression (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-differential-expression-(de-analysis">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
- <span class="dropdown-text">The main steps involved in RNA-Seq DE analysis</span></a>
+ <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_fastQ_and_fastQC.html">
@@ -120,27 +124,31 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-(nfcore-pipelines" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow (nfcore) pipelines</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-(nfcore-pipelines">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
+ <span class="dropdown-text">Let’s recall the case-study</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
- <span class="dropdown-text">Introduction to nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
- <span class="dropdown-text">nfcore-rnaseq : Parameters</span></a>
+ <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nfcore-rnaseq on Pawsey’s Nimbus Cloud</span></a>
+ <span class="dropdown-text">Deploy the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Reading the main outputs from nfcore-rnaseq</span></a>
+ <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -172,11 +180,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-nfcore-rnaseq" id="toc-introduction-to-nfcore-rnaseq" class="nav-link active" data-scroll-target="#introduction-to-nfcore-rnaseq"><strong>Introduction to nfcore-rnaseq</strong></a>
+  <li><a href="#introduction-to-nf-corernaseq" id="toc-introduction-to-nf-corernaseq" class="nav-link active" data-scroll-target="#introduction-to-nf-corernaseq"><strong>Introduction to nf-core/rnaseq</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#nfcore-rnaseq" id="toc-nfcore-rnaseq" class="nav-link" data-scroll-target="#nfcore-rnaseq"><strong>nfcore-rnaseq</strong></a></li>
+  <li><a href="#nf-corernaseq" id="toc-nf-corernaseq" class="nav-link" data-scroll-target="#nf-corernaseq"><strong>nf-core/rnaseq</strong></a></li>
   <li><a href="#platforms-to-run-the-pipeline" id="toc-platforms-to-run-the-pipeline" class="nav-link" data-scroll-target="#platforms-to-run-the-pipeline"><strong>Platforms to run the pipeline</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
@@ -188,31 +196,31 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="introduction-to-nfcore-rnaseq" class="level1">
-<h1><strong>Introduction to nfcore-rnaseq</strong></h1>
+<section id="introduction-to-nf-corernaseq" class="level1">
+<h1><strong>Introduction to nf-core/rnaseq</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What is nfcore-rnaseq</li>
+<li>What is nf-core/rnaseq</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>Introduction to the nfcore-rnaseq pipeline</li>
+<li>Introduction to the nf-core/rnaseq pipeline</li>
 </ul>
 </section>
-<section id="nfcore-rnaseq" class="level3">
-<h3 class="anchored" data-anchor-id="nfcore-rnaseq"><strong>nfcore-rnaseq</strong></h3>
+<section id="nf-corernaseq" class="level3">
+<h3 class="anchored" data-anchor-id="nf-corernaseq"><strong>nf-core/rnaseq</strong></h3>
 <ul>
-<li>nfcore-rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotation.</li>
+<li>nf-core/rnaseq is a bioinformatics pipeline that can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotation.</li>
 <li>The pipeline is built using <a href="https://www.nextflow.io/">Nextflow</a></li>
 <li>It uses <a href="https://www.docker.com/">Docker</a>/<a href="https://sylabs.io/">Singularity</a> containers making installation trivial and results highly reproducible.</li>
 <li>Citation : doi: <a href="https://doi.org/10.5281/zenodo.1400710">10.5281/zenodo.1400710</a></li>
 </ul>
 <p><img src="../fig/typical_and_nfcore_merged.png" class="img-fluid"></p>
 <ul>
-<li>nfcore-rnaseq uses <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>,<a href="http://multiqc.info/">MultiQC</a>, <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> and other tools for quality control and pre-processing of sequencing reads.</li>
+<li>nf-core/rnaseq uses <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>,<a href="http://multiqc.info/">MultiQC</a>, <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a> and other tools for quality control and pre-processing of sequencing reads.</li>
 <li>The pipeline uses <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="https://github.com/deweylab/RSEM">RSEM</a>, <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">HISAT2</a> or <a href="https://combine-lab.github.io/salmon/">Salmon</a> with gene/isoform counts for alignment and quantification.</li>
 <li>The pipeline also uses <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a> for initial exploratory analysis of the generated raw-counts matrix.</li>
 </ul>
@@ -229,9 +237,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>The nfcore-rnaseq pipeline can be run using a single command.</li>
-<li>nfcore-rnaseq is portable across platforms using easy to use configuration files.</li>
-<li>We will run the nfcore-rnaseq pipeline on training Nimbus Virtual machine (VM) instances.</li>
+<li>The nf-core/rnaseq pipeline can be run using a single command.</li>
+<li>nf-core/rnaseq is portable across platforms using easy to use configuration files.</li>
+<li>We will run the nf-core/rnaseq pipeline on training Nimbus Virtual machine (VM) instances.</li>
 </ul>
 </section>
 
