@@ -21,7 +21,7 @@ website:
           href: notebooks/1.1_Download_data.md
         - text: "Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud"
           href: notebooks/Running_nfcore_command.md
-      - text: "What are workflow managers"
+      - text: "Why use nf-core workflows?"
         menu:
         - text: "Why use Nextflow?"
           href: notebooks/3_intro_to_nextflow_and_nfcore.md
@@ -39,7 +39,7 @@ website:
           href: notebooks/2.3_Trimming.md
         - text: "Alignment to reference genome"
           href: notebooks/2.4_Alignment_using_STAR.md
-      - text: "Let's look at the results"
+      - text: "Lets look at the results"
         menu:
         - text: "Main outputs from nf-core/rnaseq"
           href: notebooks/6.3_Interpreting_results.md

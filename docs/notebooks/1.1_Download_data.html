@@ -152,12 +152,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-start-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Start Day 1</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-start-day-1">    
         <li>
-    <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
- <span class="dropdown-text">Learning objectives: Day 1</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
  <span class="dropdown-text">Introductory slides</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
+ <span class="dropdown-text">Learning objectives: Day 1</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
@@ -166,6 +166,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li>
     <a class="dropdown-item" href="../notebooks/Running_nfcore_command.html">
  <span class="dropdown-text">Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-why-use-nf-core-workflows" role="button" data-bs-toggle="dropdown" aria-expanded="false">Why use nf-core workflows?</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-why-use-nf-core-workflows">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
+ <span class="dropdown-text">Why use Nextflow?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
+ <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
   </li>  
     </ul>
   </li>
@@ -191,24 +208,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
- <span class="dropdown-text">Let’s recall the case-study</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
- <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/4_nfcore-rnaseq.html">
- <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
- <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
-  </li>  
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
  <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
@@ -247,8 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#copying-the-code-from-the-greyed-boxes-on-training-materials" id="toc-copying-the-code-from-the-greyed-boxes-on-training-materials" class="nav-link" data-scroll-target="#copying-the-code-from-the-greyed-boxes-on-training-materials"><strong>Copying the code from the <code>greyed</code> boxes on training materials</strong></a></li>
-  <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><strong>Terminal</strong></a></li>
+  <li><a href="#open-your-terminal" id="toc-open-your-terminal" class="nav-link" data-scroll-target="#open-your-terminal"><strong>Open your terminal</strong></a></li>
+  <li><a href="#samplesheet-sequence-data" id="toc-samplesheet-sequence-data" class="nav-link" data-scroll-target="#samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
@@ -265,30 +267,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>How do I setup my base directory?</li>
-<li>How do I download the required input files on the Nimbus VM instance?</li>
+<li>How do I download the required input files on Nimbus?</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <p>Download input data to an appropriate path</p>
 </section>
-<section id="copying-the-code-from-the-greyed-boxes-on-training-materials" class="level3">
-<h3 class="anchored" data-anchor-id="copying-the-code-from-the-greyed-boxes-on-training-materials"><strong>Copying the code from the <code>greyed</code> boxes on training materials</strong></h3>
-<ul>
-<li>In this workshop we will be analysing real data sets for which we need to run code both at the terminal and RStudio (tomorrow). To do this we will need to copy code from the training materials and run it.</li>
-<li>A little feature of the training materials makes this much easier.<br>
-e.g</li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vi open_a_temp_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>In te above grey box which contains a single line of code to create a text file, you’ll see a small clipboard icon on the top right hand corner.</li>
-<li>If you click on this icon it copies that code into your clipboard and you can then paste it easily into the <code>terminal</code> or <code>RStudio</code>.</li>
-<li>We’re copying and pasting code rather than typing out each command because it means that we can spend more time talking about the why of each of the analysis of steps rather than focusing on how to write the code lines and how to structure the code.</li>
-</ul>
-</section>
-<section id="terminal" class="level3">
-<h3 class="anchored" data-anchor-id="terminal"><strong>Terminal</strong></h3>
-<p>Go back to the terminal window in which you have logged on to the Nimbus training instance. If you have accidently closed it, you will need to repeat steps in <code>Setup</code> again.</p>
+<section id="open-your-terminal" class="level3">
+<h3 class="anchored" data-anchor-id="open-your-terminal"><strong>Open your terminal</strong></h3>
+<p>Go back to the terminal window in which you have logged on to Nimbus . If you have accidently closed it, you will need to repeat steps in <a href="">Setup</a> again.</p>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Copying the code from the <code>grey</code> boxes on training materials
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this workshop we need to copy code from the grey boxes in the training materials and run it in your terminal e.g</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ssh training@###.###.###.###</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <section id="make-a-directory-called-base_directory" class="level4">
 <h4 class="anchored" data-anchor-id="make-a-directory-called-base_directory">Make a directory called ‘base_directory’</h4>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mkdir base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -326,6 +328,49 @@ e.g</li>
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 deshpandes  staff   5.0M 30 Aug 11:37 rnaseq_DE_Full_matrix_DryRun.html</span>
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   330B 28 Jul 07:25 samplesheet.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
+</section>
+</section>
+<section id="samplesheet-sequence-data" class="level3">
+<h3 class="anchored" data-anchor-id="samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></h3>
+<ul>
+<li>We need a <a href="https://nf-co.re/rnaseq/3.7/usage#samplesheet-input">samplesheet</a> with information about the samples you would like to analyse.</li>
+<li>If the samplesheet is located in a different folder, you can use this parameter to specify its path.</li>
+</ul>
+<p><img src="../fig/elaborate_samplesheet.png" class="img-fluid"></p>
+<ul>
+<li>The samplesheet is a comma-separated file with 4 columns, and a header row as shown in the example samplesheet above.</li>
+<li>The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet.</li>
+<li>The samplesheet can have as many columns as you desire, however, there is a strict requirement for the first 4 columns to match those defined in the table below.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption">Samplesheet columns</figcaption><p></p>
+<p><img src="../fig/samplesheet_description.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="challenge" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge">Challenge</h3>
+<ul>
+<li>The samplesheet which we will be using for today’s hands-on is already created and available at <code>~/base_directory/working_directory/samplesheet.csv</code>.</li>
+<li>Can you open this file using the utility <code>vi</code> and figure out what is the difference between ours and the one shown as a example, above?</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+<ul>
+<li>The above samplesheet consists of both single- and paired-end data. It is for 6 samples, where TREATMENT_REP3 has been sequenced twice.</li>
+<li>The samplesheet which we are using in today’s analysis is a lot simpler, with only single-end reads; Note that the place-holders for the reverse-reads is empty.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption">Today’s samplesheet</figcaption><p></p>
+<p><img src="../fig/our_samplesheet_final.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</details>
+</section>
 <p>Check your path by typing:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -337,8 +382,6 @@ e.g</li>
 <li>Keep this command-line (terminal) window open for further analysis.</li>
 <li>We can proceed to the section <code>Differential expression(DE) analysis</code> by clicking on the top menu-bar.</li>
 </ul>
-</section>
-</section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <p>All the required files for this workshop are downloaded as a single compressed file</p>

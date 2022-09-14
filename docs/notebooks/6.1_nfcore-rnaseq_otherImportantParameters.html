@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-what-are-workflow-managers" role="button" data-bs-toggle="dropdown" aria-expanded="false">What are workflow managers</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-what-are-workflow-managers">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-why-use-nf-core-workflows" role="button" data-bs-toggle="dropdown" aria-expanded="false">Why use nf-core workflows?</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-why-use-nf-core-workflows">    
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use Nextflow?</span></a>
@@ -208,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Let’s look at the results</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
@@ -249,8 +249,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
   <li><a href="#the-nf-corernaseq-command" id="toc-the-nf-corernaseq-command" class="nav-link" data-scroll-target="#the-nf-corernaseq-command"><strong>The nf-core/rnaseq command</strong></a></li>
-  <li><a href="#samplesheet-sequence-data" id="toc-samplesheet-sequence-data" class="nav-link" data-scroll-target="#samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></a></li>
-  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
   <li><a href="#other-inputoutput-options" id="toc-other-inputoutput-options" class="nav-link" data-scroll-target="#other-inputoutput-options"><strong>Other input/output options</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
@@ -293,38 +291,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
 <p>This section introduces the user to the important nf-core/rnaseq parameters</p>
-</section>
-<section id="samplesheet-sequence-data" class="level3">
-<h3 class="anchored" data-anchor-id="samplesheet-sequence-data"><strong>Samplesheet sequence data</strong></h3>
-<ul>
-<li>We need a <a href="https://nf-co.re/rnaseq/3.7/usage#samplesheet-input">samplesheet</a> with information about the samples you would like to analyse.</li>
-<li>If the samplesheet is located in a different folder, you can use this parameter to specify its path.</li>
-</ul>
-<p><img src="../fig/elaborate_samplesheet.png" class="img-fluid"></p>
-<ul>
-<li>The samplesheet is a comma-separated file with 4 columns, and a header row as shown in the example samplesheet above.</li>
-<li>The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet.</li>
-<li>The samplesheet can have as many columns as you desire, however, there is a strict requirement for the first 4 columns to match those defined in the table below.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Samplesheet columns</figcaption><p></p>
-<p><img src="../fig/samplesheet_description.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="challenge" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge">Challenge</h3>
-<ul>
-<li>The samplesheet which we will be using for today’s hands-on is already created and available at <code>~/base_directory/working_directory/samplesheet.csv</code>.</li>
-<li>Can you open this file using the utility <code>vi</code> and figure out what is the difference between ours and the one shown as a example, above?
-<details>
-<summary>
-Solution
-</summary>
-The samplesheet above consists of both single- and paired-end data. It is for 6 samples, where TREATMENT_REP3 has been sequenced twice. The samplesheet to be used in today’s analysis is a lot simpler, with only single-end reads.
-</details></li>
-</ul>
 </section>
 <section id="other-inputoutput-options" class="level3">
 <h3 class="anchored" data-anchor-id="other-inputoutput-options"><strong>Other input/output options</strong></h3>

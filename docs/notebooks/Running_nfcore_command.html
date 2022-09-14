@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-what-are-workflow-managers" role="button" data-bs-toggle="dropdown" aria-expanded="false">What are workflow managers</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-what-are-workflow-managers">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-why-use-nf-core-workflows" role="button" data-bs-toggle="dropdown" aria-expanded="false">Why use nf-core workflows?</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-why-use-nf-core-workflows">    
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use Nextflow?</span></a>
@@ -208,7 +208,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Let’s look at the results</a>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
@@ -268,86 +268,56 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
-<p>What next ? <span class="emoji" data-emoji="grinning">😀</span></p>
+<p>How to run the nextflow command in terminal?</p>
 </section>
 <section id="run-the-pipeline-on-pawsey-nimbus-vm-instance" class="level3">
 <h3 class="anchored" data-anchor-id="run-the-pipeline-on-pawsey-nimbus-vm-instance"><strong>Run the pipeline on Pawsey-Nimbus VM instance</strong></h3>
-<section id="why-run-the-command-now" class="level4">
-<h4 class="anchored" data-anchor-id="why-run-the-command-now">Why run the command now?</h4>
-<ul>
-<li>The reason to get on running the nextflow command blindly is two-fold
-<ul>
-<li>To showcase the fact that <code>Nextflow</code> makes our lives easier; it runs the entire pipeline using a single commad!</li>
-<li>We need time to run the command. Although we are using a highly sub-setted version of the input fastq files, the pipeline will still take us around `~ 20min’.</li>
-<li>Though the rest of Day 1, we will try and understand all aspects of the command.</li>
-</ul></li>
-</ul>
-</section>
-<section id="how-to-run-the-command" class="level4">
-<h4 class="anchored" data-anchor-id="how-to-run-the-command">How to run the command?</h4>
-<p>Please go back to the command-line (Terminal) window on which you have logged on to the Nimbus training instance. - In case the window has been closed accidently or if you have been logged-off, you will need to follow the log-in steps on the <code>Setup</code> page.</p>
-<p>Check your path by typing:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>You should be in the path: <code>/home/training/base_directory/working_directory</code></li>
-<li>If you are not, move into the above path by typing:</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd <span class="sc">/</span>home<span class="sc">/</span>training<span class="sc">/</span>base_directory<span class="sc">/</span>working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Why run the command now?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We need to allow ~20 mins for the command to run on the test data. For this reason we will run the command first. We will then discuss each step of this pipeline once it has completed.</p>
+</div>
+</div>
 <section id="excecuting-the-nextflow-nf-corernaseq-pipeline" class="level4">
 <h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nf-corernaseq-pipeline"><strong>Excecuting the Nextflow nf-core/rnaseq pipeline</strong></h4>
-<p>We will run the single nf-core/rnaseq command using a utility called <strong>screen</strong> in unix.</p>
-<p>What is the <code>screen</code> command?</p>
-<ul>
-<li>The <strong>screen command</strong> in Linux provides the ability to launch and use multiple shell sessions from a single ssh session.</li>
-<li>When a process is started with ‘screen’, the process can be detached from session &amp; then can reattach the session at a later time.</li>
-<li>When the session is detached, the process that was originally started from the screen is still running and managed by the screen itself.</li>
-<li>The process can then re-attach the session at a later time, and the terminals are still there, the way it was left.</li>
-<li>In short, we can use a <code>single Terminal</code> and <code>multiple screen</code> sessions in the terminal to do multiple different things. <br><br> <strong>NOTE</strong> If this sounds too complicated, the other alternative is to open a new <code>terminal</code> window :-) for a new task.</li>
-</ul>
-</section>
-<section id="start-a-new-screen-window" class="level4">
-<h4 class="anchored" data-anchor-id="start-a-new-screen-window"><strong>(1) Start a new screen window</strong></h4>
-<p><code>-S</code>: It will start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>S run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On your terminal window, check your path by:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You should be in the path: <code>/home/training/base_directory/working_directory</code>. If you are not, move into the above path by:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd /home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="run-the-nf-corernaseq-command" class="level4">
-<h4 class="anchored" data-anchor-id="run-the-nf-corernaseq-command"><strong>(2) Run the nf-core/rnaseq command</strong></h4>
+<h4 class="anchored" data-anchor-id="run-the-nf-corernaseq-command"><strong>Run the nf-core/rnaseq command</strong></h4>
 <p><font size="2.5"></font></p><font size="2.5">
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \                                    # the excecutable file</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \                                                         # samplesheet file-name</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                                                            # profile e.g. singularity</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \                              # Path: Genome fasta file</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \                  # path: gtf file</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \    # path: 'STAR' index file</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \                                                # memory and cpu resources </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    --outdir results \</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \                                             # Excecution log file-name </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html                                               # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \                                    # the excecutable file</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \                                                         # samplesheet file-name</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                                                            # profile e.g. singularity</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \                              # Path: Genome fasta file</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \                  # path: gtf file</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \    # path: 'STAR' index file</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \                                                # memory and cpu resources </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    --outdir results \</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \                                             # Excecution log file-name </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html                                               # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="2.5"></font></p>
 <ul>
-<li>The <a href="https://cernvm.cern.ch/fs/">CernVM File System</a> i.e.&nbsp;<code>cvmfs</code> provides a scalable, reliable and low-maintenance software distribution service.</li>
-<li>The names of cvmfs folders (e.g.&nbsp;<strong>Final_resources_250722</strong>) and files need to be standardised (make these more user-friendly). This is <strong>work in progress</strong>.</li>
-</ul>
-</section>
-<section id="detach-from-the-above-screen-session" class="level4">
-<h4 class="anchored" data-anchor-id="detach-from-the-above-screen-session"><strong>(3) Detach from the above screen session</strong></h4>
-<p><code>-d</code>: It is used to detach a screen session so that it can be reattached in future. It can also be done with the help of shortcut key <code>Ctrl-a + d</code></p>
-</section>
-<section id="reattach-the-screen-session-to-check-the-progress" class="level4">
-<h4 class="anchored" data-anchor-id="reattach-the-screen-session-to-check-the-progress"><strong>(4) Reattach the screen-session to check the progress</strong></h4>
-<p><code>-r</code> : It is used to reattach a screen session which was detached in past.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Repeat Steps (3) and (4) to check the the excecution status of the command.</p>
-<ul>
-<li>The nf-core/rnaseq command will take about 18-22 minutes to run to completion.</li>
-<li>In the mean time we will proceed to discuss some of the important output and log files.</li>
-<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nf-core command, they will be able use these pre-computed results.<br>
-</li>
-<li>An <code>scp command</code> to transfer required files from the results folder on the VM instance to your local machine will also be made available.</li>
+<li><p>The <a href="https://cernvm.cern.ch/fs/">CernVM File System</a> i.e.&nbsp;<code>cvmfs</code> provides a scalable, reliable and low-maintenance software distribution service.</p></li>
+<li><p>The names of cvmfs folders (e.g.&nbsp;<strong>Final_resources_250722</strong>) and files need to be standardised (make these more user-friendly). This is <strong>work in progress</strong>.</p></li>
+<li><p>The process will run in the terminal and display updated real-time excecution status.</p></li>
+<li><p>The nf-core/rnaseq command will take about 18-22 minutes to run to completion.</p></li>
+<li><p>In the mean time we will proceed to discuss some of the important output and log files.</p></li>
+<li><p>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nf-core command, they will be able use these pre-computed results.<br>
+</p></li>
+<li><p>An <code>scp command</code> to transfer required files from the results folder on the VM instance to your local machine will also be made available.</p></li>
 </ul>
 </section>
 </section>
@@ -359,6 +329,25 @@ Solution
 </summary>
 </details>
 </section>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Using ‘screen’ utility for advance command-line users
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can run the single nf-core/rnaseq command using a utility called <strong>screen</strong> in unix.</p>
+<p>What is the <code>screen</code> command?<br> The <strong>screen command</strong> in Linux provides the ability to launch and use multiple shell sessions from a single ssh session.</p>
+<p>The following screen paramters are useful:<br> <code>-S</code>: Start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>S run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>-d</code>: Used to detach a screen session so that it can be reattached in future. It can also be done with the help of shortcut key <code>Ctrl-a + d</code></p>
+<p><code>-r</code> : It is used to reattach a screen session which was detached in past.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
