@@ -89,16 +89,20 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-start-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Start Day 1</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-start-day-1">    
         <li>
-    <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
- <span class="dropdown-text">Learning objectives: Day 1</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
+ <span class="dropdown-text">Learning objectives: Day 1</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/Running_nfcore_command.html">
+ <span class="dropdown-text">Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud</span></a>
   </li>  
     </ul>
   </li>
@@ -127,14 +131,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
         <li>
-    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
- <span class="dropdown-text">Let’s recall the case-study?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
- <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
   </li>  
@@ -145,10 +141,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
  <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
@@ -188,9 +180,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#rna-seq" id="toc-rna-seq" class="nav-link" data-scroll-target="#rna-seq"><strong>RNA-Seq</strong></a></li>
   <li><a href="#a-specific-case-study-using-rna-seq" id="toc-a-specific-case-study-using-rna-seq" class="nav-link" data-scroll-target="#a-specific-case-study-using-rna-seq"><strong>A specific case-study using RNA-Seq</strong></a></li>
+  <li><a href="#run-nf-corernaseq-pipeline-on-pawseys-nimbus-cloud" id="toc-run-nf-corernaseq-pipeline-on-pawseys-nimbus-cloud" class="nav-link" data-scroll-target="#run-nf-corernaseq-pipeline-on-pawseys-nimbus-cloud"><strong>Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud</strong></a></li>
+  <li><a href="#why-use-nf-core-workflows" id="toc-why-use-nf-core-workflows" class="nav-link" data-scroll-target="#why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></a></li>
+  <li><a href="#the-nf-core-rnaseq-command" id="toc-the-nf-core-rnaseq-command" class="nav-link" data-scroll-target="#the-nf-core-rnaseq-command"><strong>The nf-core-rnaseq command</strong></a></li>
   <li><a href="#understand-the-steps-involved-in-differential-expression-analysis-using-bulk-rnaseq-data" id="toc-understand-the-steps-involved-in-differential-expression-analysis-using-bulk-rnaseq-data" class="nav-link" data-scroll-target="#understand-the-steps-involved-in-differential-expression-analysis-using-bulk-rnaseq-data"><strong>Understand the steps involved in differential expression analysis using bulk RNAseq data</strong></a></li>
-  <li><a href="#describe-the-benefits-of-using-nf-core-workflows" id="toc-describe-the-benefits-of-using-nf-core-workflows" class="nav-link" data-scroll-target="#describe-the-benefits-of-using-nf-core-workflows"><strong>Describe the benefits of using nf-core workflows</strong></a></li>
-  <li><a href="#deploy-the-nf-core-workflow-on-pawseys-nimbus-vm" id="toc-deploy-the-nf-core-workflow-on-pawseys-nimbus-vm" class="nav-link" data-scroll-target="#deploy-the-nf-core-workflow-on-pawseys-nimbus-vm"><strong>Deploy the nf-core workflow on Pawsey’s Nimbus VM</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   </ul></li>
   </ul>
@@ -211,6 +204,7 @@ ul.task-list li input[type="checkbox"] {
 <li>What are the main applications of RNA-Seq</li>
 <li>How does a basic RNA-seq workflow look like?</li>
 <li>What is the experimental case-study for this workshop?</li>
+<li>What is nextflow and nfcore?</li>
 </ul>
 </section>
 <section id="a-specific-case-study-using-rna-seq" class="level3">
@@ -219,6 +213,32 @@ ul.task-list li input[type="checkbox"] {
 <li>Knockout mouse model to study Williams-Beuren Syndrome (WBS)</li>
 <li>What is the Experimental question?</li>
 <li>What does the experiment design look like?</li>
+</ul>
+</section>
+<section id="run-nf-corernaseq-pipeline-on-pawseys-nimbus-cloud" class="level3">
+<h3 class="anchored" data-anchor-id="run-nf-corernaseq-pipeline-on-pawseys-nimbus-cloud"><strong>Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud</strong></h3>
+<ul>
+<li>Lets’s just run the single nf-core/rnaseq command which excecutes the complete pipeline.</li>
+<li>We will allow the data to process in the background.</li>
+<li>Everything around the command and its results will be discussed throughout the day.</li>
+</ul>
+</section>
+<section id="why-use-nf-core-workflows" class="level3">
+<h3 class="anchored" data-anchor-id="why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></h3>
+<ul>
+<li>A typical bioinformatics workflow.</li>
+<li>Nextflow as a workflow management systems, how does it help?</li>
+<li>Use nf-core’s rnaseq pipeline to transform raw sequencing data into analysis ready count data.</li>
+</ul>
+</section>
+<section id="the-nf-core-rnaseq-command" class="level3">
+<h3 class="anchored" data-anchor-id="the-nf-core-rnaseq-command"><strong>The nf-core-rnaseq command</strong></h3>
+<ul>
+<li>What is the core nf-core-rnaseq command?</li>
+<li>What are the main inputs?</li>
+<li>What are the main outputs?</li>
+<li>Can we add/remove/change the tools/parameters used for the various processes?</li>
+<li>What do we carry forward to DAY 2: The gene-count matrix</li>
 </ul>
 </section>
 <section id="understand-the-steps-involved-in-differential-expression-analysis-using-bulk-rnaseq-data" class="level3">
@@ -230,24 +250,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Generate the gene-count matrix</li>
 <li>Differential expression analysis (Day2)</li>
 <li>Functional interpretation (Day2)</li>
-</ul>
-</section>
-<section id="describe-the-benefits-of-using-nf-core-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="describe-the-benefits-of-using-nf-core-workflows"><strong>Describe the benefits of using nf-core workflows</strong></h3>
-<ul>
-<li>A typical bioinformatics workflow.</li>
-<li>Nextflow as a workflow management systems, how does it help?</li>
-<li>Use nf-core’s rnaseq pipeline to transform raw sequencing data into analysis ready count data.</li>
-</ul>
-</section>
-<section id="deploy-the-nf-core-workflow-on-pawseys-nimbus-vm" class="level3">
-<h3 class="anchored" data-anchor-id="deploy-the-nf-core-workflow-on-pawseys-nimbus-vm"><strong>Deploy the nf-core workflow on Pawsey’s Nimbus VM</strong></h3>
-<ul>
-<li>What is the core nf-core-rnaseq command?</li>
-<li>What are the main inputs?</li>
-<li>What are the main outputs?</li>
-<li>Can we add/remove/change the tools/parameters used for the various processes?</li>
-<li>What do we carry forward to DAY 2: The gene-count matrix</li>
 </ul>
 <hr>
 <p><strong>Notes</strong><br>

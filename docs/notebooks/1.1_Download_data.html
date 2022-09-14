@@ -163,14 +163,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
  <span class="dropdown-text">Download all files</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/Running_nfcore_command.html">
+ <span class="dropdown-text">Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Differential expression (DE) analysis</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-differential-expression-(de-analysis">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
- <span class="dropdown-text">The main steps involved in RNA-Seq DE analysis</span></a>
+ <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_fastQ_and_fastQC.html">
@@ -187,8 +191,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-(nf-core-pipelines" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow (nf-core) pipelines</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-(nf-core-pipelines">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-using-nextflow-for-rna-seq-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">Using Nextflow for RNA-seq (DE) analysis</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-using-nextflow-for-rna-seq-(de-analysis">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/3.1_Revisiting_the_case_study.html">
+ <span class="dropdown-text">Let’s recall the case-study</span></a>
+  </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use a workflow managers such as Nextflow?</span></a>
@@ -200,10 +208,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li>
     <a class="dropdown-item" href="../notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html">
  <span class="dropdown-text">nf-core/rnaseq : Parameters</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.2_Running_nfcore_command_default_parameters.html">
- <span class="dropdown-text">Deploy the RNA-seq workflow nf-core/rnaseq on Pawsey’s Nimbus Cloud</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
@@ -243,6 +247,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  <li><a href="#copying-the-code-from-the-greyed-boxes-on-training-materials" id="toc-copying-the-code-from-the-greyed-boxes-on-training-materials" class="nav-link" data-scroll-target="#copying-the-code-from-the-greyed-boxes-on-training-materials"><strong>Copying the code from the <code>greyed</code> boxes on training materials</strong></a></li>
   <li><a href="#terminal" id="toc-terminal" class="nav-link" data-scroll-target="#terminal"><strong>Terminal</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
@@ -265,8 +270,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
+<p>Download input data to an appropriate path</p>
+</section>
+<section id="copying-the-code-from-the-greyed-boxes-on-training-materials" class="level3">
+<h3 class="anchored" data-anchor-id="copying-the-code-from-the-greyed-boxes-on-training-materials"><strong>Copying the code from the <code>greyed</code> boxes on training materials</strong></h3>
 <ul>
-<li>Download input data to an appropriate path</li>
+<li>In this workshop we will be analysing real data sets for which we need to run code both at the terminal and RStudio (tomorrow). To do this we will need to copy code from the training materials and run it.</li>
+<li>A little feature of the training materials makes this much easier.<br>
+e.g</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vi open_a_temp_file.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>In te above grey box which contains a single line of code to create a text file, you’ll see a small clipboard icon on the top right hand corner.</li>
+<li>If you click on this icon it copies that code into your clipboard and you can then paste it easily into the <code>terminal</code> or <code>RStudio</code>.</li>
+<li>We’re copying and pasting code rather than typing out each command because it means that we can spend more time talking about the why of each of the analysis of steps rather than focusing on how to write the code lines and how to structure the code.</li>
 </ul>
 </section>
 <section id="terminal" class="level3">
@@ -274,48 +291,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Go back to the terminal window in which you have logged on to the Nimbus training instance. If you have accidently closed it, you will need to repeat steps in <code>Setup</code> again.</p>
 <section id="make-a-directory-called-base_directory" class="level4">
 <h4 class="anchored" data-anchor-id="make-a-directory-called-base_directory">Make a directory called ‘base_directory’</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mkdir base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mkdir base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="download-a-compressed-file-.tar.gz-to-set-up-the-working-directory" class="level4">
 <h4 class="anchored" data-anchor-id="download-a-compressed-file-.tar.gz-to-set-up-the-working-directory">Download a compressed file (.tar.gz) to set up the working directory</h4>
 <p>In your terminal, type the following to move into to the base_directory:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cd base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then type the following to download the input files:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>git clone https://github.com/Sydney-Informatics-Hub/RNASeq_materials.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>git clone https://github.com/Sydney-Informatics-Hub/RNASeq_materials.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The files are packaged up to save space. Move the file to the current directory and Unpack it:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mv RNASeq_materials/working_directory.tar.gz ./</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tar -zxvf working_directory.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mv RNASeq_materials/working_directory.tar.gz ./</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tar -zxvf working_directory.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This creates a directory ‘working_directory’. Move into this directory using the command</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cd working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cd working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>working_directory</code> folder contains the following files</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>- 6 fastq files : SRR*_selected.fastq.gz</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>- A samplesheet file with details about the fastq files</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>- A nextflow.config file</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>- FULL_count_matrix.txt</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>- rnaseq_DE_Full_matrix_DryRun.Rmd (Required for Day 2)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>- rnaseq_DE_Full_matrix_DryRun.html (Required for Day 2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>- 6 fastq files : SRR*_selected.fastq.gz</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>- A samplesheet file with details about the fastq files</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>- A nextflow.config file</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>- FULL_count_matrix.txt</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>- rnaseq_DE_Full_matrix_DryRun.Rmd (Required for Day 2)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>- rnaseq_DE_Full_matrix_DryRun.html (Required for Day 2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can list all the files in your current directory by typing <code>ls -lh</code>.</p>
 <p><font size="3"></font></p><font size="3">
-<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   919K 22 Apr 15:11 FULL_count_matrix.txt</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   1.3K 30 Aug 11:53 README</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.4M 28 Jul 06:11 SRR3473984_selected.fastq.gz</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.1M 28 Jul 06:11 SRR3473985_selected.fastq.gz</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.0M 28 Jul 06:11 SRR3473986_selected.fastq.gz</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.3M 28 Jul 06:11 SRR3473987_selected.fastq.gz</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   4.2M 28 Jul 06:11 SRR3473988_selected.fastq.gz</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.0M 28 Jul 06:11 SRR3473989_selected.fastq.gz</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   4.8K 28 Jul 06:11 nextflow.config</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 deshpandes  staff    18K 30 Aug 11:33 rnaseq_DE_Full_matrix_DryRun.Rmd</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 deshpandes  staff   5.0M 30 Aug 11:37 rnaseq_DE_Full_matrix_DryRun.html</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   330B 28 Jul 07:25 samplesheet.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   919K 22 Apr 15:11 FULL_count_matrix.txt</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   1.3K 30 Aug 11:53 README</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.4M 28 Jul 06:11 SRR3473984_selected.fastq.gz</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.1M 28 Jul 06:11 SRR3473985_selected.fastq.gz</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.0M 28 Jul 06:11 SRR3473986_selected.fastq.gz</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.3M 28 Jul 06:11 SRR3473987_selected.fastq.gz</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   4.2M 28 Jul 06:11 SRR3473988_selected.fastq.gz</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 deshpandes  staff   3.0M 28 Jul 06:11 SRR3473989_selected.fastq.gz</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   4.8K 28 Jul 06:11 nextflow.config</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 deshpandes  staff    18K 30 Aug 11:33 rnaseq_DE_Full_matrix_DryRun.Rmd</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 deshpandes  staff   5.0M 30 Aug 11:37 rnaseq_DE_Full_matrix_DryRun.html</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 deshpandes  staff   330B 28 Jul 07:25 samplesheet.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
 <p>Check your path by typing:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>You should be in the path: <code>/home/training/base_directory/working_directory</code></li>
 <li>If you are not, move into the above path by typing:</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cd /home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cd /home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Keep this command-line (terminal) window open for further analysis.</li>
 <li>We can proceed to the section <code>Differential expression(DE) analysis</code> by clicking on the top menu-bar.</li>
