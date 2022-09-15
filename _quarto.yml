@@ -13,10 +13,10 @@ website:
         text: "Setup"
       - text: "Start Day 1"
         menu:
-        - text: "Introductory slides"
-          href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
         - text: "Learning objectives: Day 1"
           href: notebooks/1.0_Learning_objectives.md
+        - text: "Introductory slides"
+          href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
         - text: "Download all files"
           href: notebooks/1.1_Download_data.md
         - text: "Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud"
