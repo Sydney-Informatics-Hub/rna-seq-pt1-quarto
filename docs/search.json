@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
+    "title": "Part 1 Raw sequence to counts",
     "section": "",
     "text": "Introduces the first steps of analysing RNA sequencing data using the command line - including how to pre-process raw sequencing reads to analysis ready count data. We will use the nf-co.re’s rnaseq workflow on Pawsey Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
@@ -65,7 +65,7 @@
   {
     "objectID": "index.html#course-survey",
     "href": "index.html#course-survey",
-    "title": "RNA-Seq using Nextflow: Day 1",
+    "title": "Part 1 Raw sequence to counts",
     "section": "Course survey!",
     "text": "Course survey!\nPlease fill out our course survey before you leave!"
   },
