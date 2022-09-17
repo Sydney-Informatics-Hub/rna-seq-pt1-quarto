@@ -89,12 +89,12 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-start-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Start Day 1</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-start-day-1">    
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
- <span class="dropdown-text">Introductory slides</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -140,16 +144,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
- <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Alignment to reference genome and quantification</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -181,10 +176,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#alignment-to-reference-genome" id="toc-alignment-to-reference-genome" class="nav-link active" data-scroll-target="#alignment-to-reference-genome">Alignment to reference genome”</a>
+  <li><a href="#alignment-to-reference-genome-and-quantification" id="toc-alignment-to-reference-genome-and-quantification" class="nav-link active" data-scroll-target="#alignment-to-reference-genome-and-quantification"><strong>Alignment to reference genome and quantification</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#challenge-1" id="toc-challenge-1" class="nav-link" data-scroll-target="#challenge-1"><strong>Challenge 1</strong></a></li>
+  <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2"><strong>Challenge 2</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   </ul></li>
   </ul>
@@ -195,28 +192,70 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="alignment-to-reference-genome" class="level1">
-<h1>Alignment to reference genome”</h1>
+<section id="alignment-to-reference-genome-and-quantification" class="level1">
+<h1><strong>Alignment to reference genome and quantification</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions">Questions</h3>
 <ul>
-<li>How to map seqeuncig reads to a reference genome?</li>
+<li>How to map sequencing reads to a reference genome?</li>
+<li>How to use the mapped alignments to quantify gene-counts</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives">Objectives</h3>
 <ul>
 <li>Understand the alignment/mapping process</li>
-<li>Understand the outout sam/bam formats</li>
+<li>Understand the output sam/bam formats</li>
+<li>Understand the convertion of read-alignments to gene-counts</li>
 </ul>
 </section>
-<p><img src="../fig/alignment_counting_nfcore-rnaseq.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption"><strong>Stage 2 of <code>nf-core/rnaseq</code>: (Genome alignment and quantification):</strong></figcaption><p></p>
+<p><img src="../fig/nfcore_stage2And3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 <ul>
 <li>After trimming, the next step of processing RNA-seq data is to map the reads to a reference genome.</li>
 <li>RNA-seq specific aligner needs to be used to accomodate splicing.</li>
-<li>The most commonly used aligners for short-read sequencing are STAR, HISAT2 etc.</li>
+<li>The most commonly used aligners for short-read sequencing are <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a> etc.</li>
 <li>The output of the alignment step is a <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">bam</a> file, which is a compressed (“B”inary) form of a <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">sam</a> file.</li>
+<li>The reads mapped to the reference genome are then converted to a matrix which contains individual gene-counts per sample using the tool <a href="http://subread.sourceforge.net/">featurecounts</a> . The gene-count matrix can then be used for identification of differentially expressed genes.</li>
 </ul>
+<section id="challenge-1" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge-1"><strong>Challenge 1</strong></h3>
+<p>Should we have a challenge about <code>sam/bam</code> format?</p>
+<details>
+<summary>
+Solution
+</summary>
+</details>
+</section>
+<p><br>The next challenge will be done in breakout rooms. A facilitator will handle the big bam files on their side using a tool call <code>IGV</code> which will be followed by a discussion.</p>
+<section id="challenge-2" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge-2"><strong>Challenge 2</strong></h3>
+<ul>
+<li>Open the application: The Integrative Genomics Viewer <a href="https://software.broadinstitute.org/software/igv/">(IGV)</a>.</li>
+<li>Open the 6 pre-aligned bam files. These files contain the reads which are aligned specifically to the region flanking our gene of interest which is <code>Gtf2ird1</code>.</li>
+<li>This will be a good time to revisit the <code>The case study</code> which is mentioned in the <a href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=8c296cbc-3005-48d3-b977-bef7c517961e">Introductory slides</a>.</li>
+<li>Once the bam files are opened in the IGV viewer, we can navigate to the exact region of the gene <code>Gtf2ird1</code>.</li>
+<li>We have forgotten to label our samples and don’t know which samples belong to the wildtype or knockout group! So, instead, we will use the alignments and assign samples to their correct treatment group (wildtype or knockout) <br><strong>What do you see?</strong></li>
+</ul>
+<p><br> <img src="../fig/Gtf2ird1_exon1.png" class="img-fluid"></p>
+<ul>
+<li>Based on the observation (which is…), can you identify which samples belong to the <code>WT</code> and which of them are the <code>KO</code> samples? Please paste your answers in the breakout chat window.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+<ul>
+<li>A loss of function mutation of&nbsp;Gtf2ird1&nbsp;was generated by a random insertion of a&nbsp;Myc transgene into the region, resulting in a 40&nbsp;kb deletion surrounding exon 1.</li>
+<li>Samples <code>SRR3473984,SRR3473985,SRR3473984</code> contain reads supporting exon 1. These are <code>WT</code> samples.</li>
+<li>Samples <code>SRR3473987,SRR3473988,SRR3473989</code> DO NOT contain reads supporting exon 1. These are <code>KO</code> samples.</li>
+</ul>
+</details>
+</section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points">Key points</h3>
 <ul>

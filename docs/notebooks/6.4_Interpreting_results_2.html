@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -140,20 +144,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
- <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Alignment to reference genome and quantification</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
- <span class="dropdown-text">Helpful Nextflow logs</span></a>
+ <span class="dropdown-text">Helpful logs</span></a>
   </li>  
     </ul>
   </li>
@@ -181,10 +176,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#helpful-nextflow-logs" id="toc-helpful-nextflow-logs" class="nav-link active" data-scroll-target="#helpful-nextflow-logs"><strong>Helpful Nextflow logs</strong></a>
+  <li><a href="#helpful-logs" id="toc-helpful-logs" class="nav-link active" data-scroll-target="#helpful-logs"><strong>Helpful logs</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
+  </ul></li>
+  <li><a href="#multiqc" id="toc-multiqc" class="nav-link" data-scroll-target="#multiqc"><strong>MultiQC</strong></a>
+  <ul class="collapse">
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
+  </ul></li>
+  <li><a href="#nextflow-logs" id="toc-nextflow-logs" class="nav-link" data-scroll-target="#nextflow-logs"><strong>Nextflow logs</strong></a>
+  <ul class="collapse">
   <li><a href="#workflow-timeline" id="toc-workflow-timeline" class="nav-link" data-scroll-target="#workflow-timeline"><strong>Workflow timeline</strong></a></li>
   <li><a href="#compute-resource-usage" id="toc-compute-resource-usage" class="nav-link" data-scroll-target="#compute-resource-usage"><strong>Compute resource usage</strong></a>
   <ul class="collapse">
@@ -200,8 +202,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="helpful-nextflow-logs" class="level1">
-<h1><strong>Helpful Nextflow logs</strong></h1>
+<section id="helpful-logs" class="level1">
+<h1><strong>Helpful logs</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
@@ -218,6 +220,20 @@ ul.task-list li input[type="checkbox"] {
 <li>Analysing the technical requirements to run nf-core pipelines</li>
 </ul>
 </section>
+</section>
+<section id="multiqc" class="level1">
+<h1><strong>MultiQC</strong></h1>
+<ul>
+<li><a href="https://multiqc.info/">MultiQC</a> is a modular tool to aggregate results from bioinformatics analyses across many samples into a single report.</li>
+<li>Here, MultiQC searches the <code>results</code> directory for analysis logs and compiles a HTML report summarising the output from multiple tools run by the <code>nf-core/rnaseq</code> pipeline.</li>
+</ul>
+<section id="challenge" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<p>It is a very useful practice to look into the MultiQC logs but a challenge in itself <span class="emoji" data-emoji="stuck_out_tongue_winking_eye">😜</span> !</p>
+</section>
+</section>
+<section id="nextflow-logs" class="level1">
+<h1><strong>Nextflow logs</strong></h1>
 <section id="workflow-timeline" class="level2">
 <h2 class="anchored" data-anchor-id="workflow-timeline"><strong>Workflow timeline</strong></h2>
 <p><img src="../fig/timeline.png" class="img-fluid"></p>

@@ -137,7 +137,7 @@
     "href": "notebooks/6.4_Interpreting_results_2.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "What information does the timeline log file provide us?\nHow can we estimate the CPU/memory resource requirements?\nWhat were the main observations and possible limitations when running the pipeline?\n\n\n\n\n\nUnderstand the timelines for multiple processes\nEstimate the resource requirements for multiple processes\nAnalysing the technical requirements to run nf-core pipelines\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "notebooks/1.0_Learning_objectives.html",
@@ -158,7 +158,7 @@
     "href": "notebooks/2.1_The_pipeline.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "Key points\n\nTools such as FastQC can be used for assessing the sequencing read-quality.\nTrim galore is one of the many tools available for read-trimming based on multiple criteria.\nWe will use the aligner STAR to map the reads to the reference genome/transcriptome.\nThe identification of statistically significant DE genes can be done using R libraries such as DeSeq2.\n\n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "notebooks/2.1_The_pipeline.html#raw-data-and-quality-checking",
@@ -215,5 +215,26 @@
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/additional_quality_control.html",
+    "href": "notebooks/additional_quality_control.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/6.4_Interpreting_results_2.html#workflow-timeline",
+    "href": "notebooks/6.4_Interpreting_results_2.html#workflow-timeline",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "Workflow timeline",
+    "text": "Workflow timeline\n\n\nDifferent processing times for different tools.\nEach process can be assigned specifc resources using a nextflow.config file.\nNextflow parallises runs of multiple samples for specific processes depending on the available rersources; This step can thus get constrained by available resources (CPUs/memory) on the resource (here Nimbus VM)."
+  },
+  {
+    "objectID": "notebooks/6.4_Interpreting_results_2.html#compute-resource-usage",
+    "href": "notebooks/6.4_Interpreting_results_2.html#compute-resource-usage",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "Compute resource usage",
+    "text": "Compute resource usage\n\n\nShows multiple graphical statistics displaying the resource usage for various processes in the run.\nThis helps to get an estimate of the required resources for independant processes and assign them for future runs.\n\n\nAnalysing the technical requirements\n\nBig data size reflecting on resource requirements: The data used for this run is massively subsetted. Real bioinformatics samples for RNASeq are in the range of few GB. Many bioinformatics tools can use multiple CPUs and quite a few also display high memory requirements.\nStoring big reference databases for re-use: Resources such as “cvmfs” will be ideal for storing big sized reference datasets in central repostories.\nStoring most recent version of the ’nf-core software; as backup: Although it is recommended to download the latest version of a nf-core pipeline, it was observed that the most recent version of nf-core/rnaseq displayed errors. So we are hosting a near recent copy of the pipeline from the “cvmfs”. Since (possibly) minor changes are observed between sub-versions of nf-core pipelines, this approach can be used as an effective alternative.\nStoring singularity containers in cvmfs!!: Need to weigh the pros and cons! - Also, this is directly dependant on whether we download the nf-core pipeline on the fly (or use an older version)…\nX11 Forwarding: The analysis can be streamlined if the user is able to visualise and run GUI based applications on the Vm instances.\n\n\n\nKey points\n\nNextflow provides easy to understand html log files, which can be used to understand the system resource requirement and hence planning for future big runs."
   }
 ]

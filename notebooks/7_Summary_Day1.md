@@ -20,7 +20,7 @@ fig-cap-location: top
 
 </div>  
 
-<![The samplesheet](/fig/typical_and_nfcore_merged.png)
+<![The samplesheet](../fig/nfcore_whatNext.png)
 
 - What is RNA sequencing and what are the main applications of RNA-seq?
 - How does it help to analyze RNA-seq data using the nf-core/rnaseq pipeline?

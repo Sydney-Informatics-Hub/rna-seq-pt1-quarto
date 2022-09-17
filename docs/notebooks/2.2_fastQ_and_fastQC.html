@@ -89,12 +89,12 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-start-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Start Day 1</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-start-day-1">    
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
- <span class="dropdown-text">Introductory slides</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -140,20 +144,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
- <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Alignment to reference genome and quantification</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
- <span class="dropdown-text">Helpful Nextflow logs</span></a>
+ <span class="dropdown-text">Helpful logs</span></a>
   </li>  
     </ul>
   </li>
@@ -185,12 +180,8 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#fastq-format" id="toc-fastq-format" class="nav-link" data-scroll-target="#fastq-format"><strong>FastQ format</strong></a></li>
   <li><a href="#challenge-1" id="toc-challenge-1" class="nav-link" data-scroll-target="#challenge-1"><strong>Challenge #1</strong></a></li>
-  <li><a href="#phred-quality-scores" id="toc-phred-quality-scores" class="nav-link" data-scroll-target="#phred-quality-scores"><strong>Phred Quality Scores</strong></a></li>
-  <li><a href="#fastqc" id="toc-fastqc" class="nav-link" data-scroll-target="#fastqc"><strong>FastQC</strong></a></li>
   <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2"><strong>Challenge #2</strong></a></li>
-  <li><a href="#additional-challenge" id="toc-additional-challenge" class="nav-link" data-scroll-target="#additional-challenge"><strong>Additional Challenge</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
   </ul></li>
   </ul>
@@ -218,47 +209,45 @@ ul.task-list li input[type="checkbox"] {
 <li>Understand the quality metrix of FASTQ using fastQC.</li>
 </ul>
 </section>
-<p><img src="../fig/FastQ_and_fastQC_nfcore-rnaseq.png" class="img-fluid"></p>
-<p><br></p>
-<section id="fastq-format" class="level3">
-<h3 class="anchored" data-anchor-id="fastq-format"><strong>FastQ format</strong></h3>
-<p><img src="../fig/fastq_format.jpg" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption"><strong>Stage 1 of <code>nf-core/rnaseq</code>: (Pre-processing-fastQC):</strong></figcaption><p></p>
+<p><img src="../fig/nfcore_stage1.1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<section id="we-have-previously-seen-the-fastq-format" class="level4">
+<h4 class="anchored" data-anchor-id="we-have-previously-seen-the-fastq-format"><strong>We have previously seen the <code>FastQ</code> format</strong></h4>
+<p><a href="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</a> format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. <img src="../fig/fastq_format.jpg" class="img-fluid"> <br>Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.</p>
+</section>
+<section id="what-are-phred-quality-scores" class="level4">
+<h4 class="anchored" data-anchor-id="what-are-phred-quality-scores"><strong>What are Phred quality scores?</strong></h4>
+<p>The quality score which assess reliability of each base call is calculated as Phred quality score.<br> <img src="../fig/Phred_short.png" class="img-fluid"> <br>Several different encodings have been used throughout the years to report on this by Illumina, and the <a href="https://en.wikipedia.org/wiki/FASTQ_format">Wikipedia</a> page is the best place to figure out the most updated.</p>
+</section>
+<section id="how-can-you-evaluate-quality-using-the-tool-fastqc" class="level4">
+<h4 class="anchored" data-anchor-id="how-can-you-evaluate-quality-using-the-tool-fastqc"><strong>How can you evaluate quality using the tool <code>FastQC</code></strong></h4>
+<p><img src="../fig/fastqQC.png" class="img-fluid"></p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/FASTQ_format">FASTQ</a> format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores.</li>
-<li>Both the sequence letter and quality score are each encoded with a single ASCII character for brevity.</li>
+<li><p>Quality checking with <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastQC</a> and <a href="https://multiqc.info/examples/wgs/multiqc_report.html">multiQC</a></p></li>
+<li><p><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines.</p></li>
+<li><p>It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.</p></li>
 </ul>
 </section>
 <section id="challenge-1" class="level3 challenge">
 <h3 class="anchored" data-anchor-id="challenge-1"><strong>Challenge #1</strong></h3>
 <ul>
-<li>How many sequences were in SRR3473989_selected.fastq? <br><strong>NOTE:</strong> This is one of the fastq files which we have downloaded.</li>
+<li>How many sequences were in SRR3473989_selected.fastq? <br><strong>NOTE:</strong>This is one of the fastq files which we have downloaded.</li>
 <li>What are the lengths of the reads in SRR3473989_selected.fastq?</li>
 </ul>
+<p><br><strong>HINT</strong>fastqQC log files can help</p>
 <details>
 <summary>
 Solution
 </summary>
 <ul>
-<li>There are <code>104,404</code> sequences in the file SRR3473989_selected.fastq.</li>
-<li>The reads in the file SRR3473989_selected.fastq are of length <code>100 bp</code>.</li>
+<li>There are <code>59887</code> sequences in the file SRR3473989_selected.fastq.</li>
+<li>The reads in the file SRR3473989_selected.fastq are of length <code>101 bp</code>.</li>
 </ul>
 </details>
-</section>
-<section id="phred-quality-scores" class="level3">
-<h3 class="anchored" data-anchor-id="phred-quality-scores"><strong>Phred Quality Scores</strong></h3>
-<p><img src="../fig/Phred_short.png" class="img-fluid"></p>
-<ul>
-<li>The quality score which assess reliability of each base call is calculated as Phred quality score.</li>
-<li>Several different encodings have been used throughout the years to report on this by Illumina, and the <a href="https://en.wikipedia.org/wiki/FASTQ_format">Wikipedia</a> page is the best place to figure out the most updated.</li>
-</ul>
-</section>
-<section id="fastqc" class="level3">
-<h3 class="anchored" data-anchor-id="fastqc"><strong>FastQC</strong></h3>
-<p><img src="../fig/fastqQC.png" class="img-fluid"></p>
-<ul>
-<li><a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> aims to provide a simple way to do some quality control checks on raw sequence data coming from high throughput sequencing pipelines.</li>
-<li>It provides a modular set of analyses which you can use to give a quick impression of whether your data has any problems of which you should be aware before doing any further analysis.</li>
-</ul>
 </section>
 <section id="challenge-2" class="level3 challenge">
 <h3 class="anchored" data-anchor-id="challenge-2"><strong>Challenge #2</strong></h3>
@@ -279,20 +268,6 @@ Solution
 <li>The color coding separates out regions of good quality (Red Q&gt;28) from the rest. Overall yes, as most of the regions of the reads show quality values in <code>red</code>.</li>
 <li>We can trim the bases towards the 3’-end and hope to improve the overall read-quality. But trimming by quality for RNA-seq data has its pros and cons.</li>
 </ul>
-</details>
-</section>
-<section id="additional-challenge" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="additional-challenge"><strong>Additional Challenge</strong></h3>
-<ul>
-<li>Using corresponding ‘Dec’ values in this ASCII table (http://www.asciitable.com/ ), what is the Phred quality score of the first base in read provided in SRR3473984_selected.fastq?</li>
-<li>Now that you have determined the Phred score for the first base in the previous example, what is the probability (P) that this base was incorrectly called by the sequencing machine?</li>
-<li>Why do we use ASCII to encode quality scores? <br><strong>Please try this challenge in your free time</strong></li>
-</ul>
-<details>
-<summary>
-Solution
-</summary>
-<p>My solution is here</p>
 </details>
 </section>
 <section id="key-points" class="level3 keypoints">

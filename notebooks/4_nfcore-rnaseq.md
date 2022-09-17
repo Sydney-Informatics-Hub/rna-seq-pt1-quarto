@@ -27,7 +27,7 @@ fig-cap-location: top
 -  Citation : doi: [10.5281/zenodo.1400710](https://doi.org/10.5281/zenodo.1400710)
 
 
-![](/fig/typical_and_nfcore_merged.png)
+![](../fig/nfcore_all_stages_new.png)
 
 - nf-core/rnaseq uses [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/),[MultiQC](http://multiqc.info/), [Trim Galore!](https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/) and other tools for quality control and pre-processing of sequencing reads.
 - The pipeline uses [STAR](https://github.com/alexdobin/STAR), [RSEM](https://github.com/deweylab/RSEM), [HISAT2](https://ccb.jhu.edu/software/hisat2/index.shtml) or [Salmon](https://combine-lab.github.io/salmon/) with gene/isoform counts for alignment and quantification.

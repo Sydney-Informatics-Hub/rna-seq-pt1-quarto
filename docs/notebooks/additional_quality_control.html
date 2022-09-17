@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow: Day 1 – nfcore-rnaseq_otherimportantparameters</title>
+<title>RNA-Seq using Nextflow: Day 1 – additional_quality_control</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,69 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -190,10 +127,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -208,6 +141,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
  <span class="dropdown-text">Alignment to reference genome</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
+        <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -239,13 +181,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#nf-corernaseq-parameters" id="toc-nf-corernaseq-parameters" class="nav-link active" data-scroll-target="#nf-corernaseq-parameters"><strong>nf-core/rnaseq : Parameters</strong></a>
+  <li><a href="#qualimao-multiqc" id="toc-qualimao-multiqc" class="nav-link active" data-scroll-target="#qualimao-multiqc"><strong>Qualimao multiQC</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#the-nf-corernaseq-command" id="toc-the-nf-corernaseq-command" class="nav-link" data-scroll-target="#the-nf-corernaseq-command"><strong>The nf-core/rnaseq command</strong></a></li>
-  <li><a href="#other-inputoutput-options" id="toc-other-inputoutput-options" class="nav-link" data-scroll-target="#other-inputoutput-options"><strong>Other input/output options</strong></a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
+  <li><a href="#qualimap" id="toc-qualimap" class="nav-link" data-scroll-target="#qualimap">Qualimap</a></li>
+  <li><a href="#quality-control-aggregating-results-with-multiqc" id="toc-quality-control-aggregating-results-with-multiqc" class="nav-link" data-scroll-target="#quality-control-aggregating-results-with-multiqc">Quality control: aggregating results with MultiQC</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -255,76 +196,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="nf-corernaseq-parameters" class="level1">
-<h1><strong>nf-core/rnaseq : Parameters</strong></h1>
+<section id="qualimao-multiqc" class="level1">
+<h1><strong>Qualimao multiQC</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What are the important nf-core/rnaseq parameters</li>
+<li></li>
+<li></li>
+<li></li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>Understanding the nf-core/rnaseq parameters</li>
+<li>Understand the timelines for multiple processes</li>
+<li>Estimate the resource requirements for multiple processes</li>
+<li>Analysing the technical requirements to run nf-core pipelines</li>
 </ul>
 </section>
-<section id="the-nf-corernaseq-command" class="level3">
-<h3 class="anchored" data-anchor-id="the-nf-corernaseq-command"><strong>The nf-core/rnaseq command</strong></h3>
-<p>The nf-core/rnaseq pipeline can be run using a single command with deafult parameters.</p>
-<p><font size="3"></font></p><font size="3">
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  nextflow run $Path_to_nf-core/rnaseq \      # The nf-core/rnaseq excecutable</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    --input $Path_to_samplesheet.csv \        # samplesheet file-name</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                    # For pre-installed softwares</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    --fasta $Genome_fasta_file \              # Genome sequence file</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    --gtf $Path_to_Genome.gtf \               # gtf - gene locations on genome</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    --star_index $Path_to_index file \        # Formatted file for aligner</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \        # Memory and cpu resources </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    --outdir $Path_to_results \               # results folder</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \     # Excecution log file-name </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</font><p><font size="3"></font></p>
-<p>This section introduces the user to the important nf-core/rnaseq parameters</p>
+<section id="qualimap" class="level3">
+<h3 class="anchored" data-anchor-id="qualimap">Qualimap</h3>
+<p>Qualimap explores the features of aligned reads in the context of the genomic region they map to, hence providing an overall view of the data quality (as an HTML file). Various quality metrics assessed by Qualimap include:</p>
+<p>DNA or rRNA contamination 5’-3’ biases Coverage biases</p>
 </section>
-<section id="other-inputoutput-options" class="level3">
-<h3 class="anchored" data-anchor-id="other-inputoutput-options"><strong>Other input/output options</strong></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>--input   Path to comma-separated file containing information about the samples.</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>--outdir  The output directory where the results will be saved.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="reference-genome-options" class="level4">
-<h4 class="anchored" data-anchor-id="reference-genome-options"><em>Reference genome options</em></h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>--genome            Name of iGenomes reference. </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>--star_index        Path to directory or tar.gz archive for pre-built STAR index.</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>--hisat2_index      Path to directory or tar.gz archive for pre-built HISAT2 index.</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>--save_reference    If generated by the pipeline save the STAR index in the results directory.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="alignment-options" class="level4">
-<h4 class="anchored" data-anchor-id="alignment-options"><em>Alignment options</em></h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>--aligner           Alignment algorithm to use.</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>--pseudo_aligner    Pseudo aligner to use.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="process-skippinguse-alternate-options" class="level4">
-<h4 class="anchored" data-anchor-id="process-skippinguse-alternate-options"><em>Process skipping/use-alternate options</em></h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>--deseq2_vst      Use vst transformation instead of rlog with DESeq2.</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>For details of all parameters in nf-core click <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</li>
-</ul>
-</section>
-</section>
-<section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
-<ul>
-<li>A single nf-core command can be run for the complete rnaseq pipeline.</li>
-<li>It provides high flexibility change resources such as processing-memory and cpus.<br>
-</li>
-<li>The pipeline works with containers such a sigularity and docker.</li>
-<li>nf-core provides flexibility to use alternative tools (when avaialble) for a particular step and also skip non-madatory steps in the rnaseq pipeline.</li>
-</ul>
-</section>
+<section id="quality-control-aggregating-results-with-multiqc" class="level3">
+<h3 class="anchored" data-anchor-id="quality-control-aggregating-results-with-multiqc">Quality control: aggregating results with MultiQC</h3>
+<p>Throughout the workflow we have performed various steps of quality checks on our data. You will need to do this for every sample in your dataset, making sure these metrics are consistent across the samples for a given experiment. Outlier samples should be flagged for further investigation and potential removal.</p>
+<p>Manually tracking these metrics and browsing through multiple HTML reports (FastQC, Qualimap) and log files (Salmon, STAR) for each samples is tedious and prone to errors. MultiQC is a tool which aggregates results from several tools and generates a single HTML report with plots to visualize and compare various QC metrics between the samples. Assessment of the QC metrics may result in the removal of samples before proceeding to the next step, if necessary.</p>
 
 
+</section>
 </section>
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->

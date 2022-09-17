@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -141,15 +145,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
  <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -186,11 +181,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
   <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
-  <li><a href="#raw-sequence-data-and-quality-check" id="toc-raw-sequence-data-and-quality-check" class="nav-link" data-scroll-target="#raw-sequence-data-and-quality-check">1. Raw sequence data and quality check</a></li>
-  <li><a href="#alignment-and-visualisation" id="toc-alignment-and-visualisation" class="nav-link" data-scroll-target="#alignment-and-visualisation">2. Alignment and Visualisation</a></li>
-  <li><a href="#mapped-reads-to-gene-counts" id="toc-mapped-reads-to-gene-counts" class="nav-link" data-scroll-target="#mapped-reads-to-gene-counts">3. Mapped reads to gene-counts</a></li>
-  <li><a href="#differential-expression-de-analysis" id="toc-differential-expression-de-analysis" class="nav-link" data-scroll-target="#differential-expression-de-analysis">4. Differential expression (DE) analysis</a></li>
-  <li><a href="#functional-interpretation" id="toc-functional-interpretation" class="nav-link" data-scroll-target="#functional-interpretation">5. Functional interpretation</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
@@ -215,6 +205,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Get familier with the RNA-seq DE analysis pipeline.</li>
 </ul>
 </section>
+<p><br> The aim of our RNA-Seq experiment is to determine which genes are expressed at different levels between our conditions of interest - <code>WT</code> and <code>KO</code>. These genes can then be used to identify possible biological insights into our main question which is <strong>do these expression changes relate to Williams-Beuren disease phenotype</strong>. <br> To do this, we will first look at the basic structure of a differential expression analysis pipeline.</p>
 <section id="challenge" class="level3 challenge">
 <h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
 <ul>
@@ -224,50 +215,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p></p><figcaption class="figure-caption">Arrange the processes from the differential expression analysis in a sequential order</figcaption><p></p>
-<p><img src="../fig/Basic_DE_pipeline_puzzle.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Arrange the processes from the differential expression analysis (DE) in a sequential order</figcaption><p></p>
+<p><img src="../fig/DE_pipeline_scrambled_new.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 <details>
 <summary>
 Solution
 </summary>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">A typical differential expression analysis pipeline</figcaption><p></p>
-<p><img src="../fig/Basic_DE_pipeline.png" class="img-fluid figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-</details>
+<section id="the-basic-steps-in-a-differential-expression-de-pipeline" class="level4">
+<h4 class="anchored" data-anchor-id="the-basic-steps-in-a-differential-expression-de-pipeline">The basic steps in a differential expression (DE) pipeline</h4>
+<p><img src="../fig/DE_pipeline_new.png" class="img-fluid" style="width:50.0%"></p>
+<p><strong>We will now discuss the above steps in more details with context to the <code>nf-core/rnaseq pipeline</code></strong></p>
+</section></details>
 </section>
-<p><br>So the basic steps in a differential expression (DE) pipeline are:</p>
-<section id="raw-sequence-data-and-quality-check" class="level3">
-<h3 class="anchored" data-anchor-id="raw-sequence-data-and-quality-check">1. Raw sequence data and quality check</h3>
-<ul>
-<li>Obtain sequencing data in <a href="https://sapac.support.illumina.com/bulletins/2016/04/fastq-files-explained.html">Fastq</a> format</li>
-<li>Quality checking with <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">fastQC</a> and <a href="https://multiqc.info/examples/wgs/multiqc_report.html">multiQC</a></li>
-<li>Quality trimming with <a href="bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim galore</a></li>
-</ul>
-</section>
-<section id="alignment-and-visualisation" class="level3">
-<h3 class="anchored" data-anchor-id="alignment-and-visualisation">2. Alignment and Visualisation</h3>
-<ul>
-<li>Alignment with <a href="https://github.com/alexdobin/STAR">STAR</a> aligner</li>
-<li>Visualisation using <a href="http://www.htslib.org/">samtools</a> / <a href="https://software.broadinstitute.org/software/igv/home">IGV</a></li>
-</ul>
-</section>
-<section id="mapped-reads-to-gene-counts" class="level3">
-<h3 class="anchored" data-anchor-id="mapped-reads-to-gene-counts">3. Mapped reads to gene-counts</h3>
-<p>Converting the reads mapped to the reference genome to a matrix which contains individual gene-counts per sample for downstream statistical enrichment analysis.</p>
-</section>
-<section id="differential-expression-de-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="differential-expression-de-analysis">4. Differential expression (DE) analysis</h3>
-<p>Identify statistically significant DE genes using tools such as the R-library <a href="https://bioconductor.org/packages/release/bioc/html/DESeq2.html">DESeq2</a>.</p>
-</section>
-<section id="functional-interpretation" class="level3">
-<h3 class="anchored" data-anchor-id="functional-interpretation">5. Functional interpretation</h3>
-<p>Functional enrichment analysis using tools such as the R-library <a href="https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html">clusterProfiler</a>.</p>
-<p>We will discuss each of the steps from (1) to (3) in detail today. The steps (5) and (6) will be covered on Day 2 tomorrow.</p>
 </section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
@@ -280,7 +241,7 @@ Solution
 </section>
 
 
-</section>
+
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

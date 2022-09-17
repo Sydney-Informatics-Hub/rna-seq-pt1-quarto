@@ -152,12 +152,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-start-day-1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Start Day 1</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-start-day-1">    
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
- <span class="dropdown-text">Introductory slides</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../notebooks/1.0_Learning_objectives.html">
  <span class="dropdown-text">Learning objectives: Day 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+ <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/1.1_Download_data.html">
@@ -190,6 +190,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -204,15 +208,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
  <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -244,12 +239,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#interpreting-the-results" id="toc-interpreting-the-results" class="nav-link active" data-scroll-target="#interpreting-the-results"><strong>Interpreting the results</strong></a>
+  <li><a href="#nf-corernaseq-results-folder" id="toc-nf-corernaseq-results-folder" class="nav-link active" data-scroll-target="#nf-corernaseq-results-folder"><strong>nf-core/rnaseq results folder</strong></a>
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#how-to-view-and-interpret-the-results" id="toc-how-to-view-and-interpret-the-results" class="nav-link" data-scroll-target="#how-to-view-and-interpret-the-results"><strong>How to view and interpret the results</strong></a></li>
-  <li><a href="#intepreting-the-biological-results" id="toc-intepreting-the-biological-results" class="nav-link" data-scroll-target="#intepreting-the-biological-results"><strong>Intepreting the biological results</strong></a></li>
+  <li><a href="#check-if-the-nf-corernaseq-command-has-completed" id="toc-check-if-the-nf-corernaseq-command-has-completed" class="nav-link" data-scroll-target="#check-if-the-nf-corernaseq-command-has-completed"><strong>Check if the nf-core/rnaseq command has completed</strong></a></li>
+  <li><a href="#the-results-folder" id="toc-the-results-folder" class="nav-link" data-scroll-target="#the-results-folder"><strong>The <code>results</code> folder</strong></a></li>
+  <li><a href="#copy-the-results-folder-from-pawsey-nimbus-to-local-machine" id="toc-copy-the-results-folder-from-pawsey-nimbus-to-local-machine" class="nav-link" data-scroll-target="#copy-the-results-folder-from-pawsey-nimbus-to-local-machine"><strong>Copy the <code>results</code> folder from Pawsey Nimbus to local machine</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
@@ -260,62 +256,60 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="interpreting-the-results" class="level1">
-<h1><strong>Interpreting the results</strong></h1>
+<section id="nf-corernaseq-results-folder" class="level1">
+<h1><strong>nf-core/rnaseq results folder</strong></h1>
 <section id="questions" class="level3 questions">
 <h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What are the main biological results generated?</li>
-<li>How to best view and interpret the results?</li>
+<li>How are the results from the nf-core/rnaseq organised?</li>
+<li>How to transfer the results from Pawsey Nimbus for interpretation?</li>
 </ul>
 </section>
 <section id="objectives" class="level3 objectives">
 <h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
 <ul>
-<li>View and interpret the various biological results</li>
-<li>Streamline the results interpretation prcoess</li>
+<li>Check if the nf-core/rnaseq command has run to completion</li>
+<li>Understand the structure of the results folder</li>
+<li>Transfer the required files from the results folder on Paqsey Nimbus to your local machine</li>
 </ul>
 </section>
-<section id="how-to-view-and-interpret-the-results" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-view-and-interpret-the-results"><strong>How to view and interpret the results</strong></h3>
-<p>The results are stored in the folder ‘results’ with sub-folders for individual steps. It should resemble:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:53 pipeline_info</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x 19 ubuntu ubuntu 4096 Jul 26 06:53 star_salmon</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 26 06:44 trimgalore</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:43 fastqc</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 25 20:51 multiqc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="check-if-the-nf-corernaseq-command-has-completed" class="level3">
+<h3 class="anchored" data-anchor-id="check-if-the-nf-corernaseq-command-has-completed"><strong>Check if the nf-core/rnaseq command has completed</strong></h3>
 <ul>
-<li>X11 Forwarding would be the best way to provide the user with a streamlined approach to interpret and proceed on the same platform.</li>
-<li>It should also assist the user with essential steps such as :
-<ul>
-<li>Visualising the multiple html log files</li>
-<li>Using common bioinformatics tools such as IGV viewer etc.</li>
-<li>Other GUI based applications without resorting to transfer of the files back and forth across platforms.</li>
-</ul></li>
-<li>The alternate option is to identify and download certain result-files to local PC.</li>
-<li>Since X11 Forwarding is not working on the Nimbus instance, we will use the second option.</li>
+<li><p>Please check the terminal windows to see if your nfcore command has completed running without any erros.</p></li>
+<li><p>You should see a screen similar to one shown below. <br><br> <img src="../fig/completed_nfcore_rnaseq_run.png" class="img-fluid"></p></li>
+<li><p>The results of a completed run are stored in a folder <code>results</code> with sub-folders created for individual processes.</p></li>
 </ul>
-<p>On your local machine, please use the following scp command for transferring the “results” folder</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>scp -r `login_name`@###.###.###.###:PATH_TO_results_FOLDER/results ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="intepreting-the-biological-results" class="level3">
-<h3 class="anchored" data-anchor-id="intepreting-the-biological-results"><strong>Intepreting the biological results</strong></h3>
+<section id="the-results-folder" class="level3">
+<h3 class="anchored" data-anchor-id="the-results-folder"><strong>The <code>results</code> folder</strong></h3>
+<p>Type the command</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ls -lh results</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to list the contents of the <code>results</code> folder.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:53 pipeline_info</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x 19 ubuntu ubuntu 4096 Jul 26 06:53 star_salmon</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 26 06:44 trimgalore</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  2 ubuntu ubuntu 4096 Jul 26 06:43 fastqc</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>drwxrwxr-x  3 ubuntu ubuntu 4096 Jul 25 20:51 multiqc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="copy-the-results-folder-from-pawsey-nimbus-to-local-machine" class="level3">
+<h3 class="anchored" data-anchor-id="copy-the-results-folder-from-pawsey-nimbus-to-local-machine"><strong>Copy the <code>results</code> folder from Pawsey Nimbus to local machine</strong></h3>
 <ul>
-<li><strong>FastQC</strong>: Quality assessment and trimming</li>
+<li>On your local machine, open a terminal.</li>
+<li>Navigate to the path of your choice using the command <code>cd</code> to <code>change the directory</code>.</li>
+<li>Use the following command for transferring the “results” folder from Pawsey Nimbus to this local path.</li>
 </ul>
-<p><img src="../fig/fastqQC.png" class="img-fluid"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>scp -r `login_name`@###.###.###.###:~/base_directory/working_directory/results ./</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p><strong>Alignment</strong>: Map the sequenced reads against a (Huge) reference (organism) sequence to identify the genes to which they belong.</p></li>
-<li><p><strong>Count data</strong>: For gene expression in Part II <img src="../fig/count_matrix.png" class="img-fluid"></p></li>
-<li><p><strong>Principal component analysis (PCA) plot</strong>: A two dimensional view of the multi-dimensional gene signatures <img src="../fig/PCA.png" class="img-fluid"></p></li>
+<li>We can now use local browsers and other software tools such as <code>chrome</code> to open the html (and other) log files for further analysis.</li>
+<li>Next, we will try and uderstand the <code>results</code> generated by the <code>nf-core/rnaseq</code> pipeline with context to a <strong>a typical differential expression (DE) analysis pipeline</strong>.</li>
 </ul>
 </section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>Nexyflow can download the required software containers as well as genome resource databases in run-time, if we are working with standard model organisms such as human, mouse etc.</li>
-<li>The nf-core/rnaseq pipeline generates independant sub-folders in the main <code>results</code> folder for individual processes</li>
-<li>The outputs can be transferred to the local machine and viewed for further analysis.<br>
+<li>The nf-core/rnaseq pipeline generates independant sub-folders in the main <code>results</code> folder for individual processes.</li>
+<li>The results can be transferred to the local machine and the files can be used for further analysis.<br>
 </li>
 </ul>
 </section>

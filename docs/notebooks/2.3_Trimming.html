@@ -127,6 +127,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rna-seq-differential-expression-(de-analysis" role="button" data-bs-toggle="dropdown" aria-expanded="false">RNA-seq differential expression (DE) analysis</a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-rna-seq-differential-expression-(de-analysis">    
         <li>
+    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
+ <span class="dropdown-text">Results from nf-core/rnaseq</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../notebooks/2.1_The_pipeline.html">
  <span class="dropdown-text">The main steps involved in RNA-seq (DE) analysis</span></a>
   </li>  
@@ -141,15 +145,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../notebooks/2.4_Alignment_using_STAR.html">
  <span class="dropdown-text">Alignment to reference genome</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lets-look-at-the-results" role="button" data-bs-toggle="dropdown" aria-expanded="false">Lets look at the results</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lets-look-at-the-results">    
-        <li>
-    <a class="dropdown-item" href="../notebooks/6.3_Interpreting_results.html">
- <span class="dropdown-text">Main outputs from nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
@@ -185,8 +180,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#why-trim" id="toc-why-trim" class="nav-link" data-scroll-target="#why-trim"><strong>Why trim?</strong></a></li>
-  <li><a href="#does-trimming-help" id="toc-does-trimming-help" class="nav-link" data-scroll-target="#does-trimming-help"><strong>Does trimming help?</strong></a></li>
   <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
@@ -213,9 +206,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Understand the pros and cons of trimming</li>
 </ul>
 </section>
-<p><img src="../fig/trimming_nfcore-rnaseq.png" class="img-fluid"> <br></p>
-<section id="why-trim" class="level3">
-<h3 class="anchored" data-anchor-id="why-trim"><strong>Why trim?</strong></h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p></p><figcaption class="figure-caption"><strong>Stage 1 of <code>nf-core/rnaseq</code>: (Pre-processing-Trimming):</strong></figcaption><p></p>
+<p><img src="../fig/nfcore_stage1.2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p><br></p>
+<section id="why-trim" class="level4">
+<h4 class="anchored" data-anchor-id="why-trim"><strong>Why trim?</strong></h4>
 <ul>
 <li>Trimming is sometimes performed to improve the quality of the raw data and potentially improve its mappability. There are several ways to perform trimming:
 <ul>
@@ -224,9 +223,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Removal of polyA tails</li>
 </ul></li>
 </ul>
+<p>The tool <a href="bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim galore</a> is used by nf-core/rnaseq pipeline for read quality trimming.</p>
 </section>
-<section id="does-trimming-help" class="level3">
-<h3 class="anchored" data-anchor-id="does-trimming-help"><strong>Does trimming help?</strong></h3>
+<section id="does-trimming-help" class="level4">
+<h4 class="anchored" data-anchor-id="does-trimming-help"><strong>Does trimming help?</strong></h4>
 <ul>
 <li>Be very wary about trimming RNA sequencing data
 <ul>

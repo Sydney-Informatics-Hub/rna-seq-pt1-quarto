@@ -31,19 +31,17 @@ website:
           href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.md
       - text: "RNA-seq differential expression (DE) analysis"
         menu:
+        - text: "Results from nf-core/rnaseq"
+          href: notebooks/6.3_Interpreting_results.md
         - text: "The main steps involved in RNA-seq (DE) analysis"
           href: notebooks/2.1_The_pipeline.md
         - text: "Get raw sequencing data and check quality"
           href: notebooks/2.2_fastQ_and_fastQC.md
         - text: "Trimming"
           href: notebooks/2.3_Trimming.md
-        - text: "Alignment to reference genome"
+        - text: "Alignment to reference genome and quantification"
           href: notebooks/2.4_Alignment_using_STAR.md
-      - text: "Lets look at the results"
-        menu:
-        - text: "Main outputs from nf-core/rnaseq"
-          href: notebooks/6.3_Interpreting_results.md
-        - text: "Helpful Nextflow logs"
+        - text: "Helpful logs"
           href: notebooks/6.4_Interpreting_results_2.md
       - text: "Summary Day 1"
         menu:
