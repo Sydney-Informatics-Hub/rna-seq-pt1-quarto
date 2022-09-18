@@ -190,7 +190,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#workflow-timeline" id="toc-workflow-timeline" class="nav-link" data-scroll-target="#workflow-timeline"><strong>Workflow timeline</strong></a></li>
   <li><a href="#compute-resource-usage" id="toc-compute-resource-usage" class="nav-link" data-scroll-target="#compute-resource-usage"><strong>Compute resource usage</strong></a>
   <ul class="collapse">
-  <li><a href="#analysing-the-technical-requirements" id="toc-analysing-the-technical-requirements" class="nav-link" data-scroll-target="#analysing-the-technical-requirements">Analysing the technical requirements</a></li>
   <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul></li>
@@ -250,16 +249,6 @@ ul.task-list li input[type="checkbox"] {
 <li>Shows multiple graphical statistics displaying the resource usage for various processes in the run.</li>
 <li>This helps to get an estimate of the required resources for independant processes and assign them for future runs.</li>
 </ul>
-<section id="analysing-the-technical-requirements" class="level3">
-<h3 class="anchored" data-anchor-id="analysing-the-technical-requirements">Analysing the technical requirements</h3>
-<ul>
-<li><strong>Big data size reflecting on resource requirements</strong>: The data used for this run is massively subsetted. Real bioinformatics samples for RNASeq are in the range of few GB. Many bioinformatics tools can use multiple CPUs and quite a few also display high memory requirements.</li>
-<li><strong>Storing big reference databases for re-use</strong>: Resources such as “cvmfs” will be ideal for storing big sized reference datasets in central repostories.</li>
-<li><strong>Storing most recent version of the ’nf-core software; as backup</strong>: Although it is recommended to download the latest version of a nf-core pipeline, it was observed that the most recent version of nf-core/rnaseq displayed errors. So we are hosting a near recent copy of the pipeline from the “cvmfs”. Since (possibly) minor changes are observed between sub-versions of nf-core pipelines, this approach can be used as an effective alternative.</li>
-<li><strong>Storing singularity containers in cvmfs!!</strong>: Need to weigh the pros and cons! - Also, this is directly dependant on whether we download the nf-core pipeline on the fly (or use an older version)…</li>
-<li><strong>X11 Forwarding</strong>: The analysis can be streamlined if the user is able to visualise and run GUI based applications on the Vm instances.</li>
-</ul>
-</section>
 <section id="key-points" class="level3 keypoints">
 <h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>

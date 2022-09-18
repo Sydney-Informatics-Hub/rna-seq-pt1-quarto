@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/6.4_Interpreting_results_2.html">
- <span class="dropdown-text">Helpful Nextflow logs</span></a>
+ <span class="dropdown-text">Helpful logs</span></a>
   </li>  
     </ul>
   </li>
@@ -180,9 +180,12 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#challenge-1" id="toc-challenge-1" class="nav-link" data-scroll-target="#challenge-1"><strong>Challenge 1</strong></a></li>
-  <li><a href="#challenge-2" id="toc-challenge-2" class="nav-link" data-scroll-target="#challenge-2"><strong>Challenge 2</strong></a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points">Key points</a></li>
+  <li><a href="#alignment-to-reference-genome" id="toc-alignment-to-reference-genome" class="nav-link" data-scroll-target="#alignment-to-reference-genome"><strong>Alignment to reference genome</strong></a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
+  <li><a href="#pseudo-aligners" id="toc-pseudo-aligners" class="nav-link" data-scroll-target="#pseudo-aligners">Pseudo-aligners</a></li>
+  <li><a href="#read-quantification" id="toc-read-quantification" class="nav-link" data-scroll-target="#read-quantification"><strong>Read quantification</strong></a></li>
+  <li><a href="#challenge-1" id="toc-challenge-1" class="nav-link" data-scroll-target="#challenge-1"><strong>Challenge</strong></a></li>
+  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -215,31 +218,22 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="../fig/nfcore_stage2And3.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+<section id="alignment-to-reference-genome" class="level3">
+<h3 class="anchored" data-anchor-id="alignment-to-reference-genome"><strong>Alignment to reference genome</strong></h3>
 <ul>
-<li>After trimming, the next step of processing RNA-seq data is to map the reads to a reference genome.</li>
-<li>RNA-seq specific aligner needs to be used to accomodate splicing.</li>
-<li>The most commonly used aligners for short-read sequencing are <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a> etc.</li>
+<li>After trimming, the next step of processing RNA-seq data is to map the reads to a reference genome. RNA-seq specific aligner needs to be used to accomodate splicing. The most commonly used aligners for short-read sequencing are <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a> etc.</li>
 <li>The output of the alignment step is a <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">bam</a> file, which is a compressed (“B”inary) form of a <a href="https://en.wikipedia.org/wiki/SAM_(file_format)">sam</a> file.</li>
-<li>The reads mapped to the reference genome are then converted to a matrix which contains individual gene-counts per sample using the tool <a href="http://subread.sourceforge.net/">featurecounts</a> . The gene-count matrix can then be used for identification of differentially expressed genes.</li>
 </ul>
-<section id="challenge-1" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge-1"><strong>Challenge 1</strong></h3>
-<p>Should we have a challenge about <code>sam/bam</code> format?</p>
-<details>
-<summary>
-Solution
-</summary>
-</details>
-</section>
 <p><br>The next challenge will be done in breakout rooms. A facilitator will handle the big bam files on their side using a tool call <code>IGV</code> which will be followed by a discussion.</p>
-<section id="challenge-2" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge-2"><strong>Challenge 2</strong></h3>
+</section>
+<section id="challenge" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
 <ul>
 <li>Open the application: The Integrative Genomics Viewer <a href="https://software.broadinstitute.org/software/igv/">(IGV)</a>.</li>
 <li>Open the 6 pre-aligned bam files. These files contain the reads which are aligned specifically to the region flanking our gene of interest which is <code>Gtf2ird1</code>.</li>
 <li>This will be a good time to revisit the <code>The case study</code> which is mentioned in the <a href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=8c296cbc-3005-48d3-b977-bef7c517961e">Introductory slides</a>.</li>
 <li>Once the bam files are opened in the IGV viewer, we can navigate to the exact region of the gene <code>Gtf2ird1</code>.</li>
-<li>We have forgotten to label our samples and don’t know which samples belong to the wildtype or knockout group! So, instead, we will use the alignments and assign samples to their correct treatment group (wildtype or knockout) <br><strong>What do you see?</strong></li>
+<li><strong>We have forgotten to label our samples</strong> and don’t know which samples belong to the wildtype or knockout group! So, instead, we will use the alignments and assign samples to their correct treatment group (wildtype or knockout)</li>
 </ul>
 <p><br> <img src="../fig/Gtf2ird1_exon1.png" class="img-fluid"></p>
 <ul>
@@ -256,11 +250,32 @@ Solution
 </ul>
 </details>
 </section>
-<section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points">Key points</h3>
+<section id="pseudo-aligners" class="level3">
+<h3 class="anchored" data-anchor-id="pseudo-aligners">Pseudo-aligners</h3>
+<p>As salmon is part of the alignment tool STAR_salmon in nf-core/rnaseq, I will quickly discuss Pseudo-aligners and salmon here</p>
+</section>
+<section id="read-quantification" class="level3">
+<h3 class="anchored" data-anchor-id="read-quantification"><strong>Read quantification</strong></h3>
+<p>The reads mapped to the reference genome are then converted to a matrix which contains individual gene-counts per sample using the tool <a href="http://subread.sourceforge.net/">featurecounts</a> . The gene-count matrix can then be used for identification of differentially expressed genes.</p>
+</section>
+<section id="challenge-1" class="level3 challenge">
+<h3 class="anchored" data-anchor-id="challenge-1"><strong>Challenge</strong></h3>
 <ul>
-<li>Nimbus VM instances from Pawsey provide on-demand access for scalability.</li>
-<li>We use a ssh client to connect to a Linux instance.</li>
+<li>Identify the output folder in which the alignment and quantification results are placed.</li>
+<li>Identify and check ouit a few files <strong>HINT</strong> You can use the unix command <code>cat</code> which prints content of a file onto the terminal.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+There are quite a few files geenrated in this step. We can try and discuss a few which are of interest.
+</details>
+</section>
+<section id="key-points" class="level3 keypoints">
+<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
+<ul>
+<li>Tools such as STAR and HISAT2 can be used for splice-aware alignemnet of RNA-Seq reads.</li>
+<li>Tools such as featurecounts can be used to quantify the aligned-reads to gene-counts.</li>
 </ul>
 </section>
 
