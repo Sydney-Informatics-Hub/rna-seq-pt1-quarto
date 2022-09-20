@@ -72,7 +72,7 @@ nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \
 <div class="challenge">
 
 ### **Challenge**
- 
+ ???
   
 <details>
 <summary>Solution</summary>
