@@ -14,39 +14,39 @@ website:
       - text: "Start Day 1"
         menu:
         - text: "Learning objectives: Day 1"
-          href: notebooks/1.0_Learning_objectives.md
+          href: notebooks/1.0_Learning_objectives.html
         - text: "Introductory slides"
           href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
         - text: "Download all files"
-          href: notebooks/1.1_Download_data.md
+          href: notebooks/1.1_Download_data.html
         - text: "Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud"
           href: notebooks/Running_nfcore_command.html
       - text: "nf-core workflows"
         menu:
         - text: "Why use Nextflow?"
-          href: notebooks/3_intro_to_nextflow_and_nfcore.md
+          href: notebooks/3_intro_to_nextflow_and_nfcore.html
         - text: "Introduction to nf-core/rnaseq"
-          href: notebooks/4_nfcore-rnaseq.md
+          href: notebooks/4_nfcore-rnaseq.html
         - text: "nf-core/rnaseq : Parameters"
-          href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.md
+          href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html
       - text: "RNA-seq differential expression (DE) analysis"
         menu:
         - text: "Results from nf-core/rnaseq"
-          href: notebooks/6.3_Interpreting_results.md
+          href: notebooks/6.3_Interpreting_results.html
         - text: "The main steps involved in RNA-seq (DE) analysis"
-          href: notebooks/2.1_The_pipeline.md
+          href: notebooks/2.1_The_pipeline.html
         - text: "Get raw sequencing data and check quality"
-          href: notebooks/2.2_fastQ_and_fastQC.md
+          href: notebooks/2.2_fastQ_and_fastQC.html
         - text: "Trimming"
-          href: notebooks/2.3_Trimming.md
+          href: notebooks/2.3_Trimming.html
         - text: "Alignment to reference genome and quantification"
-          href: notebooks/2.4_Alignment_using_STAR.md
+          href: notebooks/2.4_Alignment_using_STAR.html
         - text: "Helpful logs"
-          href: notebooks/6.4_Interpreting_results_2.md
+          href: notebooks/6.4_Interpreting_results_2.html
       - text: "Summary Day 1"
         menu:
         - text: "Raw sequence to gene-counts"
-          href: notebooks/7_Summary_Day1.md
+          href: notebooks/7_Summary_Day1.html
       
 
   body-footer: "All materials copyright Sydney Informatics Hub, University of Sydney"
