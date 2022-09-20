@@ -20,7 +20,7 @@ website:
         - text: "Download all files"
           href: notebooks/1.1_Download_data.md
         - text: "Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud"
-          href: notebooks/Running_nfcore_command.md
+          href: notebooks/Running_nfcore_command.html
       - text: "nf-core workflows"
         menu:
         - text: "Why use Nextflow?"

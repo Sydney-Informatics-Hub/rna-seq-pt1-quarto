@@ -39,9 +39,8 @@ cd /home/training/base_directory/working_directory
 ```
 
 #### **Run the nf-core/rnaseq command**
-<font size="2.5">
+<font size="2.7">
 ```default
-
 cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722
 
 nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \

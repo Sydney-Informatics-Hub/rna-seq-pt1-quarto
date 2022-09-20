@@ -143,7 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html">Home</a>
+    <a class="nav-link" href="https://sydney-informatics-hub.github.io/training.RNAseq.series-quarto/">Home</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../setup.html">Setup</a>
@@ -170,8 +170,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-why-use-nf-core-workflows" role="button" data-bs-toggle="dropdown" aria-expanded="false">Why use nf-core workflows?</a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-why-use-nf-core-workflows">    
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-nf-core-workflows" role="button" data-bs-toggle="dropdown" aria-expanded="false">nf-core workflows</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-nf-core-workflows">    
         <li>
     <a class="dropdown-item" href="../notebooks/3_intro_to_nextflow_and_nfcore.html">
  <span class="dropdown-text">Why use Nextflow?</span></a>
@@ -289,21 +289,20 @@ Why run the command now?
 </section>
 <section id="run-the-nf-corernaseq-command" class="level4">
 <h4 class="anchored" data-anchor-id="run-the-nf-corernaseq-command"><strong>Run the nf-core/rnaseq command</strong></h4>
-<p><font size="2.5"></font></p><font size="2.5">
-<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \                                    # the excecutable file</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \                                                         # samplesheet file-name</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                                                            # profile e.g. singularity</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \                              # Path: Genome fasta file</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \                  # path: gtf file</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \    # path: 'STAR' index file</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \                                                # memory and cpu resources </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    --outdir results \</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \                                             # Excecution log file-name </span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html                                               # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</font><p><font size="2.5"></font></p>
+<p><font size="2.7"></font></p><font size="2.7">
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                --input samplesheet.csv \</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                -profile singularity \</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                --max_memory '6 GB' --max_cpus 2 \</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                --outdir results \</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>                -with-report excecution_report.html \</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>                -with-timeline timeline_report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</font><p><font size="2.7"></font></p>
 <ul>
 <li><p>The <a href="https://cernvm.cern.ch/fs/">CernVM File System</a> i.e.&nbsp;<code>cvmfs</code> provides a scalable, reliable and low-maintenance software distribution service.</p></li>
 <li><p>The names of cvmfs folders (e.g.&nbsp;<strong>Final_resources_250722</strong>) and files need to be standardised (make these more user-friendly). This is <strong>work in progress</strong>.</p></li>
@@ -318,6 +317,7 @@ Why run the command now?
 </section>
 <section id="challenge" class="level3 challenge">
 <h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<p>???</p>
 <details>
 <summary>
 Solution
