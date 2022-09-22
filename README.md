@@ -1,9 +1,11 @@
 ---
-title: "SIH Quarto Training template"
+title: "RNA-Seq using Nextflow: Day 1"
 ---
-# Read me
 
-- We recommend storing all notebooks (.ipynb) or R files (as .qmd or .rmd) in the `notebooks` folder.
+## RNA-Seq using Nextflow: Day 1
+This page is rendered at: https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/ 
+
+# Template read me
 
 ## How to use
 
@@ -12,7 +14,7 @@ title: "SIH Quarto Training template"
 - Edit or create `setup.qmd` to change the Setup instruction pages.
 - Edit `_quarto.yml` to change the dropdown menu options.
 - Add additional `*.md` files to the root dir to have them converted to html files (and add them to `_quarto.yml` to make them navigable).
-
+- We recommend storing all notebooks (.ipynb) or R files (as .qmd or .rmd) in the `notebooks` folder.
 - If using Python, use VSCode's [Quarto Extension](https://quarto.org/docs/tools/vscode.html) to render the project (recommended b/c it's easier/nice)
 - If using R, type `quarto render` in the Terminal in RStudio (not the R command line, the Terminal tab!) - or use the buttons
 - If you want to command line, run the below commands (after activating the correct Python environment, if needed) 
