@@ -5,8 +5,6 @@ title: "RNA-Seq using Nextflow: Day 1"
 ## RNA-Seq using Nextflow: Day 1
 This page is rendered at: https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/ 
 
-# Template read me
-
 ## How to use
 
 - Copy this repository
