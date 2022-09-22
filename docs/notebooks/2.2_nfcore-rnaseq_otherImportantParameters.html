@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow: Day 1 – running_nfcore-rnaseq_command_details</title>
+<title>RNA-Seq using Nextflow: Day 1 – nfcore-rnaseq_otherimportantparameters</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -233,13 +233,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" id="toc-run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" class="nav-link active" data-scroll-target="#run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance"><strong>Run the nf-core/rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></a>
+  <li><a href="#customising-the-nf-corernaseq-workflow" id="toc-customising-the-nf-corernaseq-workflow" class="nav-link active" data-scroll-target="#customising-the-nf-corernaseq-workflow"><strong>Customising the nf-core/rnaseq workflow</strong></a>
   <ul class="collapse">
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><strong>Questions</strong></a></li>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link" data-scroll-target="#objectives"><strong>Objectives</strong></a></li>
-  <li><a href="#run-the-pipeline-on-pawsey-nimbus-vm-instance" id="toc-run-the-pipeline-on-pawsey-nimbus-vm-instance" class="nav-link" data-scroll-target="#run-the-pipeline-on-pawsey-nimbus-vm-instance"><strong>Run the pipeline on Pawsey-Nimbus VM instance</strong></a></li>
-  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge"><strong>Challenge</strong></a></li>
-  <li><a href="#key-points" id="toc-key-points" class="nav-link" data-scroll-target="#key-points"><strong>Key points</strong></a></li>
+  <li><a href="#some-useful-customisation-options" id="toc-some-useful-customisation-options" class="nav-link" data-scroll-target="#some-useful-customisation-options"><strong>Some useful customisation options</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -249,130 +245,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="run-the-nf-corernaseq-pipeline-on-pawseys-nimbus-vm-instance" class="level1">
-<h1><strong>Run the nf-core/rnaseq pipeline on Pawsey’s Nimbus VM instance</strong></h1>
-<section id="questions" class="level3 questions">
-<h3 class="anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
+<section id="customising-the-nf-corernaseq-workflow" class="level1">
+<h1><strong>Customising the nf-core/rnaseq workflow</strong></h1>
+<section id="questions" class="level3 unlisted questions">
+<h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>What does the actual nf-core/rnaseq command look like?</li>
-<li>What are the main input parameters?</li>
-<li>What are the outputs?</li>
-<li>What are the output log files?</li>
+<li>What are the essential nf-core/rnaseq parameters?</li>
+<li>What parameters can be customised?</li>
 </ul>
 </section>
-<section id="objectives" class="level3 objectives">
-<h3 class="anchored" data-anchor-id="objectives"><strong>Objectives</strong></h3>
+<p><br>
+</p>
+<p>The nf-core/rnaseq pipeline can be run using a single command with deafult parameters. The default parameters are explained in detail here, and include:</p>
 <ul>
-<li>Understand and excecute the nf-core/rnaseq command</li>
-</ul>
-</section>
-<section id="run-the-pipeline-on-pawsey-nimbus-vm-instance" class="level3">
-<h3 class="anchored" data-anchor-id="run-the-pipeline-on-pawsey-nimbus-vm-instance"><strong>Run the pipeline on Pawsey-Nimbus VM instance</strong></h3>
-<ul>
-<li>Please go back to the command-line(Terminal) window on which you have logged on to the Nimbus training instance.</li>
-<li>In case the window has been closed accidently or if you have been logged-off, you will need to follow the log-in steps on the <code>Setup</code> page.</li>
-</ul>
-<p>Check your path by typing:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>You should be in the path: <code>/home/training/base_directory/working_directory</code></li>
-<li>If you are not, move into the above path by typing:</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>cd <span class="sc">/</span>home<span class="sc">/</span>training<span class="sc">/</span>base_directory<span class="sc">/</span>working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="excecuting-the-nextflow-nf-corernaseq-pipeline" class="level4">
-<h4 class="anchored" data-anchor-id="excecuting-the-nextflow-nf-corernaseq-pipeline"><strong>Excecuting the Nextflow nf-core/rnaseq pipeline</strong></h4>
-<p>We will run the single nf-core/rnaseq command using a utility called <strong>screen</strong> in unix.</p>
-<p>What is the <code>screen</code> command?</p>
-<ul>
-<li>The <strong>screen command</strong> in Linux provides the ability to launch and use multiple shell sessions from a single ssh session.</li>
-<li>When a process is started with ‘screen’, the process can be detached from session &amp; then can reattach the session at a later time.</li>
-<li>When the session is detached, the process that was originally started from the screen is still running and managed by the screen itself.</li>
-<li>The process can then re-attach the session at a later time, and the terminals are still there, the way it was left.</li>
-<li>In short, we can use a <code>single Terminal</code> and <code>multiple screen</code> sessions in the terminal to do multiple different things. <br><br> <strong>NOTE</strong> If this sounds too complicated, the other alternative is to open a new <code>terminal</code> window :-) for a new task.</li>
-</ul>
-</section>
-<section id="start-a-new-screen-window" class="level4">
-<h4 class="anchored" data-anchor-id="start-a-new-screen-window"><strong>(1) Start a new screen window</strong></h4>
-<p><code>-S</code>: It will start a new window within the screen and also gives a name to the window. It creates a session which is identified by that name. The name can be used to reattach screen at a later stage.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>S run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="run-the-nf-corernaseq-command" class="level4">
-<h4 class="anchored" data-anchor-id="run-the-nf-corernaseq-command"><strong>(2) Run the nf-core/rnaseq command</strong></h4>
-<p><font size="2.5"></font></p><font size="2.5">
-<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \                                    # the excecutable file</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \                                                         # samplesheet file-name</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    -profile singularity \                                                            # profile e.g. singularity</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    --fasta $cvmfs_path/Mouse_chr18_reference/chr18.fa \                              # Path: Genome fasta file</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    --gtf $cvmfs_path/Mouse_chr18_reference/chr_18_startOfLine.gtf \                  # path: gtf file</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    --star_index $cvmfs_path/Mouse_chr18_reference/chr18_STAR_singularity_index/ \    # path: 'STAR' index file</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    --max_memory '6 GB' --max_cpus 2 \                                                # memory and cpu resources </span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    --outdir results \</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    -with-report excecution_report.html \                                             # Excecution log file-name </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    -with-timeline timeline_report.html                                               # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</font><p><font size="2.5"></font></p>
-<ul>
-<li>The <a href="https://cernvm.cern.ch/fs/">CernVM File System</a> i.e.&nbsp;<code>cvmfs</code> provides a scalable, reliable and low-maintenance software distribution service.</li>
-<li>The names of cvmfs folders (e.g.&nbsp;<strong>Final_resources_250722</strong>) and files need to be standardised (make these more user-friendly). This is <strong>work in progress</strong>.</li>
-</ul>
-</section>
-<section id="detach-from-the-above-screen-session" class="level4">
-<h4 class="anchored" data-anchor-id="detach-from-the-above-screen-session"><strong>(3) Detach from the above screen session</strong></h4>
-<p><code>-d</code>: It is used to detach a screen session so that it can be reattached in future. It can also be done with the help of shortcut key <code>Ctrl-a + d</code></p>
-</section>
-<section id="reattach-the-screen-session-to-check-the-progress" class="level4">
-<h4 class="anchored" data-anchor-id="reattach-the-screen-session-to-check-the-progress"><strong>(4) Reattach the screen-session to check the progress</strong></h4>
-<p><code>-r</code> : It is used to reattach a screen session which was detached in past.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen <span class="sc">-</span>r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Repeat Steps (3) and (4) to check the the excecution status of the command.</p>
-<ul>
-<li>The nf-core/rnaseq command will take about 18-22 minutes to run to completion.</li>
-<li>In the mean time we will proceed to discuss some of the important output and log files.</li>
-<li>We plan to make a <code>pre-processed results folder</code> available for download. If one of more attendess have a problem excecuting the nf-core command, they will be able use these pre-computed results.<br>
+<li>Either an input sample sheet (<code>--input</code>) or directory housing fastq files (<code>--reads</code>)<br>
 </li>
-<li>An <code>scp command</code> to transfer required files from the results folder on the VM instance to your local machine will also be made available.</li>
+<li>A reference genome, either one available through Illumina’s <a href="https://github.com/nf-core/rnaseq/blob/master/conf/igenomes.config">iGenomes repository</a> (<code>--genome</code>), or a user-specified reference assembly (<code>--fasta</code>) and annotation file (<code>--gtf</code>)</li>
+<li>A configuration profile suitable for the compute environment you’re working on.</li>
 </ul>
+<p>For example, a user working with human samples, who has Singularity installed and all fastq files stored in a directory would be able to run this command to run the nf-core/rnaseq pipeline:</p>
+<p><font size="3"></font></p><font size="3">
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nextflow run nf-core/rnaseq \                 </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  --reads '*_R{1,2}.fastq.gz' \               # The location of fastq files</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  --genome GRCh38 \                           # Illumina iGenomes database</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  -profile singularity                        # For pre-installed software</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</font><p><font size="3"></font></p>
+<p>Most of us will need to customise the command a little more than this though. For example, a user working with multiple samples, who wants to provide their own pre-indexed reference data, and has compute resource limitations might run a command that looks more like this:</p>
+<p><font size="3"></font></p><font size="3">
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nextflow run $Path_to_nf-core/rnaseq \      </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  --input $Path_to_samplesheet.csv \        # Samplesheet file-name</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  -profile singularity \                    # For pre-installed software</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  --fasta $Genome_fasta_file \              # Genome sequence file</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  --gtf $Path_to_Genome.gtf \               # GTF - gene locations on genome</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  --star_index $Path_to_index file \        # Formatted file for aligner</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  --max_memory '6 GB' --max_cpus 2 \        # Memory and cpu resources </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  --outdir $Path_to_results \               # Results folder</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  -with-report excecution_report.html \     # Excecution log file-name </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  -with-timeline timeline_report.html       # Timeline log file-name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</font><p><font size="3"></font></p>
+<section id="some-useful-customisation-options" class="level3">
+<h3 class="anchored" data-anchor-id="some-useful-customisation-options"><strong>Some useful customisation options</strong></h3>
+<section id="input-and-output-options" class="level4">
+<h4 class="anchored" data-anchor-id="input-and-output-options"><em>Input and output options</em></h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>--input   Path to comma-separated file containing information about the samples.</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>--outdir  The output directory where the results will be saved.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="reference-genome-options" class="level4">
+<h4 class="anchored" data-anchor-id="reference-genome-options"><em>Reference genome options</em></h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>--genome            Name of iGenomes reference. </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>--star_index        Path to directory or tar.gz archive for pre-built STAR index.</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>--hisat2_index      Path to directory or tar.gz archive for pre-built HISAT2 index.</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>--save_reference    If generated by the pipeline save the STAR index in the results directory.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="alignment-options" class="level4">
+<h4 class="anchored" data-anchor-id="alignment-options"><em>Alignment options</em></h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>--aligner           Alignment algorithm to use.</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>--pseudo_aligner    Pseudo aligner to use.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="process-skippinguse-alternate-options" class="level4">
+<h4 class="anchored" data-anchor-id="process-skippinguse-alternate-options"><em>Process skipping/use-alternate options</em></h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>--deseq2_vst      Use vst transformation instead of rlog with DESeq2.</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For details of all parameters in nf-core take a look <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</p>
 </section>
 </section>
-<section id="challenge" class="level3 challenge">
-<h3 class="anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<section id="key-points" class="level3 unlisted keypoints">
+<h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
-<li>Which parameters in the above <code>nf-core/rnaseq</code> command seem to be mandatory? <br><strong>NOTE</strong> This is a trick question , but a very important one <span class="emoji" data-emoji="smirk">😏</span></li>
-</ul>
-<details>
-<summary>
-Solution
-</summary>
-<ul>
-<li>If we are working with model organisms such as human/mouse
-<ul>
-<li>The ONLY mandatory parameters which the user needs to supply to the pipeline are
-<ul>
-<li>The samplesheet : <code>--input samplesheet.csv</code></li>
-<li>The name of the genome version e.g.&nbsp;<code>--genome GRCh37</code></li>
-<li>The profile ‘-profile’</li>
-</ul></li>
-<li>So the most basic command (when a standard genome is available from a nf-core resource) is</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nextflow run nf-core/rnaseq \</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    --input samplesheet.csv \</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    --outdir &lt;OUTDIR&gt; \</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    --genome GRCh37 \</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    -profile &lt;docker/singularity/podman/shifter/charliecloud/conda/institute&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>Provided with a genome ID such as <code>--genome GRCh37</code>, the nf-core/rnaseq pipeline will download all requried genome-related files at run-time.</li>
-<li>However when we are working with our own non-model species of interest, we will need to provide the genome related index files.</li>
-<li>In this workshop, although we are working with a standard version of the mouse genome (GRCh38/mm10) , inorder to save time, bandwidth and hard-disk space on the individial VM instances, we have hosted the genome files in a central repository called <a href="https://cernvm.cern.ch/fs/"><code>Cern-VM-FS</code></a>, and hence provided the cvmfs paths.</li>
-</ul>
-</details>
-</section>
-<section id="key-points" class="level3 keypoints">
-<h3 class="anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
-<ul>
-<li>Pawsey Nimbus VM is a good resource to run nf-core piplelines</li>
+<li>A single nf-core command can be run for the complete pipeline.</li>
+<li>Many different parameters can be used to customise pipeline runs.</li>
+<li>nf-core allows users to skip non-madatory steps in the pipeline.</li>
 </ul>
 </section>
 

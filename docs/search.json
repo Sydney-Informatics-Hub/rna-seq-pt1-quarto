@@ -2,142 +2,16 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Part 1 Raw sequence to counts",
+    "title": "Day 1: raw sequence reads to gene counts",
     "section": "",
-    "text": "Introduces the first steps of analysing RNA sequencing data using the command line - including how to pre-process raw sequencing reads to analysis ready count data. We will use the nf-co.re’s rnaseq workflow on Pawsey Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "index.html#trainers",
-    "href": "index.html#trainers",
-    "title": "Course title",
-    "section": "Trainers",
-    "text": "Trainers\n\nNathaniel (Nate) Butterworth (PhD Computational Geophysics), nathaniel.butterworth@sydney.edu.au\nDarya Vanichkina (PhD Bioinformatics, SFHEA)\nKristian Maras (MSc Quant Fin)"
-  },
-  {
-    "objectID": "index.html#course-pre-requisites-and-setup-requirements",
-    "href": "index.html#course-pre-requisites-and-setup-requirements",
-    "title": "Course title",
-    "section": "Course pre-requisites and setup requirements",
-    "text": "Course pre-requisites and setup requirements\nNo previous programming experience is required, but Session 1 is a pre-requisite for the other sessions. Training will be delivered online, so you will need access to a modern computer with a stable internet connection and around 5GB of storage space for data downloaded prior to the course. Participants are encouraged to setup a Python environment on their local computer (as per the Setup Instructions provided), but participation using other platforms/environments can be supported where necessary."
-  },
-  {
-    "objectID": "index.html#venue-online-via-zoom",
-    "href": "index.html#venue-online-via-zoom",
-    "title": "Course title",
-    "section": "Venue, online via Zoom",
-    "text": "Venue, online via Zoom\nParticipants will be provided with a Zoom link. Trainers will be broadcasting from Sydney.\n\nZoom etiquette and how we interact\nSessions will be recorded for attendees only, and it is set up to only record the host shared screen and host audio. We will try and get these uploaded to this site as soon as possible. Please interrupt whenever you want! Ideally, have your camera on and interact as much as possible. There will be someone monitoring the chat-window with any questions you would like to post there. Four hours is a long Zoom session so we have plenty of scheduled breaks combined with a mix of content to be delivered as demos, plus sections as independent exercises, but most of the course will be pretty-hands on with everyone writing their own code. We will use Zoom break-out rooms as needed with the Trainers and participants."
-  },
-  {
-    "objectID": "index.html#code-of-conduct",
-    "href": "index.html#code-of-conduct",
-    "title": "Course title",
-    "section": "Code of Conduct",
-    "text": "Code of Conduct\nWe expect all attendees of our training to follow our code of conduct, including bullying, harassment and discrimination prevention policies.\nIn order to foster a positive and professional learning environment we encourage the following kinds of behaviours at all our events and on our platforms:\n\nUse welcoming and inclusive language\nBe respectful of different viewpoints and experiences\nGracefully accept constructive criticism\nFocus on what is best for the community\nShow courtesy and respect towards other community members\n\nOur full CoC, with incident reporting guidelines, is available [here]https://sydney-informatics-hub.github.io/codeofconduct/)."
-  },
-  {
-    "objectID": "index.html#general-session-timings",
-    "href": "index.html#general-session-timings",
-    "title": "Course title",
-    "section": "General session timings",
-    "text": "General session timings\n\n…"
-  },
-  {
-    "objectID": "index.html#setup-instructions",
-    "href": "index.html#setup-instructions",
-    "title": "Course title",
-    "section": "Setup Instructions",
-    "text": "Setup Instructions\nPlease complete the Setup Instructions before the course.\nIf you have any trouble, please get in contact with us ASAP."
-  },
-  {
-    "objectID": "setup.html",
-    "href": "setup.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/01a-fundamentals.html",
-    "href": "notebooks/01a-fundamentals.html",
-    "title": "Sydney Informatics Hub Course name",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "On day 1 of this workshop series, we will introduce you to the data pre-processing pipeline for bulk RNA sequencing (RNA-seq) using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the nf-core/rnaseq Nextflow pipeline on Pawsey’s Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "index.html#course-survey",
     "href": "index.html#course-survey",
-    "title": "Part 1 Raw sequence to counts",
+    "title": "Day 1: raw sequence reads to gene counts",
     "section": "Course survey!",
     "text": "Course survey!\nPlease fill out our course survey before you leave!"
-  },
-  {
-    "objectID": "notebooks/1.1_Download_data.html",
-    "href": "notebooks/1.1_Download_data.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/4_nfcore-rnaseq.html",
-    "href": "notebooks/4_nfcore-rnaseq.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/2.3_Trimming.html",
-    "href": "notebooks/2.3_Trimming.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html",
-    "href": "notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/3_intro_to_nextflow_and_nfcore.html",
-    "href": "notebooks/3_intro_to_nextflow_and_nfcore.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/6.2_Running_nfcore_command_default_parameters.html",
-    "href": "notebooks/6.2_Running_nfcore_command_default_parameters.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/6.3_Interpreting_results.html",
-    "href": "notebooks/6.3_Interpreting_results.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/2.4_Alignment_using_STAR.html",
-    "href": "notebooks/2.4_Alignment_using_STAR.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/2.2_fastQ_and_fastQC.html",
-    "href": "notebooks/2.2_fastQ_and_fastQC.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/6.4_Interpreting_results_2.html",
-    "href": "notebooks/6.4_Interpreting_results_2.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "What information does the timeline log file provide us?\nHow can we estimate the CPU/memory resource requirements?\nWhat were the main observations and possible limitations when running the pipeline?\n\n\n\n\n\nUnderstand the timelines for multiple processes\nEstimate the resource requirements for multiple processes\nAnalysing the technical requirements to run nf-core pipelines\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "notebooks/1.0_Learning_objectives.html",
@@ -147,71 +21,99 @@
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/7_Summary_Day1.html",
-    "href": "notebooks/7_Summary_Day1.html",
+    "objectID": "notebooks/1.1_Download_data.html",
+    "href": "notebooks/1.1_Download_data.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/2.1_The_pipeline.html",
-    "href": "notebooks/2.1_The_pipeline.html",
-    "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "",
-    "text": "Key points\n\nTools such as FastQC can be used for assessing the sequencing read-quality.\nTrim galore is one of the many tools available for read-trimming based on multiple criteria.\nWe will use the aligner STAR to map the reads to the reference genome/transcriptome.\nThe identification of statistically significant DE genes can be done using R libraries such as DeSeq2.\n\n\n\n\n\n\nAll materials copyright Sydney Informatics Hub, University of Sydney"
-  },
-  {
-    "objectID": "notebooks/2.1_The_pipeline.html#raw-data-and-quality-checking",
-    "href": "notebooks/2.1_The_pipeline.html#raw-data-and-quality-checking",
-    "title": "RNA-Seq using Nextflow",
-    "section": "1. Raw data and quality checking",
-    "text": "1. Raw data and quality checking\n\nObtain sequencing data in Fastq format\nQuality checking with fastQC and multiQC\nQuality trimming with Trim galore"
-  },
-  {
-    "objectID": "notebooks/2.1_The_pipeline.html#alignment-and-visualisation",
-    "href": "notebooks/2.1_The_pipeline.html#alignment-and-visualisation",
-    "title": "RNA-Seq using Nextflow",
-    "section": "2. Alignment and Visualisation",
-    "text": "2. Alignment and Visualisation\n\nAlignment with STAR aligner\nVisualisation using …"
-  },
-  {
-    "objectID": "notebooks/2.1_The_pipeline.html#mapped-reads-to-gene-counts",
-    "href": "notebooks/2.1_The_pipeline.html#mapped-reads-to-gene-counts",
-    "title": "RNA-Seq using Nextflow",
-    "section": "3. Mapped reads to gene-counts",
-    "text": "3. Mapped reads to gene-counts\nConverting the reads mapped to the reference genome to a matrix which contains individual gene-counts per sample for downstream statistical enrichment analysis."
-  },
-  {
-    "objectID": "notebooks/2.1_The_pipeline.html#differential-expression-de-analysis",
-    "href": "notebooks/2.1_The_pipeline.html#differential-expression-de-analysis",
-    "title": "RNA-Seq using Nextflow",
-    "section": "4. Differential expression (DE) analysis",
-    "text": "4. Differential expression (DE) analysis\nIdentify statistically significant DE genes using tools such as the R-library DESeq2."
-  },
-  {
-    "objectID": "notebooks/2.1_The_pipeline.html#functional-interpretation",
-    "href": "notebooks/2.1_The_pipeline.html#functional-interpretation",
-    "title": "RNA-Seq using Nextflow",
-    "section": "5. Functional interpretation",
-    "text": "5. Functional interpretation\nFunctional enrichment analysis using tools such as the R-library clusterProfiler.\n\nWe will discuss each of the steps from (1) to (3) in detail today.\nThe steps (5) and (6) will be covered on Day 2 tomorrow.\n\n\nKey points\n\nTools such as FastQC can be used for assessing the sequencing read-quality.\nTrim galore is one of the many tools available for read-trimming based on multiple criteria.\nWe will use the aligner STAR to map the reads to the reference genome/transcriptome.\nThe identification of statistically significant DE genes can be done using R libraries such as DeSeq2."
-  },
-  {
-    "objectID": "notebooks/3.1_Revisiting_the_case_study.html",
-    "href": "notebooks/3.1_Revisiting_the_case_study.html",
+    "objectID": "notebooks/1.2_Running_nfcore_command.html",
+    "href": "notebooks/1.2_Running_nfcore_command.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/Running_nfcore_command.html",
-    "href": "notebooks/Running_nfcore_command.html",
+    "objectID": "notebooks/2.0_intro_to_nextflow_and_nfcore.html",
+    "href": "notebooks/2.0_intro_to_nextflow_and_nfcore.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/Running_nfcore-rnaseq_command_details.html",
-    "href": "notebooks/Running_nfcore-rnaseq_command_details.html",
+    "objectID": "notebooks/2.1_nfcore-rnaseq.html",
+    "href": "notebooks/2.1_nfcore-rnaseq.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html",
+    "href": "notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.0_The_pipeline.html",
+    "href": "notebooks/3.0_The_pipeline.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.1_Interpreting_results.html",
+    "href": "notebooks/3.1_Interpreting_results.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.2_fastQ_and_fastQC.html",
+    "href": "notebooks/3.2_fastQ_and_fastQC.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.3_Trimming.html",
+    "href": "notebooks/3.3_Trimming.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.4_Alignment_using_STAR.html",
+    "href": "notebooks/3.4_Alignment_using_STAR.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/3.5_Interpreting_results_2.html",
+    "href": "notebooks/3.5_Interpreting_results_2.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/4_Summary_Day1.html",
+    "href": "notebooks/4_Summary_Day1.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "Today we answered a lot of questions:\n\nWhat is RNA sequencing and what are it’s main applications?\nWhat are the main steps we perform to process raw RNA-seq data to raw gene counts?\nHow can workflow management tools make running bioinformatics workflows easier?\nHow to run the nf-core/rnaseq pipeline and interpret its outputs?\nWhat are the important features of the nf-core/rnaseq pipeline?\n\nOn day 2, we will learn about differential expression analysis and functional annotation of differentially expressed genes. We’ll still be working on Nimbus, but instead of working on the command line, we’ll be using R/RStudio.\n\nGS-link the updated course survey\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "notebooks/4_Summary_Day1.html#course-survey",
+    "href": "notebooks/4_Summary_Day1.html#course-survey",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "Course survey!",
+    "text": "Course survey!\nPlease fill out our course survey before you leave!\nSee you tomorrow! 😎"
+  },
+  {
+    "objectID": "notebooks/5_Revisiting_the_case_study.html",
+    "href": "notebooks/5_Revisiting_the_case_study.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
@@ -224,17 +126,17 @@
     "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/6.4_Interpreting_results_2.html#workflow-timeline",
-    "href": "notebooks/6.4_Interpreting_results_2.html#workflow-timeline",
+    "objectID": "notebooks/Running_nfcore-rnaseq_command_details.html",
+    "href": "notebooks/Running_nfcore-rnaseq_command_details.html",
     "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "Workflow timeline",
-    "text": "Workflow timeline\n\n\nDifferent processing times for different tools.\nEach process can be assigned specifc resources using a nextflow.config file.\nNextflow parallises runs of multiple samples for specific processes depending on the available rersources; This step can thus get constrained by available resources (CPUs/memory) on the resource (here Nimbus VM)."
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
-    "objectID": "notebooks/6.4_Interpreting_results_2.html#compute-resource-usage",
-    "href": "notebooks/6.4_Interpreting_results_2.html#compute-resource-usage",
+    "objectID": "setup.html",
+    "href": "setup.html",
     "title": "RNA-Seq using Nextflow: Day 1",
-    "section": "Compute resource usage",
-    "text": "Compute resource usage\n\n\nShows multiple graphical statistics displaying the resource usage for various processes in the run.\nThis helps to get an estimate of the required resources for independant processes and assign them for future runs.\n\n\nKey points\n\nNextflow provides easy to understand html log files, which can be used to understand the system resource requirement and hence planning for future big runs."
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
   }
 ]

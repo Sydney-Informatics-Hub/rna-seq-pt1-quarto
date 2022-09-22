@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow: Day 1 – learning_objectives</title>
+<title>RNA-Seq using Nextflow: Day 1 – summary_day1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="../notebooks/4_Summary_Day1.html">Day 1 wrap up</a>
+    <a class="nav-link active" href="../notebooks/4_Summary_Day1.html" aria-current="page">Day 1 wrap up</a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -170,14 +170,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-1-learning-objectives" id="toc-day-1-learning-objectives" class="nav-link active" data-scroll-target="#day-1-learning-objectives"><strong>Day 1 learning objectives</strong></a>
-  <ul class="collapse">
-  <li><a href="#introductory-slides" id="toc-introductory-slides" class="nav-link" data-scroll-target="#introductory-slides"><strong>Introductory slides</strong></a></li>
-  <li><a href="#run-the-nf-corernaseq-pipeline" id="toc-run-the-nf-corernaseq-pipeline" class="nav-link" data-scroll-target="#run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></a></li>
-  <li><a href="#why-use-nf-core-workflows" id="toc-why-use-nf-core-workflows" class="nav-link" data-scroll-target="#why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></a></li>
-  <li><a href="#the-ins-and-outs-of-nf-core-rnaseq" id="toc-the-ins-and-outs-of-nf-core-rnaseq" class="nav-link" data-scroll-target="#the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></a></li>
-  <li><a href="#the-rnaseq-pre-processing-workflow" id="toc-the-rnaseq-pre-processing-workflow" class="nav-link" data-scroll-target="#the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></a></li>
-  </ul></li>
+  <li><a href="#day-1-wrap-up" id="toc-day-1-wrap-up" class="nav-link active" data-scroll-target="#day-1-wrap-up"><strong>Day 1 wrap up</strong></a></li>
+  <li><a href="#course-survey" id="toc-course-survey" class="nav-link" data-scroll-target="#course-survey">Course survey!</a></li>
   </ul>
 </nav>
     </div>
@@ -186,55 +180,26 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="day-1-learning-objectives" class="level1">
-<h1><strong>Day 1 learning objectives</strong></h1>
-<p>Today, we will introduce you to the first steps of analysing RNA sequencing (RNA-seq) data using the command line. We will learn about the pre-processing workflow we use to convert raw sequence reads to analysis-ready count data.</p>
-<section id="introductory-slides" class="level3">
-<h3 class="anchored" data-anchor-id="introductory-slides"><strong>Introductory slides</strong></h3>
+<section id="day-1-wrap-up" class="level2">
+<h2 class="anchored" data-anchor-id="day-1-wrap-up"><strong>Day 1 wrap up</strong></h2>
+<p>Today we answered a lot of questions:</p>
 <ul>
-<li>Understand how RNA-seq data is generated</li>
-<li>Review the applications of RNA-seq</li>
-<li>Understand experimental design considerations for differential expression (DE) analysis</li>
-<li>Understand the basic RNA-seq DE analysis workflow</li>
+<li>What is RNA sequencing and what are it’s main applications?</li>
+<li>What are the main steps we perform to process raw RNA-seq data to raw gene counts?</li>
+<li>How can workflow management tools make running bioinformatics workflows easier?</li>
+<li>How to run the nf-core/rnaseq pipeline and interpret its outputs?</li>
+<li>What are the important features of the nf-core/rnaseq pipeline?</li>
 </ul>
+<p>On day 2, we will learn about differential expression analysis and functional annotation of differentially expressed genes. We’ll still be working on Nimbus, but instead of working on the command line, we’ll be using R/RStudio.</p>
+<p><img src="../fig/nfcore_whatNext.png" class="img-fluid"></p>
+<p><strong>GS-link the updated course survey</strong></p>
 </section>
-<section id="run-the-nf-corernaseq-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></h3>
-<ul>
-<li>Set up your computer for this workshop series</li>
-<li>Log in to your Nimbus instance</li>
-<li>Download the input data files</li>
-<li>Run the nf-core/rnaseq command to excecute the pipeline</li>
-</ul>
-</section>
-<section id="why-use-nf-core-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></h3>
-<ul>
-<li>Understand why Nextflow and nf-core are good options for reproducible and portable bioinformatics workflows</li>
-</ul>
-</section>
-<section id="the-ins-and-outs-of-nf-core-rnaseq" class="level3">
-<h3 class="anchored" data-anchor-id="the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></h3>
-<ul>
-<li>Write and run a basic nf-core/rnaseq command to perform RNA-seq data pre-processing</li>
-<li>Understand what input files and parameters are required to run the command</li>
-<li>Review the output files generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to adjust the run command to customise the workflow</li>
-</ul>
-</section>
-<section id="the-rnaseq-pre-processing-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></h3>
-<ul>
-<li>Understand the different steps in a typical RNA-seq pre-processing pipeline</li>
-<li>Evaluate the results and outputs generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to perform quality checking of raw sequence data</li>
-<li>Understand the requirements for trimming raw RNA-seq reads</li>
-<li>Understand the process of aligning RNA-seq reads to a reference genome</li>
-<li>Understand how read alignments are converted to gene count data</li>
-</ul>
+<section id="course-survey" class="level2">
+<h2 class="anchored" data-anchor-id="course-survey">Course survey!</h2>
+<p><strong><em>Please</em></strong> fill out our <strong><a href="">course survey</a></strong> before you leave!</p>
+<p><strong>See you tomorrow!</strong> <span class="emoji" data-emoji="sunglasses">😎</span></p>
 
 
-</section>
 </section>
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->

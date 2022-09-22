@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow: Day 1 – learning_objectives</title>
+<title>RNA-Seq using Nextflow: Day 1 – alignment_using_star</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -170,13 +170,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-1-learning-objectives" id="toc-day-1-learning-objectives" class="nav-link active" data-scroll-target="#day-1-learning-objectives"><strong>Day 1 learning objectives</strong></a>
+  <li><a href="#read-alignment-and-quantification" id="toc-read-alignment-and-quantification" class="nav-link active" data-scroll-target="#read-alignment-and-quantification"><strong>Read alignment and quantification</strong></a>
   <ul class="collapse">
-  <li><a href="#introductory-slides" id="toc-introductory-slides" class="nav-link" data-scroll-target="#introductory-slides"><strong>Introductory slides</strong></a></li>
-  <li><a href="#run-the-nf-corernaseq-pipeline" id="toc-run-the-nf-corernaseq-pipeline" class="nav-link" data-scroll-target="#run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></a></li>
-  <li><a href="#why-use-nf-core-workflows" id="toc-why-use-nf-core-workflows" class="nav-link" data-scroll-target="#why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></a></li>
-  <li><a href="#the-ins-and-outs-of-nf-core-rnaseq" id="toc-the-ins-and-outs-of-nf-core-rnaseq" class="nav-link" data-scroll-target="#the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></a></li>
-  <li><a href="#the-rnaseq-pre-processing-workflow" id="toc-the-rnaseq-pre-processing-workflow" class="nav-link" data-scroll-target="#the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></a></li>
+  <li><a href="#alignment-to-reference-genome" id="toc-alignment-to-reference-genome" class="nav-link" data-scroll-target="#alignment-to-reference-genome"><strong>Alignment to reference genome</strong></a></li>
+  <li><a href="#read-quantification" id="toc-read-quantification" class="nav-link" data-scroll-target="#read-quantification"><strong>Read quantification</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -186,55 +183,86 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="day-1-learning-objectives" class="level1">
-<h1><strong>Day 1 learning objectives</strong></h1>
-<p>Today, we will introduce you to the first steps of analysing RNA sequencing (RNA-seq) data using the command line. We will learn about the pre-processing workflow we use to convert raw sequence reads to analysis-ready count data.</p>
-<section id="introductory-slides" class="level3">
-<h3 class="anchored" data-anchor-id="introductory-slides"><strong>Introductory slides</strong></h3>
+<section id="read-alignment-and-quantification" class="level1">
+<h1><strong>Read alignment and quantification</strong></h1>
+<section id="questions" class="level3 unlisted questions">
+<h3 class="unlisted anchored" data-anchor-id="questions">Questions</h3>
 <ul>
-<li>Understand how RNA-seq data is generated</li>
-<li>Review the applications of RNA-seq</li>
-<li>Understand experimental design considerations for differential expression (DE) analysis</li>
-<li>Understand the basic RNA-seq DE analysis workflow</li>
+<li>How to map sequencing reads to a reference genome?</li>
+<li>How to use the mapped alignments to quantify gene-counts</li>
 </ul>
 </section>
-<section id="run-the-nf-corernaseq-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></h3>
+<p>We’ve moved on to the second stage of the nf-core/rnaseq workflow: read alignment and quantification (red box below).</p>
+<p><img src="../fig/nfcore_stage2And3.png" class="img-fluid"></p>
+<section id="alignment-to-reference-genome" class="level3">
+<h3 class="anchored" data-anchor-id="alignment-to-reference-genome"><strong>Alignment to reference genome</strong></h3>
+<p><strong>GS- can you confirm this is correct please.</strong><br>
+After read trimming, the nf-core/rnaseq pipeline maps reads to a reference genome specified by the user. Keep in mind that RNA-seq specific alignment tools are different to whole genome alignment tools. They are designed to be <strong>‘splice aware’</strong>, meaning they are capable of differentiating intronic from exonic regions in the alignment process.</p>
+<p>Bulk RNA-seq reads are derived from mature mRNA and contain only exons (and no introns). This means a sequence read can span 2 exons. Splice-aware aligners use a reference <strong>genome</strong>, not a transcriptome to perform read alignment, which contain intergenic, intronic and exonic sequences. This means that when they’re aligned to the reference genome, RNA-seq reads might span large introns. Splice aware aligners know not to align the RNA-seq reads to introns and can align a read across exons.</p>
+<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Genetics 101 refresher: mRNA splicing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>mRNA splicing is the process by which an mRNA transcript prepares to be translated into an amino acid sequence. It works by removing introns and splicing all exons back together to create a mature mRNA that is transported from the nucleus to the cytoplasm, ready to undergo translation.</p>
+</div>
+</div>
+<p>The most commonly used aligners for short-read sequencing are available in the nf-core/rnaseq workflow, including <a href="https://github.com/alexdobin/STAR">STAR</a> and <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a>. Aligned sequences for each sample are output in the <a href="https://en.wikipedia.org/wiki/BAM_(file_format)">bam</a> file format.</p>
+<p>The challenge activity for this session will be a group exercise. In breakout rooms, your facilitator will demonstrate how we can visualise alignments using a tool called <a href="https://software.broadinstitute.org/software/igv/">IGV</a>.</p>
+<p><strong>GS- the link to the case study is broken</strong></p>
+</section>
+<section id="challenge" class="level3 unlisted challenge">
+<h3 class="unlisted anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
+<p>This is a hard one! Thinking back to the <a href="">case study</a>, can you work out how you would handle the scenario below?</p>
+<p>Imagine that <strong>we have forgotten to label the conditional groupings of our samples and we don’t know which samples belong to the wildtype or knockout groups!</strong></p>
+<p>Can we use the alignment files to assign samples to their correct treatment group?</p>
+<details>
+<summary>
+Solution
+</summary>
 <ul>
-<li>Set up your computer for this workshop series</li>
-<li>Log in to your Nimbus instance</li>
-<li>Download the input data files</li>
-<li>Run the nf-core/rnaseq command to excecute the pipeline</li>
+<li>From the case study, we know a loss of function mutation of&nbsp;<em>Gtf2ird1</em>&nbsp;was generated by an insertion of a&nbsp;Myc transgene, resulting in a 40&nbsp;kb deletion surrounding exon 1.</li>
+<li>Navigate to the gene in the mm10 assemble (chr5:134332897-134481480)</li>
+<li>Samples SRR3473984, SRR3473985, SRR3473984 contain reads covering exon 1. These are Wildtype samples.</li>
+<li>Samples SRR3473987, SRR3473988, SRR3473989 DO NOT contain reads covering exon 1. These are Knockout samples.</li>
+</ul>
+</details>
+</section>
+<section id="read-quantification" class="level3">
+<h3 class="anchored" data-anchor-id="read-quantification"><strong>Read quantification</strong></h3>
+<p><strong>GS- This needs to be updated in accordance with whats in the <a href="https://docs.google.com/document/d/1n5k8U3RyBTr5cXcJ34hSmAqBqF7Perow7MOZp0DoZFM/edit#heading=h.vyktmcp6jqez">runsheet</a></strong></p>
+<p>Following read alignment, we use the alignment files to calculate raw gene-count data for each sample. We can then use these count files (called gene-count matrix), to identify differentially expressed genes.</p>
+<p>To perform read quantification, nf-core/rnaseq uses</p>
+<strong>GS- This needs to be updated in accordance with whats in the <a href="https://docs.google.com/document/d/1n5k8U3RyBTr5cXcJ34hSmAqBqF7Perow7MOZp0DoZFM/edit#heading=h.vyktmcp6jqez">runsheet</a></strong><br>
+
+</section>
+<section id="challenge-1" class="level3 unlisted challenge">
+<h3 class="unlisted anchored" data-anchor-id="challenge-1"><strong>Challenge</strong></h3>
+<ul>
+<li>Identify the output folder in which the alignment and quantification results are placed.</li>
+<li>Identify and check out a few files which you think are important. <br><strong>HINT</strong> You can use the unix command <code>cat</code> which prints content of a file onto the terminal.</li>
+</ul>
+<details>
+<summary>
+Solution
+</summary>
+There are quite a few files generated in this step. We can try and discuss some of them.
+</details>
+</section>
+<section id="key-points" class="level3 unlisted keypoints">
+<h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
+<ul>
+<li>Splice aware alignemnet tools like HISAT2 and STAR must be used when aligning RNA-seq reads to a reference genome.</li>
+<li>?? <strong>GS- a key point needed for quantification</strong></li>
 </ul>
 </section>
-<section id="why-use-nf-core-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></h3>
-<ul>
-<li>Understand why Nextflow and nf-core are good options for reproducible and portable bioinformatics workflows</li>
-</ul>
-</section>
-<section id="the-ins-and-outs-of-nf-core-rnaseq" class="level3">
-<h3 class="anchored" data-anchor-id="the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></h3>
-<ul>
-<li>Write and run a basic nf-core/rnaseq command to perform RNA-seq data pre-processing</li>
-<li>Understand what input files and parameters are required to run the command</li>
-<li>Review the output files generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to adjust the run command to customise the workflow</li>
-</ul>
-</section>
-<section id="the-rnaseq-pre-processing-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></h3>
-<ul>
-<li>Understand the different steps in a typical RNA-seq pre-processing pipeline</li>
-<li>Evaluate the results and outputs generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to perform quality checking of raw sequence data</li>
-<li>Understand the requirements for trimming raw RNA-seq reads</li>
-<li>Understand the process of aligning RNA-seq reads to a reference genome</li>
-<li>Understand how read alignments are converted to gene count data</li>
-</ul>
 
 
-</section>
 </section>
 
 <p>All materials copyright Sydney Informatics Hub, University of Sydney</p></main> <!-- /main -->

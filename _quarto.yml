@@ -10,45 +10,42 @@ website:
       - href: https://sydney-informatics-hub.github.io/training.RNAseq.series-quarto/
         text: Home
       - href: setup.html
-        text: "Setup"
-      - text: "Start Day 1"
+        text: "Set-up"
+      - text: "Day 1 kick off"
         menu:
-        - text: "Learning objectives: Day 1"
+        - text: "Learning objectives"
           href: notebooks/1.0_Learning_objectives.html
         - text: "Introductory slides"
           href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
-        - text: "Download all files"
+        - text: "Prepare your data"
           href: notebooks/1.1_Download_data.html
-        - text: "Run nf-core/rnaseq pipeline on Pawsey’s Nimbus Cloud"
-          href: notebooks/Running_nfcore_command.html
-      - text: "nf-core workflows"
+        - text: "Run the pipeline"
+          href: notebooks/1.2_Running_nfcore_command.html
+      - text: "Why use nf-core/rnaseq?"
         menu:
-        - text: "Why use Nextflow?"
-          href: notebooks/3_intro_to_nextflow_and_nfcore.html
-        - text: "Introduction to nf-core/rnaseq"
-          href: notebooks/4_nfcore-rnaseq.html
-        - text: "nf-core/rnaseq : Parameters"
-          href: notebooks/6.1_nfcore-rnaseq_otherImportantParameters.html
-      - text: "RNA-seq differential expression (DE) analysis"
+        - text: "Introduction to Nextflow"
+          href: notebooks/2.0_intro_to_nextflow_and_nfcore.html
+        - text: "Introducing nf-core/rnaseq"
+          href: notebooks/2.1_nfcore-rnaseq.html
+        - text: "Customising nf-core/rnaseq"
+          href: notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html
+      - text: "What is nf-core/rnaseq doing?"
         menu:
-        - text: "Results from nf-core/rnaseq"
-          href: notebooks/6.3_Interpreting_results.html
-        - text: "The main steps involved in RNA-seq (DE) analysis"
-          href: notebooks/2.1_The_pipeline.html
-        - text: "Get raw sequencing data and check quality"
-          href: notebooks/2.2_fastQ_and_fastQC.html
-        - text: "Trimming"
-          href: notebooks/2.3_Trimming.html
-        - text: "Alignment to reference genome and quantification"
-          href: notebooks/2.4_Alignment_using_STAR.html
-        - text: "Helpful logs"
-          href: notebooks/6.4_Interpreting_results_2.html
-      - text: "Summary Day 1"
-        menu:
-        - text: "Raw sequence to gene-counts"
-          href: notebooks/7_Summary_Day1.html
+        - text: "RNA-seq workflow overview"
+          href: notebooks/3.0_The_pipeline.html
+        - text: "nf-core/rnaseq results"
+          href: notebooks/3.1_Interpreting_results.html
+        - text: "Raw sequencing data QC"
+          href: notebooks/3.2_fastQ_and_fastQC.html
+        - text: "Read trimming"
+          href: notebooks/3.3_Trimming.html
+        - text: "Read alignment and quantification"
+          href: notebooks/3.4_Alignment_using_STAR.html
+        - text: "Nextflow logs"
+          href: notebooks/3.5_Interpreting_results_2.html
+      - text: "Day 1 wrap up"
+        href: notebooks/4_Summary_Day1.html
       
-
   body-footer: "All materials copyright Sydney Informatics Hub, University of Sydney"
           
 format:

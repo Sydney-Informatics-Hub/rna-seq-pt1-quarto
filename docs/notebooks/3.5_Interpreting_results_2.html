@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>RNA-Seq using Nextflow: Day 1 – learning_objectives</title>
+<title>RNA-Seq using Nextflow: Day 1 – interpreting_results_2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -170,13 +233,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#day-1-learning-objectives" id="toc-day-1-learning-objectives" class="nav-link active" data-scroll-target="#day-1-learning-objectives"><strong>Day 1 learning objectives</strong></a>
+  <li><a href="#useful-nextflow-logs" id="toc-useful-nextflow-logs" class="nav-link active" data-scroll-target="#useful-nextflow-logs"><strong>Useful Nextflow logs</strong></a>
   <ul class="collapse">
-  <li><a href="#introductory-slides" id="toc-introductory-slides" class="nav-link" data-scroll-target="#introductory-slides"><strong>Introductory slides</strong></a></li>
-  <li><a href="#run-the-nf-corernaseq-pipeline" id="toc-run-the-nf-corernaseq-pipeline" class="nav-link" data-scroll-target="#run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></a></li>
-  <li><a href="#why-use-nf-core-workflows" id="toc-why-use-nf-core-workflows" class="nav-link" data-scroll-target="#why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></a></li>
-  <li><a href="#the-ins-and-outs-of-nf-core-rnaseq" id="toc-the-ins-and-outs-of-nf-core-rnaseq" class="nav-link" data-scroll-target="#the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></a></li>
-  <li><a href="#the-rnaseq-pre-processing-workflow" id="toc-the-rnaseq-pre-processing-workflow" class="nav-link" data-scroll-target="#the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></a></li>
+  <li><a href="#workflow-execution-report" id="toc-workflow-execution-report" class="nav-link" data-scroll-target="#workflow-execution-report"><strong>Workflow execution report</strong></a></li>
+  <li><a href="#workflow-timeline-report" id="toc-workflow-timeline-report" class="nav-link" data-scroll-target="#workflow-timeline-report"><strong>Workflow timeline report</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -186,52 +246,43 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="day-1-learning-objectives" class="level1">
-<h1><strong>Day 1 learning objectives</strong></h1>
-<p>Today, we will introduce you to the first steps of analysing RNA sequencing (RNA-seq) data using the command line. We will learn about the pre-processing workflow we use to convert raw sequence reads to analysis-ready count data.</p>
-<section id="introductory-slides" class="level3">
-<h3 class="anchored" data-anchor-id="introductory-slides"><strong>Introductory slides</strong></h3>
+<section id="useful-nextflow-logs" class="level1">
+<h1><strong>Useful Nextflow logs</strong></h1>
+<section id="questions" class="level3 unlisted questions">
+<h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
-<li>Understand how RNA-seq data is generated</li>
-<li>Review the applications of RNA-seq</li>
-<li>Understand experimental design considerations for differential expression (DE) analysis</li>
-<li>Understand the basic RNA-seq DE analysis workflow</li>
+<li>How can we use the workflow logs generated by Nextflow to understand the resource needs of our data?<br>
+</li>
+<li>What were the main observations and possible limitations when running the pipeline?</li>
 </ul>
 </section>
-<section id="run-the-nf-corernaseq-pipeline" class="level3">
-<h3 class="anchored" data-anchor-id="run-the-nf-corernaseq-pipeline"><strong>Run the nf-core/rnaseq pipeline</strong></h3>
+<p><br>
+</p>
+<p>Nextflow has some inbuilt reporting features that are used by the nf-core/rnaseq pipeline. The nf-core/rnaseq pipeline outputs these reports to the directory we ran the pipeline from (<code>/home/training/base_directory/working_directory</code>). The information presented in these reports helps to get an estimate of the required resources for independant processes and assign them for future runs.</p>
+<p>Remember back to the run command we used? We specified two flags to create these reports:</p>
+<section id="workflow-execution-report" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-execution-report"><strong>Workflow execution report</strong></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>-with-report excecution_report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This instructs Nextflow to generate an <a href="https://www.nextflow.io/docs/latest/tracing.html#execution-report">execution report</a> as an .html file. This file is broken down into:</p>
 <ul>
-<li>Set up your computer for this workshop series</li>
-<li>Log in to your Nimbus instance</li>
-<li>Download the input data files</li>
-<li>Run the nf-core/rnaseq command to excecute the pipeline</li>
+<li>Summary: execution status, run command, execution time, other workflow metadata.</li>
+<li>Resources: plots of disturbution of CPU, RAM usage for each workflow process.<br>
+</li>
+<li>Tasks: all tasks executed by the run command, their status, and command run.</li>
+</ul>
+<p><img src="../fig/cpu_usage.png" class="img-fluid"></p>
+</section>
+<section id="workflow-timeline-report" class="level2">
+<h2 class="anchored" data-anchor-id="workflow-timeline-report"><strong>Workflow timeline report</strong></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>-with-timeline timeline_report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This instructs Nextflow to generate a <a href="https://www.nextflow.io/docs/latest/tracing.html#timeline-report">timeline report</a> as an .html file. This file contains bar plots for each process, how long they took to run and the maximum amount of memory consumed.</p>
+<p><img src="../fig/timeline.png" class="img-fluid"></p>
+<section id="key-points" class="level3 unlisted keypoints">
+<h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
+<ul>
+<li>Nextflow provides easy to understand html log files, which can be used to understand the system resource requirements.</li>
 </ul>
 </section>
-<section id="why-use-nf-core-workflows" class="level3">
-<h3 class="anchored" data-anchor-id="why-use-nf-core-workflows"><strong>Why use nf-core workflows?</strong></h3>
-<ul>
-<li>Understand why Nextflow and nf-core are good options for reproducible and portable bioinformatics workflows</li>
-</ul>
-</section>
-<section id="the-ins-and-outs-of-nf-core-rnaseq" class="level3">
-<h3 class="anchored" data-anchor-id="the-ins-and-outs-of-nf-core-rnaseq"><strong>The ins and outs of nf-core-rnaseq</strong></h3>
-<ul>
-<li>Write and run a basic nf-core/rnaseq command to perform RNA-seq data pre-processing</li>
-<li>Understand what input files and parameters are required to run the command</li>
-<li>Review the output files generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to adjust the run command to customise the workflow</li>
-</ul>
-</section>
-<section id="the-rnaseq-pre-processing-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="the-rnaseq-pre-processing-workflow"><strong>The RNAseq pre-processing workflow</strong></h3>
-<ul>
-<li>Understand the different steps in a typical RNA-seq pre-processing pipeline</li>
-<li>Evaluate the results and outputs generated by the nf-core/rnaseq pipeline</li>
-<li>Understand how to perform quality checking of raw sequence data</li>
-<li>Understand the requirements for trimming raw RNA-seq reads</li>
-<li>Understand the process of aligning RNA-seq reads to a reference genome</li>
-<li>Understand how read alignments are converted to gene count data</li>
-</ul>
 
 
 </section>
