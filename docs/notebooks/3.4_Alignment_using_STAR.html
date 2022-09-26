@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="read-alignment-and-quantification" class="level1">
 <h1><strong>Read alignment and quantification</strong></h1>
 <section id="questions" class="level3 unlisted questions">
-<h3 class="unlisted anchored" data-anchor-id="questions">Questions</h3>
+<h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
 <li>How to map sequencing reads to a reference genome?</li>
 <li>How to use the mapped alignments to quantify gene-counts</li>
@@ -211,12 +211,18 @@ Genetics 101 refresher: mRNA splicing
 <p>mRNA splicing is the process by which an mRNA transcript prepares to be translated into an amino acid sequence. It works by removing introns and splicing all exons back together to create a mature mRNA that is transported from the nucleus to the cytoplasm, ready to undergo translation.</p>
 </div>
 </div>
-<p>The most commonly used aligners for short-read sequencing are available in the nf-core/rnaseq workflow, including <a href="https://github.com/alexdobin/STAR">STAR</a> and <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a>. Aligned sequences for each sample are output in the <a href="https://en.wikipedia.org/wiki/BAM_(file_format)">bam</a> file format.</p>
+<p>The nf-core/rnaseq pipeline offers us various alignment and quantification routes:</p>
+<ul>
+<li>STAR – Salmon</li>
+<li>STAR – RSEM</li>
+<li>HISAT2 – no quantification</li>
+</ul>
+<p>Aligned sequences for each sample are output in the <a href="https://en.wikipedia.org/wiki/BAM_(file_format)">bam</a> file format.</p>
 <p>The challenge activity for this session will be a group exercise. In breakout rooms, your facilitator will demonstrate how we can visualise alignments using a tool called <a href="https://software.broadinstitute.org/software/igv/">IGV</a>.</p>
 </section>
 <section id="challenge" class="level3 unlisted challenge">
 <h3 class="unlisted anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
-<p>This is a hard one! Thinking back to the <a href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">case study</a>, can you work out how you would handle the scenario below?</p>
+<p>This is a hard one! Thinking back to the <a href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">case study</a> (slide 13-14), can you work out how you would handle the scenario below?</p>
 <p>Oh no! We have forgotten to label the conditional groupings of our samples and we don’t know which samples belong to the wildtype or knockout groups!</p>
 <p>Can we use the alignment files to assign samples to their correct treatment group?</p>
 <details>
@@ -233,14 +239,14 @@ Solution
 </section>
 <section id="read-quantification" class="level3">
 <h3 class="anchored" data-anchor-id="read-quantification"><strong>Read quantification</strong></h3>
-<p>Following read alignment, we use the alignment files to calculate raw gene-count data for each sample. We can then use these count files (called gene-count matrix), to identify differentially expressed genes.</p>
+<p>Following read alignment, we use the alignment files to calculate raw gene-count data for each sample. We can then use these count files (called gene-count matrix), to identify differentially expressed genes. By default, the nf-core/rnaseq pipeline runs Salmon for transcript quantification, following alignment by STAR.</p>
 <p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.5_Interpreting_results_2.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Nextflow logs</strong> on the menu bar.</p>
 </section>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
 <li>Splice aware alignemnet tools like HISAT2 and STAR must be used when aligning RNA-seq reads to a reference genome.</li>
-<li>?? <strong>GS- a key point needed for quantification</strong></li>
+<li>A variety of methods for read alignment and transcript quantification are available in the nf-core/rnaseq pipeline.</li>
 </ul>
 </section>
 

@@ -28,8 +28,10 @@ We recommend attending both courses if you would like an end-to-end overview of 
 
 ## **Course survey!** {.unlisted}
 
-Please fill out our **[course survey](https://www.surveymonkey.com/r/rnaseq2022)** before you leave! Help us help you! :grin:
+Please fill out our **[course survey](https://www.surveymonkey.com/r/rnaseq2022)** before you leave! Help us help you!
 
 ## **Credits**{.unlisted}
 
 This workshop series developed by the Sydney Informatics Hub, University of Sydney in partnership with the Pawsey Supercomputing Research Centre, AARnet, QCIF, and the Australian BioCommons. 
+
+![](/fig/partners.png)
