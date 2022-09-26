@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -193,8 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Where can I run the nf-core/rnaseq pipeline?</li>
 </ul>
 </section>
-<p><br>
-</p>
+<p><br></p>
 <p>The nf-core/rnaseq pipeline can be used to analyse RNA sequencing data obtained from organisms with a reference genome and annotated gene dataset. It is built using <a href="https://www.nextflow.io/">Nextflow</a> and is flexible and modular, allowing users to choose which processes to run and giving users the choice of different tools for essential steps like read alignment.</p>
 <section id="what-tools-and-processes-does-the-pipeline-run" class="level2">
 <h2 class="anchored" data-anchor-id="what-tools-and-processes-does-the-pipeline-run"><strong>What tools and processes does the pipeline run?</strong></h2>
@@ -202,19 +201,20 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Raw data pre-processing and quality control using <a href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a>, <a href="http://multiqc.info/">MultiQC</a> and <a href="https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/">Trim Galore!</a><br>
 </li>
-<li>Genome alignment and quantification using a choice of <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="https://github.com/deweylab/RSEM">RSEM</a>, <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">HISAT2</a> or <a href="https://combine-lab.github.io/salmon/">Salmon</a><br>
+<li>Genome alignment and quantification using a choice of <a href="https://github.com/alexdobin/STAR">STAR</a>, <a href="https://github.com/deweylab/RSEM">RSEM</a>, or <a href="https://ccb.jhu.edu/software/hisat2/index.shtml">HISAT2</a><br>
 </li>
-<li>Pseudo-alignment and quantification</li>
-<li>Post-processing of aligned sequences including alignment indexing, removal of duplicate reads, and transcript assembly and quantification</li>
-<li>Final quality control using multiple tools for evaluating alignment and quantification results.</li>
+<li>Pseudo-alignment and quantification with <a href="https://combine-lab.github.io/salmon/">Salmon</a></li>
+<li>Post-processing of aligned sequences including indexing, removal of duplicate reads, and transcript assembly and quantification</li>
+<li>Final quality control for evaluating alignment and quantification results.</li>
 </ol>
 <p><img src="../fig/nfcore_all_stages_new.png" class="img-fluid"></p>
 </section>
 <section id="where-can-i-run-the-pipeline" class="level2">
 <h2 class="anchored" data-anchor-id="where-can-i-run-the-pipeline"><strong>Where can I run the pipeline?</strong></h2>
 <p>Given Nextflow’s focus on portability and reproducibility, the nf-core/rnaseq pipeline can be theoretically be run on any compute environment where you can install Nextflow and one of the software management tools like Singularity, Docker, and Conda among others. Take a look at their <a href="https://nf-co.re/docs/usage/installation#nextflow">installation guide</a> for more details.</p>
-<p>Keep in mind that each of the tools the nf-core/rnaseq pipeline uses has its own minimum compute resource requirements. This means you’ll need to make sure the environment you’re working on has enough RAM and CPUs to process your data and disk space to store your raw data, intermediate files, and final results. Given how greedy these processes can be, we usually recommend you don’t work on your personal computer. Today, we’re working on Pawsey’s Nimbus cloud which is accessible to all Australian researchers. You might also consider other national high performance computing (HPC) platforms, your institution’s HPC, as well as commercial cloud offerings.</p>
-<p>Take a look at <a href="https://www.youtube.com/watch?v=hNTbngSc-W0">this Australian BioCommons webinar</a> if you’d like to learn more about understanding computing resources of bioinformatics analyses and how you can access the resources you need.</p>
+<p>Keep in mind that each of the tools the nf-core/rnaseq pipeline uses has its own minimum compute resource requirements. This means you’ll need to make sure the environment you’re working on has enough RAM and CPUs to process your data and disk space to store your raw data, intermediate files, and final results. Given how greedy these processes can be, we usually recommend you don’t work on your personal computer. Today, we’re working on <a href="https://support.pawsey.org.au/documentation/display/US/Nimbus+for+Bioinformatics">Pawsey’s Nimbus cloud</a> which is accessible to all Australian researchers. You might also consider other national high performance computing (HPC) platforms, your institution’s HPC, as well as commercial cloud offerings.</p>
+<p>Take a look at this <a href="https://www.youtube.com/watch?v=hNTbngSc-W0">Australian BioCommons webinar</a> if you’d like to learn more about understanding computing resources of bioinformatics analyses and how you can access the resources you need.</p>
+<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">Proceed to the next lesson</a> by clicking on <strong>Why use nf-core/rnaseq? &gt; Customising nf-core/rnaseq</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>

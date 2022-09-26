@@ -8,24 +8,28 @@ output:
 fig-cap-location: top
 ---
 
-On day 1 of this workshop series, we will introduce you to the __data pre-processing pipeline for bulk RNA sequencing (RNA-seq)__ using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the __[nf-core/rnaseq Nextflow pipeline](https://nf-co.re/rnaseq/3.8.1) on [Pawsey's Nimbus Cloud](https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation)__. 
+In **part 1** of this workshop series, we will introduce you to the **data pre-processing pipeline for bulk RNA sequencing (RNA-seq)** using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the **[nf-core/rnaseq](https://nf-co.re/rnaseq/3.8.1)** Nextflow pipeline on **[Pawsey's Nimbus Cloud](https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation)**. 
 
-### Target audience
-This workshop is designed for researchers, students, and life scientists who are new to RNA-seq for differential expression and pathway analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn how to use [nf-co.re](https://nf-co.re/) workflows.  
+## **Target audience**{.unlisted}
 
-### Useful resources
-- Introduction to __[Command Line for Genomics](https://datacarpentry.org/shell-genomics/)__
-- __[Nextflow and Supercomputing at Pawsey](https://www.biocommons.org.au/events/nextflow-nimbus)__ : WEBINAR: Portable, reproducible and scalable bioinformatics workflows using Nextflow and Pawsey Nimbus Cloud. 
+This workshop series is suitable for people who are familiar with working at command line interface and may be new to RNA-seq for differential expression analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn about and use [nf-co.re](https://nf-co.re/) workflows. 
 
-### How to navigate the webpages
-Please use the Menu bar on the top. We will start with the `Setup` page and then naviate to the right. Each main menu header has sub-header which will be visible when you click on the main-menu, as shown below.
+## **How to navigate the webpages**{.unlisted}
 
-![**Menu bar for navigation**](/fig/MenuBar_Day1.png)
+Please use the Menu bar to move between lessons. We will start Day 1 with the `Setup` page and then naviate to the right. Each main menu header has sub-header which will be visible when you click on the main-menu, as shown below.
 
-### Follow-on courses
+![](/fig/MenuBar_Day1.png)
+
+## **Follow-on courses**{.unlisted}
+
 This course is __part one__ of the two-part __[RNA sequencing training series](https://sydney-informatics-hub.github.io/training.RNAseq.series/)__. The second part of the series uses R/R Studio on Pawsey Nimbus Cloud to perform differential expression and pathway analysis using raw count data generated in part 1.
 
 We recommend attending both courses if you would like an end-to-end overview of how to perform the analysis. If you are only interested in the technologies used, you may be able to get away with attending only the parts of interest. 
 
-## Course survey!
-**_Please_** fill out our **[course survey](https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR)** before you leave!
+## **Course survey!** {.unlisted}
+
+Please fill out our **[course survey](https://www.surveymonkey.com/r/rnaseq2022)** before you leave! Help us help you! :grin:
+
+## **Credits**{.unlisted}
+
+This workshop series developed by the Sydney Informatics Hub, University of Sydney in partnership with the Pawsey Supercomputing Research Centre, AARnet, QCIF, and the Australian BioCommons. 

@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -172,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#raw-sequence-data-quality-control" id="toc-raw-sequence-data-quality-control" class="nav-link active" data-scroll-target="#raw-sequence-data-quality-control"><strong>Raw sequence data quality control</strong></a>
   <ul class="collapse">
-  <li><a href="#fastq-format" id="toc-fastq-format" class="nav-link" data-scroll-target="#fastq-format">Fastq format</a></li>
+  <li><a href="#fastq-format" id="toc-fastq-format" class="nav-link" data-scroll-target="#fastq-format"><strong>Fastq format</strong></a></li>
   <li><a href="#what-are-phred-quality-scores" id="toc-what-are-phred-quality-scores" class="nav-link" data-scroll-target="#what-are-phred-quality-scores"><strong>What are Phred quality scores?</strong></a></li>
   <li><a href="#what-quality-metrics-can-we-evaluate-with-fastqc" id="toc-what-quality-metrics-can-we-evaluate-with-fastqc" class="nav-link" data-scroll-target="#what-quality-metrics-can-we-evaluate-with-fastqc"><strong>What quality metrics can we evaluate with FastQC?</strong></a></li>
   </ul></li>
@@ -194,11 +194,17 @@ ul.task-list li input[type="checkbox"] {
 <li>How can I evaluate the quality of my raw data using FastQC?</li>
 </ul>
 </section>
-<p>We’re starting at the first stage of the nf-core/rnaseq workflow, specifically with raw sequence data (red box below). When your data is sequenced, it will be output in the fastq format by the sequencing machine.</p>
+<p><br> We’re starting at the first stage of the nf-core/rnaseq workflow, specifically with raw sequence data (red box below). When your data is sequenced, it will be output in the fastq format by the sequencing machine.</p>
 <p><img src="../fig/nfcore_stage1.1.png" class="img-fluid"></p>
 <section id="fastq-format" class="level2">
-<h2 class="anchored" data-anchor-id="fastq-format">Fastq format</h2>
-<p><a href="https://en.wikipedia.org/wiki/FASTQ_format">Fastq</a> is a text-based format for storing both a biological sequence (usually nucleotide sequence) and it’s corresponding quality score. Each entry in a fastq file will consist of 4 lines: 1. A sequence identifier (label) 2. The nucleotide sequence 3. A separator line, usually just a plus (+) sign 4. The base call quality score per nucleotide. These are Phred scored, using ASCII characters.</p>
+<h2 class="anchored" data-anchor-id="fastq-format"><strong>Fastq format</strong></h2>
+<p><a href="https://en.wikipedia.org/wiki/FASTQ_format">Fastq</a> is a text-based format for storing both a biological sequence (usually nucleotide sequence) and it’s corresponding quality score. Each entry in a fastq file will consist of 4 lines:</p>
+<ol type="1">
+<li>A sequence identifier (label)</li>
+<li>The nucleotide sequence</li>
+<li>A separator line, usually just a plus (+) sign</li>
+<li>The base call quality score per nucleotide. These are Phred scored, using ASCII characters.</li>
+</ol>
 <p><img src="../fig/fastq_format.jpg" class="img-fluid"></p>
 </section>
 <section id="what-are-phred-quality-scores" class="level2">
@@ -246,7 +252,7 @@ Solution
 </ol>
 </details>
 </section>
-<p>Once you’ve answered these questions, proceed to the next lesson which covers the next step run by the nf-core/rnaseq pipeline <a href="">What is nf-core/rnaseq doing? &gt; Read trimming</a>. <strong>GS- add links here once finalised</strong></p>
+<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.3_Trimming.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Read trimming</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points">Key points</h3>
 <ul>

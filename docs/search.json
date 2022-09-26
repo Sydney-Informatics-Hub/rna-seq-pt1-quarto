@@ -4,14 +4,42 @@
     "href": "index.html",
     "title": "Day 1: raw sequence reads to gene counts",
     "section": "",
-    "text": "On day 1 of this workshop series, we will introduce you to the data pre-processing pipeline for bulk RNA sequencing (RNA-seq) using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the nf-core/rnaseq Nextflow pipeline on Pawsey’s Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "In part 1 of this workshop series, we will introduce you to the data pre-processing pipeline for bulk RNA sequencing (RNA-seq) using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the nf-core/rnaseq Nextflow pipeline on Pawsey’s Nimbus Cloud.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
+    "objectID": "index.html#target-audience",
+    "href": "index.html#target-audience",
+    "title": "Day 1: raw sequence reads to gene counts",
+    "section": "Target audience",
+    "text": "Target audience\nThis workshop series is suitable for people who are familiar with working at command line interface and may be new to RNA-seq for differential expression analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn about and use nf-co.re workflows."
+  },
+  {
+    "objectID": "index.html#how-to-navigate-the-webpages",
+    "href": "index.html#how-to-navigate-the-webpages",
+    "title": "Day 1: raw sequence reads to gene counts",
+    "section": "How to navigate the webpages",
+    "text": "How to navigate the webpages\nPlease use the Menu bar to move between lessons. We will start Day 1 with the Setup page and then naviate to the right. Each main menu header has sub-header which will be visible when you click on the main-menu, as shown below."
+  },
+  {
+    "objectID": "index.html#follow-on-courses",
+    "href": "index.html#follow-on-courses",
+    "title": "Day 1: raw sequence reads to gene counts",
+    "section": "Follow-on courses",
+    "text": "Follow-on courses\nThis course is part one of the two-part RNA sequencing training series. The second part of the series uses R/R Studio on Pawsey Nimbus Cloud to perform differential expression and pathway analysis using raw count data generated in part 1.\nWe recommend attending both courses if you would like an end-to-end overview of how to perform the analysis. If you are only interested in the technologies used, you may be able to get away with attending only the parts of interest."
   },
   {
     "objectID": "index.html#course-survey",
     "href": "index.html#course-survey",
     "title": "Day 1: raw sequence reads to gene counts",
     "section": "Course survey!",
-    "text": "Course survey!\nPlease fill out our course survey before you leave!"
+    "text": "Course survey!\nPlease fill out our course survey before you leave! Help us help you! :grin:"
+  },
+  {
+    "objectID": "index.html#credits",
+    "href": "index.html#credits",
+    "title": "Day 1: raw sequence reads to gene counts",
+    "section": "Credits",
+    "text": "Credits\nThis workshop series developed by the Sydney Informatics Hub, University of Sydney in partnership with the Pawsey Supercomputing Research Centre, AARnet, QCIF, and the Australian BioCommons."
   },
   {
     "objectID": "notebooks/1.0_Learning_objectives.html",
@@ -102,14 +130,14 @@
     "href": "notebooks/4_Summary_Day1.html",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "",
-    "text": "Today we answered a lot of questions:\n\nWhat is RNA sequencing and what are it’s main applications?\nWhat are the main steps we perform to process raw RNA-seq data to raw gene counts?\nHow can workflow management tools make running bioinformatics workflows easier?\nHow to run the nf-core/rnaseq pipeline and interpret its outputs?\nWhat are the important features of the nf-core/rnaseq pipeline?\n\nOn day 2, we will learn about differential expression analysis and functional annotation of differentially expressed genes. We’ll still be working on Nimbus, but instead of working on the command line, we’ll be using R/RStudio.\n\nGS-link the updated course survey\nAll materials copyright Sydney Informatics Hub, University of Sydney"
+    "text": "Today we answered a lot of questions:\n\nWhat is RNA sequencing and what are it’s main applications?\nWhat are the main steps we perform to process raw RNA-seq data to raw gene counts?\nHow can workflow management tools make running bioinformatics workflows easier?\nHow to run the nf-core/rnaseq pipeline and interpret its outputs?\nWhat are the important features of the nf-core/rnaseq pipeline?\n\nOn day 2, we will learn about differential expression analysis and functional annotation of differentially expressed genes. We’ll still be working on Nimbus, but instead of working on the command line, we’ll be using R/RStudio.\nAll materials copyright Sydney Informatics Hub, University of Sydney"
   },
   {
     "objectID": "notebooks/4_Summary_Day1.html#course-survey",
     "href": "notebooks/4_Summary_Day1.html#course-survey",
     "title": "RNA-Seq using Nextflow: Day 1",
     "section": "Course survey!",
-    "text": "Course survey!\nPlease fill out our course survey before you leave!\nSee you tomorrow! 😎"
+    "text": "Course survey!\nPlease fill out our course survey before you leave! Help us help you! 😁\nSee you tomorrow! 😎"
   },
   {
     "objectID": "notebooks/5_Revisiting_the_case_study.html",

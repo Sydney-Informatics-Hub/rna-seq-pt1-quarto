@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -196,9 +196,8 @@ ul.task-list li input[type="checkbox"] {
 <p><img src="../fig/nfcore_stage2And3.png" class="img-fluid"></p>
 <section id="alignment-to-reference-genome" class="level3">
 <h3 class="anchored" data-anchor-id="alignment-to-reference-genome"><strong>Alignment to reference genome</strong></h3>
-<p><strong>GS- can you confirm this is correct please.</strong><br>
-After read trimming, the nf-core/rnaseq pipeline maps reads to a reference genome specified by the user. Keep in mind that RNA-seq specific alignment tools are different to whole genome alignment tools. They are designed to be <strong>‘splice aware’</strong>, meaning they are capable of differentiating intronic from exonic regions in the alignment process.</p>
-<p>Bulk RNA-seq reads are derived from mature mRNA and contain only exons (and no introns). This means a sequence read can span 2 exons. Splice-aware aligners use a reference <strong>genome</strong>, not a transcriptome to perform read alignment, which contain intergenic, intronic and exonic sequences. This means that when they’re aligned to the reference genome, RNA-seq reads might span large introns. Splice aware aligners know not to align the RNA-seq reads to introns and can align a read across exons.</p>
+<p>After read trimming, the nf-core/rnaseq pipeline maps reads to a reference genome specified by the user. Keep in mind that RNA-seq specific alignment tools are different to whole genome alignment tools. They are designed to be <strong>‘splice aware’</strong>, meaning they are capable of differentiating intronic from exonic regions in the alignment process.</p>
+<p>Bulk RNA-seq reads are derived from mature mRNA and contain only exons (and no introns). This means a sequence read can span 2 exons. Splice-aware aligners use a <strong>reference genome</strong>, not a transcriptome to perform read alignment, which contain intergenic, intronic and exonic sequences. This means that when they’re aligned to the reference genome, RNA-seq reads might span large introns. Splice aware aligners know not to align the RNA-seq reads to introns and can align a read across exons.</p>
 <div class="callout-note callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -214,12 +213,11 @@ Genetics 101 refresher: mRNA splicing
 </div>
 <p>The most commonly used aligners for short-read sequencing are available in the nf-core/rnaseq workflow, including <a href="https://github.com/alexdobin/STAR">STAR</a> and <a href="http://daehwankimlab.github.io/hisat2/">HISAT2</a>. Aligned sequences for each sample are output in the <a href="https://en.wikipedia.org/wiki/BAM_(file_format)">bam</a> file format.</p>
 <p>The challenge activity for this session will be a group exercise. In breakout rooms, your facilitator will demonstrate how we can visualise alignments using a tool called <a href="https://software.broadinstitute.org/software/igv/">IGV</a>.</p>
-<p><strong>GS- the link to the case study is broken</strong></p>
 </section>
 <section id="challenge" class="level3 unlisted challenge">
 <h3 class="unlisted anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
-<p>This is a hard one! Thinking back to the <a href="">case study</a>, can you work out how you would handle the scenario below?</p>
-<p>Imagine that <strong>we have forgotten to label the conditional groupings of our samples and we don’t know which samples belong to the wildtype or knockout groups!</strong></p>
+<p>This is a hard one! Thinking back to the <a href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">case study</a>, can you work out how you would handle the scenario below?</p>
+<p>Oh no! We have forgotten to label the conditional groupings of our samples and we don’t know which samples belong to the wildtype or knockout groups!</p>
 <p>Can we use the alignment files to assign samples to their correct treatment group?</p>
 <details>
 <summary>
@@ -227,7 +225,7 @@ Solution
 </summary>
 <ul>
 <li>From the case study, we know a loss of function mutation of&nbsp;<em>Gtf2ird1</em>&nbsp;was generated by an insertion of a&nbsp;Myc transgene, resulting in a 40&nbsp;kb deletion surrounding exon 1.</li>
-<li>Navigate to the gene in the mm10 assemble (chr5:134332897-134481480)</li>
+<li>Navigate to the gene in the mm10 assembly (chr5:134332897-134481480)</li>
 <li>Samples SRR3473984, SRR3473985, SRR3473984 contain reads covering exon 1. These are Wildtype samples.</li>
 <li>Samples SRR3473987, SRR3473988, SRR3473989 DO NOT contain reads covering exon 1. These are Knockout samples.</li>
 </ul>
@@ -235,24 +233,8 @@ Solution
 </section>
 <section id="read-quantification" class="level3">
 <h3 class="anchored" data-anchor-id="read-quantification"><strong>Read quantification</strong></h3>
-<p><strong>GS- This needs to be updated in accordance with whats in the <a href="https://docs.google.com/document/d/1n5k8U3RyBTr5cXcJ34hSmAqBqF7Perow7MOZp0DoZFM/edit#heading=h.vyktmcp6jqez">runsheet</a></strong></p>
 <p>Following read alignment, we use the alignment files to calculate raw gene-count data for each sample. We can then use these count files (called gene-count matrix), to identify differentially expressed genes.</p>
-<p>To perform read quantification, nf-core/rnaseq uses</p>
-<strong>GS- This needs to be updated in accordance with whats in the <a href="https://docs.google.com/document/d/1n5k8U3RyBTr5cXcJ34hSmAqBqF7Perow7MOZp0DoZFM/edit#heading=h.vyktmcp6jqez">runsheet</a></strong><br>
-
-</section>
-<section id="challenge-1" class="level3 unlisted challenge">
-<h3 class="unlisted anchored" data-anchor-id="challenge-1"><strong>Challenge</strong></h3>
-<ul>
-<li>Identify the output folder in which the alignment and quantification results are placed.</li>
-<li>Identify and check out a few files which you think are important. <br><strong>HINT</strong> You can use the unix command <code>cat</code> which prints content of a file onto the terminal.</li>
-</ul>
-<details>
-<summary>
-Solution
-</summary>
-There are quite a few files generated in this step. We can try and discuss some of them.
-</details>
+<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.5_Interpreting_results_2.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Nextflow logs</strong> on the menu bar.</p>
 </section>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>

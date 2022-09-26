@@ -17,9 +17,8 @@ On day 2, we will learn about differential expression analysis and functional an
 
 ![](../fig/nfcore_whatNext.png)
 
-**GS-link the updated course survey**  
+## **Course survey!** {.unlisted}
 
-## Course survey!
-**_Please_** fill out our **[course survey]()** before you leave!
+Please fill out our **[course survey](https://www.surveymonkey.com/r/rnaseq2022)** before you leave! Help us help you! :grin:
 
 **See you tomorrow!** :sunglasses:

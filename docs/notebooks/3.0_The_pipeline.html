@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -170,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#differential-expression-rna-seq-workflow-overview" id="toc-differential-expression-rna-seq-workflow-overview" class="nav-link active" data-scroll-target="#differential-expression-rna-seq-workflow-overview"><strong>Differential expression RNA-seq workflow overview</strong></a>
+  <li><a href="#rna-seq-for-differential-expression-workflow" id="toc-rna-seq-for-differential-expression-workflow" class="nav-link active" data-scroll-target="#rna-seq-for-differential-expression-workflow"><strong>RNA-seq for differential expression workflow</strong></a>
   <ul class="collapse">
   <li><a href="#what-steps-does-the-nf-corernaseq-pipeline-perform" id="toc-what-steps-does-the-nf-corernaseq-pipeline-perform" class="nav-link" data-scroll-target="#what-steps-does-the-nf-corernaseq-pipeline-perform"><strong>What steps does the nf-core/rnaseq pipeline perform?</strong></a></li>
   </ul></li>
@@ -182,8 +182,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="differential-expression-rna-seq-workflow-overview" class="level1">
-<h1><strong>Differential expression RNA-seq workflow overview</strong></h1>
+<section id="rna-seq-for-differential-expression-workflow" class="level1">
+<h1><strong>RNA-seq for differential expression workflow</strong></h1>
 <section id="questions" class="level3 unlisted questions">
 <h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
@@ -191,9 +191,7 @@ ul.task-list li input[type="checkbox"] {
 <li>What steps does the nf-core/rnaseq pipeline perform?</li>
 </ul>
 </section>
-<p><br>
-</p>
-<p>Now that we’ve learned about the nf-core/rnaseq pipeline, let’s think about where this pipeline sits within the broader experimental method. Remember we’re processing our RNA-seq reads so that we can identify differentially expressed genes and perform pathway enrichment analysis.</p>
+<p><br> Now that we’ve learned about the nf-core/rnaseq pipeline, let’s think about where it sits within the broader experimental method. Remember we’re processing our RNA-seq reads so that we can identify differentially expressed genes and perform functional enrichment analysis.</p>
 <div class="callout-note callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -207,17 +205,17 @@ Revisit the aims of the case study!
 <p>The aim of our RNA-seq experiment is to determine which genes are differentially expressed between our two conditions of interest in our mice. We are then asking if the differences in expression between <em>Gtf2ird1</em> knockout mice and normal (wildtype) mice can provide clues as to the underlying mechanisms involved in Williams-Beuren syndrome.</p>
 </div>
 </div>
-<p>In order to identify differentially expressed genes between these groups, we need to perform multiple steps that convert those raw sequence reads to analysis-ready data. We discussed the strucutre of this workflow and the various processes that are performed by nf-core/rnaseq pipeline earlier today. <strong>Can you use what you learned from those discussions to do the challenge exercise below?</strong></p>
+<p><br> In order to identify differentially expressed genes between our groups of interest, we need to perform multiple steps that convert those raw sequence reads to analysis-ready data. We discussed the structure of this workflow and the various processes that are performed by nf-core/rnaseq pipeline earlier today.</p>
 <section id="challenge" class="level3 unlisted challenge">
 <h3 class="unlisted anchored" data-anchor-id="challenge"><strong>Challenge</strong></h3>
 <p>Here are all the steps that make up a typical differential expression workflow when we’re working with bulk RNA-seq data. Can you place the steps in the right order?<br>
 <img src="../fig/DE_pipeline_scrambled_new.png" class="img-fluid"></p>
-<p>HINT: Start with the data given to you by a sequencing company and finish with the process you’d use to link expression differences with the phenotype of interest.</p>
+<p><strong>Hint:</strong> Start with the data given to you by a sequencing company and finish with the process you’d use to link expression differences with the phenotype of interest.</p>
 <details>
 <summary>
 Solution
 </summary>
-<img src="../fig/DE_pipeline_new.png" class="img-fluid" style="width:50.0%">
+<img src="../fig/DE_pipeline_new.png" class="img-fluid" style="width:60.0%">
 </details>
 </section>
 <section id="what-steps-does-the-nf-corernaseq-pipeline-perform" class="level2">
@@ -230,7 +228,7 @@ Solution
 <li>Trimmed read quality control</li>
 <li>Read alignment</li>
 </ol>
-By now our nf-core/rnaseq command should have finished. Lets move on to the next part of the workshop, where we’ll look at all the files and results generated by the pipeline. Open your terminal window again to check its finished running and proceed to the next lesson: <a href="">What is nf-core/rnaseq doing? &gt; The results</a>. <strong>GS- add links here once finalised</strong>
+<p>By now our nf-core/rnaseq command should have finished. Lets <a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.1_Interpreting_results.html">proceed to the next lesson</a>, by clicking on <strong>What is nf-core/rnaseq doing? &gt; nf-core/rnaseq results</strong> on the menu bar. Open your terminal window again to check the command has finished running.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>

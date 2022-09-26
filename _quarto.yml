@@ -16,7 +16,7 @@ website:
         - text: "Learning objectives"
           href: notebooks/1.0_Learning_objectives.html
         - text: "Introductory slides"
-          href: https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&file=Sept2022_Introductory_slides_biocommons_template.pptx&action=edit&mobileredirect=true&cid=e9271245-0780-4b25-8982-fb6da8d78cca
+          href: https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing
         - text: "Prepare your data"
           href: notebooks/1.1_Download_data.html
         - text: "Run the pipeline"
@@ -25,7 +25,7 @@ website:
         menu:
         - text: "Introduction to Nextflow"
           href: notebooks/2.0_intro_to_nextflow_and_nfcore.html
-        - text: "Introducing nf-core/rnaseq"
+        - text: "Introduction to nf-core/rnaseq"
           href: notebooks/2.1_nfcore-rnaseq.html
         - text: "Customising nf-core/rnaseq"
           href: notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html

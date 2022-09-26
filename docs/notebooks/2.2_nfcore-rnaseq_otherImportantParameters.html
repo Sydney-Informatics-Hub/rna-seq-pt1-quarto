@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#customising-the-nf-corernaseq-workflow" id="toc-customising-the-nf-corernaseq-workflow" class="nav-link active" data-scroll-target="#customising-the-nf-corernaseq-workflow"><strong>Customising the nf-core/rnaseq workflow</strong></a>
+  <li><a href="#customising-the-workflow" id="toc-customising-the-workflow" class="nav-link active" data-scroll-target="#customising-the-workflow"><strong>Customising the workflow</strong></a>
   <ul class="collapse">
   <li><a href="#some-useful-customisation-options" id="toc-some-useful-customisation-options" class="nav-link" data-scroll-target="#some-useful-customisation-options"><strong>Some useful customisation options</strong></a></li>
   </ul></li>
@@ -245,8 +245,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="customising-the-nf-corernaseq-workflow" class="level1">
-<h1><strong>Customising the nf-core/rnaseq workflow</strong></h1>
+<section id="customising-the-workflow" class="level1">
+<h1><strong>Customising the workflow</strong></h1>
 <section id="questions" class="level3 unlisted questions">
 <h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
@@ -254,14 +254,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>What parameters can be customised?</li>
 </ul>
 </section>
-<p><br>
-</p>
-<p>The nf-core/rnaseq pipeline can be run using a single command with deafult parameters. The default parameters are explained in detail here, and include:</p>
+<p><br> The nf-core/rnaseq pipeline can be run using a single command with deafult parameters. The default parameters are explained in detail here, and include:</p>
 <ul>
 <li>Either an input sample sheet (<code>--input</code>) or directory housing fastq files (<code>--reads</code>)<br>
 </li>
-<li>A reference genome, either one available through Illumina’s <a href="https://github.com/nf-core/rnaseq/blob/master/conf/igenomes.config">iGenomes repository</a> (<code>--genome</code>), or a user-specified reference assembly (<code>--fasta</code>) and annotation file (<code>--gtf</code>)</li>
-<li>A configuration profile suitable for the compute environment you’re working on.</li>
+<li>A reference genome, either one available through Illumina’s <a href="https://github.com/nf-core/rnaseq/blob/master/conf/igenomes.config">iGenomes database</a> (<code>--genome</code>), or a user-specified reference assembly (<code>--fasta</code>) and annotation file (<code>--gtf</code>)</li>
+<li>A configuration profile suitable for the computing environment you’re working on.</li>
 </ul>
 <p>For example, a user working with human samples, who has Singularity installed and all fastq files stored in a directory would be able to run this command to run the nf-core/rnaseq pipeline:</p>
 <p><font size="3"></font></p><font size="3">
@@ -270,7 +268,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  --genome GRCh38 \                           # Illumina iGenomes database</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  -profile singularity                        # For pre-installed software</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
-<p>Most of us will need to customise the command a little more than this though. For example, a user working with multiple samples, who wants to provide their own pre-indexed reference data, and has compute resource limitations might run a command that looks more like this:</p>
+<p>Most of us will need to customise the command a little more than this though. For example, a user working with multiple samples, who wants to provide their own pre-indexed reference data, and has computing resource limitations might run a command that looks more like this:</p>
 <p><font size="3"></font></p><font size="3">
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nextflow run $Path_to_nf-core/rnaseq \      </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  --input $Path_to_samplesheet.csv \        # Samplesheet file-name</span>
@@ -308,6 +306,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>--skip_fastqc     Skip FastQC.</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>--skip_multiqc    Skip MultiQC.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For details of all parameters in nf-core take a look <a href="https://nf-co.re/rnaseq/3.8.1/parameters">here</a>.</p>
+<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.0_The_pipeline.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; RNA-seq workflow overview</strong> on the menu bar.</p>
 </section>
 </section>
 <section id="key-points" class="level3 unlisted keypoints">

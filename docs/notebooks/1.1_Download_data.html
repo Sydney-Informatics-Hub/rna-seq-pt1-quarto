@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -233,7 +233,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare-your-data-for-pre-processing" id="toc-prepare-your-data-for-pre-processing" class="nav-link active" data-scroll-target="#prepare-your-data-for-pre-processing"><strong>Prepare your data for pre-processing</strong></a>
+  <li><a href="#prepare-your-data-for-processing" id="toc-prepare-your-data-for-processing" class="nav-link active" data-scroll-target="#prepare-your-data-for-processing"><strong>Prepare your data for processing</strong></a>
   <ul class="collapse">
   <li><a href="#log-in-to-nimbus" id="toc-log-in-to-nimbus" class="nav-link" data-scroll-target="#log-in-to-nimbus"><strong>Log in to Nimbus</strong></a></li>
   <li><a href="#make-your-base-directory" id="toc-make-your-base-directory" class="nav-link" data-scroll-target="#make-your-base-directory"><strong>Make your base directory</strong></a></li>
@@ -248,8 +248,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="prepare-your-data-for-pre-processing" class="level1">
-<h1><strong>Prepare your data for pre-processing</strong></h1>
+<section id="prepare-your-data-for-processing" class="level1">
+<h1><strong>Prepare your data for processing</strong></h1>
 <section id="questions" class="level3 unlisted questions">
 <h3 class="unlisted anchored" data-anchor-id="questions"><strong>Questions</strong></h3>
 <ul>
@@ -257,9 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>How do I download the required input files?</li>
 </ul>
 </section>
-<p><br>
-</p>
-<p>In this workshop series we are working with a real dataset from a study of a knockout mouse model by <a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2801-4">Corley et al.&nbsp;(2016)</a>. Before we can get started, we need to download the materials used in this workshop, including the raw sequence files and organise our working space on the command line.</p>
+<p><br> In this workshop series we are working with a real dataset from a study of a knockout mouse model by <a href="https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-016-2801-4">Corley et al.&nbsp;(2016)</a>. Before we can get started, we need to download the materials used in this workshop and organise our working space on the command line.</p>
 <div class="callout-note callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -270,20 +268,20 @@ Copying the code from the <code>grey</code> boxes on training materials
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this workshop we need to copy code from the grey boxes in the training materials and run it in the terminal. If you hovery our mouse over a grey box on the website, a clipboard icon will appear on the right side. Click on the clipboard logo to copy the code. Test it out with:</p>
+<p>In this workshop we need to copy code from the grey boxes in the training materials and run it in the terminal. If you hover your mouse over a grey box on the website, a clipboard icon will appear on the right side. Click on the clipboard logo to copy the code. Test it out with:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ssh training@###.###.###.###</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <section id="log-in-to-nimbus" class="level2">
 <h2 class="anchored" data-anchor-id="log-in-to-nimbus"><strong>Log in to Nimbus</strong></h2>
-<p>Go to the terminal window in which you have logged on to Nimbus. If you have accidently closed it, you will need to repeat steps in <a href="">Setup</a> <strong>GS-THIS NEEDS A LINK STILL</strong> again. Check where you are by typing:</p>
+<p>Go to the terminal window in which you have logged on to Nimbus. If you have accidently closed it, you will need to repeat steps on the <a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/setup.html">setup</a> page again. Check where you are by typing:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It should return <code>home/training</code>. To get back here at any point, you can always type:</p>
+<p>It should return <code>/home/training</code>. To get back here at any point, you can always type:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cd ~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="make-your-base-directory" class="level2">
 <h2 class="anchored" data-anchor-id="make-your-base-directory"><strong>Make your base directory</strong></h2>
-<p>This is where we will be working for the next 2 days. In your terminal once you have logged into Nimbus and are sure you’re in <code>home/training</code>, type the following:</p>
+<p>This is where we will be working for the next 2 days. In your terminal once you have logged into Nimbus and are sure you’re in <code>/home/training</code>, type the following:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mkdir base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="download-the-files-to-be-used-in-this-workshop" class="level2">
@@ -291,10 +289,9 @@ Copying the code from the <code>grey</code> boxes on training materials
 <p>In your terminal, type the following to move into to the base_directory:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cd base_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then type the following to download the input files: <strong>GS- ADD CLOUDSTOR LINK WITH FINAL MATERIALS</strong></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>git clone https://github.com/Sydney-Informatics-Hub/RNASeq_materials.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The files are packaged up to save space. Move the file to the current directory and unpack it:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mv RNASeq_materials/working_directory.tar.gz ./</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tar -zxvf working_directory.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cloudstor link to add</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The files are packaged up to save space. Let’s unpack it:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tar -zxvf working_directory.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This creates a directory called <code>working_directory</code>. Move into this directory by running:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cd working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You can list all the files in your current directory by running the list command:</p>
@@ -310,8 +307,8 @@ Copying the code from the <code>grey</code> boxes on training materials
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 training  training   4.2M 28 Jul 06:11 SRR3473988_selected.fastq.gz</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>-rwxr-xr-x@ 1 training  training   3.0M 28 Jul 06:11 SRR3473989_selected.fastq.gz</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 training  training   4.8K 28 Jul 06:11 nextflow.config</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 training  training    18K 30 Aug 11:33 rnaseq_DE_Full_matrix_DryRun.Rmd</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 training  training   5.0M 30 Aug 11:37 rnaseq_DE_Full_matrix_DryRun.html</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 training  training    18K 30 Aug 11:33 rnaseq_DE_analysis_Day2.Rmd</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>-rw-r--r--@ 1 training  training   5.0M 30 Aug 11:37 rnaseq_DE_analysis_Day2.html</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>-rw-------@ 1 training  training   330B 28 Jul 07:25 samplesheet.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
 <p>The <code>working_directory</code> folder contains the following files:</p>
@@ -322,23 +319,18 @@ Copying the code from the <code>grey</code> boxes on training materials
 </li>
 <li>The genome-wide gene count matrix file for day 2: <code>FULL_count_matrix.txt</code><br>
 </li>
-<li>The lessons and code for day 2: <code>rnaseq_DE_Full_matrix_DryRun.Rmd</code> and <code>rnaseq_DE_Full_matrix_DryRun.html</code></li>
+<li>The lessons and code for day 2: <code>rnaseq_DE_analysis_Day2.Rmd</code> and <code>rnaseq_DE_analysis_Day2.html</code></li>
 </ul>
 </section>
 <section id="look-at-the-sample-sheet" class="level2">
 <h2 class="anchored" data-anchor-id="look-at-the-sample-sheet"><strong>Look at the sample sheet</strong></h2>
 <p>A sample sheet is a standard input rquirement of nf-core pipelines, including nf-core/rnaseq. This sheet contains information on each sample being processed with this pipeline. Take a look at the <a href="https://nf-co.re/rnaseq/3.7/usage#samplesheet-input">nf-core/rnaseq documentation</a> for more information. For example:</p>
 <p><img src="../fig/elaborate_samplesheet.png" class="img-fluid"></p>
-<p>The sample sheet we are using today contains a header row and one row per sample being processed. It has 4 columns, each separated by the comma. The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet. The samplesheet can have as many columns as you desire, however, there is a strict requirement for the first 4 columns to match those defined in the table below:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption">Samplesheet columns</figcaption><p></p>
-<p><img src="../fig/samplesheet_description.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
+<p>The sample sheet we are using today contains a <strong>header row</strong> and <strong>one row per sample</strong> being processed. It has 4 columns, each separated by the comma. The pipeline will auto-detect whether a sample is single- or paired-end using the information provided in the samplesheet. The samplesheet can have as many columns as you desire, however, there is a strict requirement for the first 4 columns to match those defined in the table below:</p>
+<p><img src="../fig/samplesheet_description.png" class="img-fluid"></p>
 <section id="challenge" class="level3 unlisted challenge">
 <h3 class="unlisted anchored" data-anchor-id="challenge">Challenge</h3>
-<p>The samplesheet we are using today has already been created for you. You can find it at <code>~/base_directory/working_directory/samplesheet.csv</code>. Can you view this file using the <code>cat</code> command and identify differences between our sheet the one shown in the example screenshot above?</p>
+<p>Can you view the provided sample sheet using the <code>cat</code> command and identify differences between our sheet the one shown in the example screenshot above?</p>
 <details>
 <summary>
 Solution
@@ -346,7 +338,8 @@ Solution
 <p>View samplesheet.csv by running:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cat ~/base_directory/working_directory/samplesheet.csv </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Our sample sheet looks like this: <img src="../fig/our_samplesheet_final.png" class="img-fluid" style="width:70.0%" alt="Today’s samplesheet"></p>
-<p>Both sample sheets contain 6 samples. However, the example samplesheet consists of both single- and paired-end data for the control samples and TREATMENT_REP3 has been sequenced twice. Our sample sheet is a lot simpler, with only single-end reads. Note that the column for the reverse-reads is empty in our sample sheet.</p>
+<p>Both sample sheets contain 6 samples. However, the example samplesheet consists of both single- and paired-end data for the control samples and TREATMENT_REP3 has been sequenced twice.</p>
+<p>Our sample sheet is a lot simpler, with only single-end reads. Note that the column for the reverse-reads is empty in our sample sheet.</p>
 </details>
 </section>
 <p>Now that we have prepared our work space and downloaded the required files, we will proceed to running the nf-core/rnseq pipeline. Before proceeding:</p>
@@ -354,7 +347,7 @@ Solution
 <div class="sourceCode" id="cb12"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>pwd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should return: <code>/home/training/base_directory/working_directory</code>. If you are not here, move into the above path by running:</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cd /home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Keep your terminal window open for further analysis and proceed to the lesson by clicking on Day 1 kick off &gt; Run the pipeline on the top menu bar on the <a href="">workshop Day 1 website</a>. <strong>GS- add link here once finalised</strong></p>
+<p><br> Keep your terminal window open and <a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/1.2_Running_nfcore_command.html">proceed to the next lesson</a> by clicking on <strong>Day 1 kick off &gt; Run the pipeline</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>

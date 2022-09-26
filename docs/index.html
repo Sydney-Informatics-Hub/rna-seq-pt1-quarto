@@ -93,7 +93,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -115,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -166,17 +166,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#target-audience" id="toc-target-audience" class="nav-link active" data-scroll-target="#target-audience">Target audience</a></li>
-  <li><a href="#useful-resources" id="toc-useful-resources" class="nav-link" data-scroll-target="#useful-resources">Useful resources</a></li>
-  <li><a href="#how-to-navigate-the-webpages" id="toc-how-to-navigate-the-webpages" class="nav-link" data-scroll-target="#how-to-navigate-the-webpages">How to navigate the webpages</a></li>
-  <li><a href="#follow-on-courses" id="toc-follow-on-courses" class="nav-link" data-scroll-target="#follow-on-courses">Follow-on courses</a></li>
-  <li><a href="#course-survey" id="toc-course-survey" class="nav-link" data-scroll-target="#course-survey">Course survey!</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -197,36 +187,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>On day 1 of this workshop series, we will introduce you to the <strong>data pre-processing pipeline for bulk RNA sequencing (RNA-seq)</strong> using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the <strong><a href="https://nf-co.re/rnaseq/3.8.1">nf-core/rnaseq Nextflow pipeline</a> on <a href="https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation">Pawsey’s Nimbus Cloud</a></strong>.</p>
-<section id="target-audience" class="level3">
-<h3 class="anchored" data-anchor-id="target-audience">Target audience</h3>
-<p>This workshop is designed for researchers, students, and life scientists who are new to RNA-seq for differential expression and pathway analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn how to use <a href="https://nf-co.re/">nf-co.re</a> workflows.</p>
+<p>In <strong>part 1</strong> of this workshop series, we will introduce you to the <strong>data pre-processing pipeline for bulk RNA sequencing (RNA-seq)</strong> using the command line. To perform differential gene expression analysis, we first need to process raw sequence data to generate a gene count matrix that represents gene expression levels. To do this, we will run the <strong><a href="https://nf-co.re/rnaseq/3.8.1">nf-core/rnaseq</a></strong> Nextflow pipeline on <strong><a href="https://support.pawsey.org.au/documentation/display/US/Cloud+Documentation">Pawsey’s Nimbus Cloud</a></strong>.</p>
+<section id="target-audience" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="target-audience"><strong>Target audience</strong></h2>
+<p>This workshop series is suitable for people who are familiar with working at command line interface and may be new to RNA-seq for differential expression analysis. The course is beginner friendly and intended for those interested in using the command line interface for their analysis. It is also suitable for those who want to learn about and use <a href="https://nf-co.re/">nf-co.re</a> workflows.</p>
 </section>
-<section id="useful-resources" class="level3">
-<h3 class="anchored" data-anchor-id="useful-resources">Useful resources</h3>
-<ul>
-<li>Introduction to <strong><a href="https://datacarpentry.org/shell-genomics/">Command Line for Genomics</a></strong></li>
-<li><strong><a href="https://www.biocommons.org.au/events/nextflow-nimbus">Nextflow and Supercomputing at Pawsey</a></strong> : WEBINAR: Portable, reproducible and scalable bioinformatics workflows using Nextflow and Pawsey Nimbus Cloud.</li>
-</ul>
+<section id="how-to-navigate-the-webpages" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="how-to-navigate-the-webpages"><strong>How to navigate the webpages</strong></h2>
+<p>Please use the Menu bar to move between lessons. We will start Day 1 with the <code>Setup</code> page and then naviate to the right. Each main menu header has sub-header which will be visible when you click on the main-menu, as shown below.</p>
+<p><img src="./fig/MenuBar_Day1.png" class="img-fluid"></p>
 </section>
-<section id="how-to-navigate-the-webpages" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-navigate-the-webpages">How to navigate the webpages</h3>
-<p>Please use the Menu bar on the top. We will start with the <code>Setup</code> page and then naviate to the right. Each main menu header has sub-header which will be visible when you click on the main-menu, as shown below.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p></p><figcaption class="figure-caption"><strong>Menu bar for navigation</strong></figcaption><p></p>
-<p><img src="./fig/MenuBar_Day1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="follow-on-courses" class="level3">
-<h3 class="anchored" data-anchor-id="follow-on-courses">Follow-on courses</h3>
+<section id="follow-on-courses" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="follow-on-courses"><strong>Follow-on courses</strong></h2>
 <p>This course is <strong>part one</strong> of the two-part <strong><a href="https://sydney-informatics-hub.github.io/training.RNAseq.series/">RNA sequencing training series</a></strong>. The second part of the series uses R/R Studio on Pawsey Nimbus Cloud to perform differential expression and pathway analysis using raw count data generated in part 1.</p>
 <p>We recommend attending both courses if you would like an end-to-end overview of how to perform the analysis. If you are only interested in the technologies used, you may be able to get away with attending only the parts of interest.</p>
 </section>
-<section id="course-survey" class="level2">
-<h2 class="anchored" data-anchor-id="course-survey">Course survey!</h2>
-<p><strong><em>Please</em></strong> fill out our <strong><a href="https://redcap.sydney.edu.au/surveys/?s=FJ33MYNCRR">course survey</a></strong> before you leave!</p>
+<section id="course-survey" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="course-survey"><strong>Course survey!</strong></h2>
+<p>Please fill out our <strong><a href="https://www.surveymonkey.com/r/rnaseq2022">course survey</a></strong> before you leave! Help us help you! :grin:</p>
+</section>
+<section id="credits" class="level2 unlisted">
+<h2 class="unlisted anchored" data-anchor-id="credits"><strong>Credits</strong></h2>
+<p>This workshop series developed by the Sydney Informatics Hub, University of Sydney in partnership with the Pawsey Supercomputing Research Centre, AARnet, QCIF, and the Australian BioCommons.</p>
 
 
 </section>

@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="dropdown-text">Learning objectives</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="https://unisyd.sharepoint.com/:p:/r/teams/SydneyInformaticsHub2/_layouts/15/Doc.aspx?sourcedoc=%7B02017CE8-31E0-4693-AAA7-27968E003127%7D&amp;file=Sept2022_Introductory_slides_biocommons_template.pptx&amp;action=edit&amp;mobileredirect=true&amp;cid=e9271245-0780-4b25-8982-fb6da8d78cca">
+    <a class="dropdown-item" href="https://docs.google.com/presentation/d/1Na2nAlK34N196ONzMazGbpxvd-h7Ltx82webeLlN4RU/edit?usp=sharing">
  <span class="dropdown-text">Introductory slides</span></a>
   </li>  
         <li>
@@ -178,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.1_nfcore-rnaseq.html">
- <span class="dropdown-text">Introducing nf-core/rnaseq</span></a>
+ <span class="dropdown-text">Introduction to nf-core/rnaseq</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/2.2_nfcore-rnaseq_otherImportantParameters.html">
@@ -253,9 +253,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>How to run the nextflow command in terminal?</li>
 </ul>
 </section>
-<p><br>
-</p>
-<p>Now that we have prepared our working space and downloaded all the data we need, we can run the nf-core/rnaseq pipeline. The mouse genome is large and contains ~30,000 genes which would take hours to process. For the sake of expediency, today we are running the pre-processing workflow on a subset of the whole mouse genome. Tomorrow we will provide you with a whole genome count matrix, to perform differential expression and enrichment analyses.</p>
+<p><br> Now that we have prepared our working space and downloaded all the data we need, we can run the nf-core/rnaseq pipeline. The mouse genome is large and contains ~20,000 genes which would take hours to process. For the sake of expediency, we are running the pre-processing workflow on a subset of the whole mouse genome. Tomorrow we will provide you with a whole genome count matrix, to perform differential expression and enrichment analyses.</p>
 <div class="callout-note callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -277,14 +275,8 @@ Why run the command now?
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>/home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If you are not, move into the above path by running:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cd /home/training/base_directory/working_directory</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In order to run the pre-processing pipeline for all 6 samples, we need to provide nf-core/rnaseq command with some essential parameters and inputs. Our run command specifies some extra details that we will explore in more depth later today, but for now the important things to know are:</p>
-<ul>
-<li>All the reference data we are working with (i.e.&nbsp;fasta, gtf, star index files) are stored in a centralised file system called CernVM File System (CVMFS) (<code>cvmfs_path=</code>) that we are accessing remotely.</li>
-<li>We have specified how much memory (<code>--max_memory</code>) and how many CPUs (<code>--max_cpus</code>) the nf-core/rnaseq pipeline can use. Doing this ensures the pipeline won’t try to consume more memory or CPUs than are available on our system and crash.</li>
-<li>Outputs will be saved to the results directory (<code>--outdir</code>)</li>
-</ul>
 <p>Run the command:</p>
-<p><font size="2.7"></font></p><font size="2.7">
+<p><font size="3"></font></p><font size="3">
 <div class="sourceCode" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>cvmfs_path=/cvmfs/data.biocommons.aarnet.edu.au/Final_resources_250722</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nextflow run $cvmfs_path/nfcore_pipeline/rnaseq/ \</span>
@@ -297,7 +289,13 @@ Why run the command now?
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                --outdir results \</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                -with-report excecution_report.html \</span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                -with-timeline timeline_report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</font><p><font size="2.7"></font></p>
+</font><p><font size="3"></font></p>
+<p>In order to run the pre-processing pipeline for all 6 samples, we need to provide nf-core/rnaseq command with some essential parameters and inputs. Our run command specifies some extra details that we will explore in depth later today, but for now the important things to know are:</p>
+<ul>
+<li>The <strong>reference data</strong> we are working with (i.e.&nbsp;fasta, gtf, star index files) are stored in a centralised file system called CernVM File System (CVMFS) (<code>cvmfs_path=</code>) that we are accessing remotely.</li>
+<li>We have specified <strong>how much memory</strong> (<code>--max_memory</code>) and <strong>how many CPUs</strong> (<code>--max_cpus</code>) the nf-core/rnaseq pipeline can use. Doing this ensures the pipeline won’t try to consume more memory or CPUs than are available on our system and crash.</li>
+<li><strong>Outputs</strong> will be saved to the results directory (<code>--outdir</code>)</li>
+</ul>
 <p>The progress of the workflow will be displayed in the terminal and updated in real-time. Take a look at all the processes you have just run with a single command!</p>
 <div class="callout-note callout callout-style-simple callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -309,7 +307,7 @@ What if my command fails?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Don’t worry if your run fails for whatever reason, we have a set of results available for anyone who has experiences issues. If you need help with this, please ask one of our demonstrators in the Slack channel.</p>
+<p>If you need help, please ask one of our demonstrators in the Slack channel. Don’t worry if your run fails though, we have a set of results available for anyone who has experiences issues.</p>
 </div>
 </div>
 <p>If you are an experienced CLI user, you might want to run commands that take a while to finish in the background, so you can keep using your terminal while it runs. If that sounds nifty to you, feel free to try the challenge below to run your nf-core/rnaseq command.</p>
@@ -324,7 +322,7 @@ What if my command fails?
 <li>Detatch from the screen session</li>
 <li>Reopen the screen session to check on the progress of the run command</li>
 </ol>
-<p>Hint: to work out what flags you will need to do this, run:</p>
+<p><strong>Hint:</strong> to work out what flags you will need to do this, run:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>screen --help </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <details>
 <summary>
@@ -345,7 +343,7 @@ Solution
 <div class="sourceCode" id="cb8"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>screen -r run_nextflow_in_screen</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </section>
-<p>For now, we will leave the pipeline to run in our terminals and discuss how Nextflow and nf-core/rnaseq work while we wait. Keep your terminal window open to allow the nf-core/rnaseq command to finish and proceed to the next lesson: <a href="">Why use nf-core/rnaseq? &gt; Introduction to Nextflow</a>. <strong>GS- add links here once finalised</strong></p>
+<p><br> For now, we will leave the pipeline to run in our terminals and discuss Nextflow and nf-core/rnaseq while we wait. Keep your terminal window open to allow the nf-core/rnaseq command to finish and <a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/2.0_intro_to_nextflow_and_nfcore.html">proceed to the next lesson</a> by clicking on <strong>Why use nf-core/rnaseq? &gt; Introduction to Nextflow</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>
