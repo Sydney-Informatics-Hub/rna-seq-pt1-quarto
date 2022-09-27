@@ -42,6 +42,13 @@
     "text": "Credits\nThis workshop series developed by the Sydney Informatics Hub, University of Sydney in partnership with the Pawsey Supercomputing Research Centre, AARnet, QCIF, and the Australian BioCommons."
   },
   {
+    "objectID": "notebooks/0.0_about.html",
+    "href": "notebooks/0.0_about.html",
+    "title": "RNA-Seq using Nextflow: Day 1",
+    "section": "",
+    "text": "All materials copyright Sydney Informatics Hub, University of Sydney"
+  },
+  {
     "objectID": "notebooks/1.0_Learning_objectives.html",
     "href": "notebooks/1.0_Learning_objectives.html",
     "title": "RNA-Seq using Nextflow: Day 1",

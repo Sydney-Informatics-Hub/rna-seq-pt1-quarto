@@ -83,6 +83,9 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://sydney-informatics-hub.github.io/training.RNAseq.series-quarto/">Home</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../notebooks/0.0_about.html">About</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../setup.html">Set-up</a>
   </li>  
   <li class="nav-item dropdown ">
@@ -240,8 +243,24 @@ Solution
 <section id="read-quantification" class="level3">
 <h3 class="anchored" data-anchor-id="read-quantification"><strong>Read quantification</strong></h3>
 <p>Following read alignment, we use the alignment files to calculate raw gene-count data for each sample. We can then use these count files (called gene-count matrix), to identify differentially expressed genes. By default, the nf-core/rnaseq pipeline runs Salmon for transcript quantification, following alignment by STAR.</p>
-<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.5_Interpreting_results_2.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Nextflow logs</strong> on the menu bar.</p>
 </section>
+<section id="challenge-1" class="level3 unlisted challenge">
+<h3 class="unlisted anchored" data-anchor-id="challenge-1"><strong>Challenge</strong></h3>
+<ol type="1">
+<li>Can you identify the per sample gene count files produced by STAR and Salmon?</li>
+<li>Can you identify the final gene count matrix created by STAR and Salmon?</li>
+</ol>
+<details>
+<summary>
+Solution
+</summary>
+<ol type="1">
+<li><p>You will see <strong>per sample salmon quant output files in sample directories</strong>, e.g results &gt; star_salmon &gt; SRR3473989 &gt; quant.sf (transcript level) and quant.genes.sf (gene level). Columns of these files are described in the <a href="https://salmon.readthedocs.io/en/latest/file_formats.html">Salmon documentation</a>. <strong>Note</strong> - raw counts is not a simple count of depth of reads, there is a lot more to consider and each tool does this slightly differently (e.g.&nbsp;how do you count reads spanning overlapping exons across two different genes?). See the <a href="https://salmon.readthedocs.io/en/latest/file_formats.html">Salmon documentation</a> for how Salmon does it - <strong>this count is an estimation</strong>.</p></li>
+<li><p>A count matrix file (tab separated values or TSV format) is also produced by the workflow. This looks very similar to what we will import in R tomorrow, it can be found here: results &gt; star_salmon &gt; salmon.merged.gene_counts.tsv. Most genes will have 0 counts because we subsetted the data. You can find or grep the <em>Gtf2ird1</em> gene (ENSMUSG00000023079).This takes the number in “NumReads” for each sample and gene in the quant.sf file, and puts it into a count matrix file</p></li>
+</ol>
+</details>
+</section>
+<p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.5_Interpreting_results_2.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Nextflow logs</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points"><strong>Key points</strong></h3>
 <ul>

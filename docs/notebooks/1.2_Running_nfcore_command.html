@@ -146,6 +146,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="https://sydney-informatics-hub.github.io/training.RNAseq.series-quarto/">Home</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../notebooks/0.0_about.html">About</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../setup.html">Set-up</a>
   </li>  
   <li class="nav-item dropdown ">
@@ -254,13 +257,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </section>
 <p><br> Now that we have prepared our working space and downloaded all the data we need, we can run the nf-core/rnaseq pipeline. The mouse genome is large and contains ~20,000 genes which would take hours to process. For the sake of expediency, we are running the pre-processing workflow on a subset of the whole mouse genome. Tomorrow we will provide you with a whole genome count matrix, to perform differential expression and enrichment analyses.</p>
-<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-Why run the command now?
+<strong>Why run the command now?</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -288,7 +291,8 @@ Why run the command now?
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>                --max_memory '6 GB' --max_cpus 2 \</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>                --outdir results \</span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>                -with-report excecution_report.html \</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                -with-timeline timeline_report.html</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                -with-timeline timeline_report.html \</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                -with-dag flowchart.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
 <p>In order to run the pre-processing pipeline for all 6 samples, we need to provide nf-core/rnaseq command with some essential parameters and inputs. Our run command specifies some extra details that we will explore in depth later today, but for now the important things to know are:</p>
 <ul>
@@ -296,14 +300,28 @@ Why run the command now?
 <li>We have specified <strong>how much memory</strong> (<code>--max_memory</code>) and <strong>how many CPUs</strong> (<code>--max_cpus</code>) the nf-core/rnaseq pipeline can use. Doing this ensures the pipeline won’t try to consume more memory or CPUs than are available on our system and crash.</li>
 <li><strong>Outputs</strong> will be saved to the results directory (<code>--outdir</code>)</li>
 </ul>
-<p>The progress of the workflow will be displayed in the terminal and updated in real-time. Take a look at all the processes you have just run with a single command!</p>
-<div class="callout-note callout callout-style-simple callout-captioned">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-What if my command fails?
+<strong>A note on genome indexing</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Today we are using a <strong>pre-indexed reference genome</strong> (<code>--star_index</code>) stored centrally on a filesystem called CernVMFS. Index files are required for tools like our aligners to run faster. Think of it like the index at the back of a textbook, where you can easily find what pages certain words are on.</p>
+<p>Note that indexing requires a lot of memory, so if you didn’t have a prepared index and you needed nf-core/rnaseq to perform indexing, you would need to increase memory (<code>--max_memory</code>).</p>
+</div>
+</div>
+<p>The progress of the workflow will be displayed in the terminal and updated in real-time. Take a look at all the processes you have just run with a single command!</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>What if my command fails?</strong>
 </div>
 </div>
 <div class="callout-body-container callout-body">

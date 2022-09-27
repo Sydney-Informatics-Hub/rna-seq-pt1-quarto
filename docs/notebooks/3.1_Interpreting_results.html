@@ -146,6 +146,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="https://sydney-informatics-hub.github.io/training.RNAseq.series-quarto/">Home</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../notebooks/0.0_about.html">About</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../setup.html">Set-up</a>
   </li>  
   <li class="nav-item dropdown ">
@@ -258,6 +261,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><br> Lets start by checking that the nf-core/rnaseq command has completed. Bring up the terminal window you left your command running in. If your run was successful, your terminal should display a Pipeline completed successfully message, same as the image below:</p>
 <p><img src="../fig/completed_nfcore_rnaseq_run.png" class="img-fluid"></p>
 <p>The pipeline completion message tells us some useful information including when the run finished, how long it took to run, and how many CPU hours it consumed. If you scroll up in your terminal, you’ll see just how many processes were run, and can confirm they all ran successfully.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+<strong>A comment on running time</strong>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may notice the walltime of your command was different to the screenshot above. This command was run on a different Nimbus machine to those we are working on today.</p>
+<p><strong>Can you think of any differences between computers and the way the command can be run that might speed up the running time of the pipeline?</strong></p>
+</div>
+</div>
 <section id="the-results-directory" class="level3">
 <h3 class="anchored" data-anchor-id="the-results-directory"><strong>The results directory</strong></h3>
 <p>Lets take a look at the results output by the pipeline. Remember that we told the nf-core/rnaseq run command to output all results to a directory named ‘results’ using the <code>--outdir</code> flag.</p>
@@ -302,8 +319,8 @@ MultiQC output logs
 <ol start="4" type="1">
 <li>Download the fastqc and trimgalore results from Nimbus to your local computer:</li>
 </ol>
-<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scp -r trainee@###.###.###.###:~/base_directory/working_directory/results/fastqc ./RNAseq_workshop/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>scp -r trainee@###.###.###.###:~/base_directory/working_directory/results/trimgalore ./RNAseq_workshop/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>scp -r training@###.###.###.###:~/base_directory/working_directory/results/fastqc ./RNAseq_workshop/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>scp -r training@###.###.###.###:~/base_directory/working_directory/results/trimgalore ./RNAseq_workshop/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
