@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                -with-timeline timeline_report.html \</span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                -with-dag flowchart.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </font><p><font size="3"></font></p>
-<p>In order to run the pre-processing pipeline for all 6 samples, we need to provide nf-core/rnaseq command with some essential parameters and inputs. Our run command specifies some extra details that we will explore in depth later today, but for now the important things to know are:</p>
+<p>In order to run the pipeline for all 6 samples, we need to provide nf-core/rnaseq command with some essential parameters and inputs. Our run command specifies some extra details that we will explore in depth later today, but for now the important things to know are:</p>
 <ul>
 <li>The <strong>reference data</strong> we are working with (i.e.&nbsp;fasta, gtf, star index files) are stored in a centralised file system called CernVM File System (CVMFS) (<code>cvmfs_path=</code>) that we are accessing remotely.</li>
 <li>We have specified <strong>how much memory</strong> (<code>--max_memory</code>) and <strong>how many CPUs</strong> (<code>--max_cpus</code>) the nf-core/rnaseq pipeline can use. Doing this ensures the pipeline won’t try to consume more memory or CPUs than are available on our system and crash.</li>

@@ -255,6 +255,22 @@ Solution
 </ol>
 </details>
 </section>
+<section id="challenge-3" class="level3 unlisted challenge">
+<h3 class="unlisted anchored" data-anchor-id="challenge-3"><strong>Challenge #3</strong></h3>
+<p>FastQC was designed for whole genome sequencing (not RNA-seq) experiments. With this knowledge, can you discuss why some categories might have been marked as “fail” or “warn” by looking at the HTML reports?</p>
+<details>
+<summary>
+Solution
+</summary>
+<ul>
+<li>Per-base sequence content fails. Per sequence GC content, sequence duplication levels, and overrepresented sequences return warnings.</li>
+<li>Per-base sequence content fails because we always see bias at the start of RNA-seq reads, which tells us the random priming is not ‘truly random’. See <a href="https://sequencing.qcfail.com/articles/positional-sequence-bias-in-random-primed-libraries/">here</a> for a nice explanation of this.</li>
+<li>Per sequence GC content, sequence duplication levels, and overrepresented sequences return warnings are received for this same reason.</li>
+<li>Given there is much less RNA sequence then DNA in our bodies, we don’t observe these biases in WGS.</li>
+<li>By chance, RNA will be fragmented at the same spot and sequenced multiple times. For DNA, the purpose of these plots is to check for technical bias (optical duplicates - when the sequencer reads the same strand multiple times).</li>
+</ul>
+</details>
+</section>
 <p><a href="https://sydney-informatics-hub.github.io/rna-seq-pt1-quarto/notebooks/3.3_Trimming.html">Proceed to the next lesson</a> by clicking on <strong>What is nf-core/rnaseq doing? &gt; Read trimming</strong> on the menu bar.</p>
 <section id="key-points" class="level3 unlisted keypoints">
 <h3 class="unlisted anchored" data-anchor-id="key-points">Key points</h3>
